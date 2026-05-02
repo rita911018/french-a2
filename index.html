@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Français A1–A2 · 31天复习 + 知识点手册</title>
+<title>Français A1–A2 · 60天冲刺计划</title>
 <style>
   :root {
     --ink: #1a1a2e;
@@ -439,6 +439,12 @@
   .plan-card-header.phase1 { background: linear-gradient(135deg, #e8f0fb 0%, #d0e3ff 100%); border-bottom: 2px solid #2c6fad; }
   .plan-card-header.phase2 { background: linear-gradient(135deg, #e8f7ee 0%, #c8edd9 100%); border-bottom: 2px solid #277a4e; }
   .plan-card-header.phase3 { background: linear-gradient(135deg, #fdecea 0%, #fad0cc 100%); border-bottom: 2px solid #c0392b; }
+  .plan-card-header.phase4 { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); border-bottom: 2px solid #4c1d95; }
+  .plan-card-header.phase5 { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); border-bottom: 2px solid #7f1d1d; }
+  .plan-cal-day.phase4 { background: #ede9fe; border-color: #a78bfa; }
+  .plan-cal-day.phase5 { background: #fee2e2; border-color: #fca5a5; }
+  .plan-phase-label:nth-of-type(4) { color: #7c3aed; }
+  .plan-phase-label:nth-of-type(5) { color: #dc2626; }
   .plan-day-badge {
     font-size: 1.3rem;
     font-weight: 900;
@@ -925,13 +931,10 @@
 <div class="app-layout">
 <aside class="sidebar">
   <div class="sidebar-brand">Français A2</div>
-  <div class="sidebar-tab active" data-tab="plan">📅 30天计划</div>
+  <div class="sidebar-tab active" data-tab="plan">📅 计划</div>
   <div class="sidebar-tab" data-tab="grammar">📖 语法</div>
-  <div class="sidebar-tab" data-tab="verbs">🔤 动词变位</div>
-  <div class="sidebar-tab" data-tab="vocab">📝 词汇</div>
-  <div class="sidebar-tab" data-tab="exam">📝 真题</div>
-  <div class="sidebar-tab" data-tab="oral">🗣️ 口语</div>
   <div class="sidebar-tab" data-tab="listen">🎧 听力</div>
+  <div class="sidebar-tab" data-tab="oral">🗣️ 口语</div>
   <div class="sidebar-tab" data-tab="wrong">❌ 错题本</div>
 </aside>
 <main class="main-content">
@@ -939,8 +942,8 @@
 <!-- ════════════════════════════════  PLAN ════════════════════════════════ -->
 <div class="tab-content active" id="tab-plan">
 <div class="container">
-  <h1>📅 30天学习计划</h1>
-  <p class="subtitle">A2存题补缺→高频场景→模拟冲刺，共三阶段30天。每天语法+词汇+听力+练习题，答错自动入错题本。</p>
+  <h1>📅 60天学习计划</h1>
+  <p class="subtitle">2026-05-01起，60天到考试（6月29日）。每天语法+词汇+练习题，答错自动入错题本。</p>
   <div id="planDayNav" class="plan-day-nav"></div>
   <div id="planContent"></div>
 </div>
@@ -950,7 +953,242 @@
 <div class="tab-content" id="tab-grammar">
 <div class="container">
   <h1>A1–A2 语法参考手册</h1>
-  <p class="subtitle">A1（基础）+ A2（进阶）共 20 个核心语法点。点击展开详细卡片。</p>
+  <p class="subtitle">A1零基础 + A1基础 + A2进阶 共 27 个核心语法点。点击展开详细卡片。末尾附动词变位表、词汇表、写作范文。</p>
+
+
+<div class="gc-section">A1 · 零基础起点</div>
+
+<!-- A1-0. 字母与发音 -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">🔤 Alphabet & Prononciation · 字母与发音</div>
+      <div class="gc-header-sub">26字母 · liaison联诵 · élision省音</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-rules cols-2">
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-blue">字</span>26个字母发音要点</div>
+        元音：A(啊)·E(厄)·I(依)·O(哦)·U(于)·Y(依格雷克)<br>
+        特殊：<span class="gc-fr">é</span>(诶) · <span class="gc-fr">è/ê</span>(诶，开口) · <span class="gc-fr">ç</span>(ss) · <span class="gc-fr">œ/eu</span>(厄)<br>
+        <div class="gc-ex">bonjour → bon-jour，每个音节清楚</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-orange">哑</span>哑音字母</div>
+        词尾的 <span class="gc-fr">s, t, d, x, z, p</span> 通常不发音<br>
+        <div class="gc-ex">tu es（不念末尾s） · petit（不念t） · bras</div>
+        <div class="gc-ex green">但：fils（儿子）末尾s发音</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-green">联</span>Liaison 联诵</div>
+        辅音末尾 + 元音开头的下一词 → 连读
+        <div class="gc-ex">les<u>_z</u>amis · vous<u>_z</u>avez · nous<u>_z</u>allons</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-red">省</span>Élision 省音</div>
+        le/la/de/que/je + 元音/哑音h → 缩写
+        <div class="gc-ex">je aime → <u>j'</u>aime · le ami → <u>l'</u>ami · de eau → <u>d'</u>eau</div>
+      </div>
+    </div>
+    <div class="gc-tip">💡 发音规则记忆法：看到词尾辅音字母不发音，看到两词相邻有元音就联诵，je/le/la+元音就省音。</div>
+  </div>
+</div>
+
+<!-- A1-0b. 数字 0-100 -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">🔢 Nombres 0–100 · 数字</div>
+      <div class="gc-header-sub">0-20必背 · 特殊：70/80/90构成法</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-table-wrap">
+      <table class="gc-table">
+        <tr><th>数字</th><th>法语</th><th>数字</th><th>法语</th><th>数字</th><th>法语</th></tr>
+        <tr><td>0</td><td>zéro</td><td>11</td><td>onze</td><td>70</td><td>soixante-dix</td></tr>
+        <tr><td>1</td><td>un/une</td><td>12</td><td>douze</td><td>71</td><td>soixante et onze</td></tr>
+        <tr><td>2</td><td>deux</td><td>13</td><td>treize</td><td>72</td><td>soixante-douze…</td></tr>
+        <tr><td>3</td><td>trois</td><td>14</td><td>quatorze</td><td>80</td><td>quatre-vingts</td></tr>
+        <tr><td>4</td><td>quatre</td><td>15</td><td>quinze</td><td>81</td><td>quatre-vingt-un</td></tr>
+        <tr><td>5</td><td>cinq</td><td>16</td><td>seize</td><td>90</td><td>quatre-vingt-dix</td></tr>
+        <tr><td>6</td><td>six</td><td>17</td><td>dix-sept</td><td>91</td><td>quatre-vingt-onze</td></tr>
+        <tr><td>7</td><td>sept</td><td>18</td><td>dix-huit</td><td>99</td><td>quatre-vingt-dix-neuf</td></tr>
+        <tr><td>8</td><td>huit</td><td>19</td><td>dix-neuf</td><td>100</td><td>cent</td></tr>
+        <tr><td>9</td><td>neuf</td><td>20</td><td>vingt</td><td>1000</td><td>mille</td></tr>
+        <tr><td>10</td><td>dix</td><td>21</td><td>vingt et un</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="gc-warn">⚠️ 80前加s：<span class="gc-fr">quatre-vingts</span>，但81起不加s：<span class="gc-fr">quatre-vingt-un</span>（去掉s）</div>
+    <div class="gc-tip">💡 21/31/41/51/61/71 用"et un"，其余直接连字符：22=vingt-deux, 72=soixante-douze</div>
+  </div>
+</div>
+
+<!-- A1-0c. 星期/月份/季节 -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">📅 Jours / Mois / Saisons · 星期·月份·季节</div>
+      <div class="gc-header-sub">法语日期表达全覆盖</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-rules cols-3">
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-blue">星</span>星期（小写）</div>
+        lundi（一）· mardi（二）· mercredi（三）<br>
+        jeudi（四）· vendredi（五）· samedi（六）· dimanche（日）
+        <div class="gc-ex">le lundi = 每周一 · lundi = 本周一</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-orange">月</span>月份（小写）</div>
+        janvier(1)·février(2)·mars(3)·avril(4)·mai(5)·juin(6)<br>
+        juillet(7)·août(8)·septembre(9)·octobre(10)·novembre(11)·décembre(12)
+        <div class="gc-ex">en juin · le 1er janvier</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-green">季</span>季节 + 介词</div>
+        <span class="gc-fr">au printemps</span>（春）<br>
+        <span class="gc-fr">en été</span>（夏）· <span class="gc-fr">en automne</span>（秋）· <span class="gc-fr">en hiver</span>（冬）
+        <div class="gc-ex">J'aime nager en été.</div>
+      </div>
+    </div>
+    <div class="gc-struct">
+      <div class="gc-struct-label">日期表达</div>
+      Aujourd'hui, c'est le <code>numéro + mois + année</code><br>
+      <span style="font-size:0.82rem">Nous sommes le mercredi 1er mai 2026.</span>
+    </div>
+  </div>
+</div>
+
+<!-- A1-0d. être / avoir -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">⚙️ être / avoir · 核心不规则动词</div>
+      <div class="gc-header-sub">A1最重要的两个动词，必须完整记忆</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-table-wrap">
+      <table class="gc-table">
+        <thead><tr><th>人称</th><th class="col-etre">être（是/在）</th><th class="col-avoir">avoir（有）</th></tr></thead>
+        <tbody>
+          <tr><td class="cell-person">je</td><td class="col-etre">je <u>suis</u></td><td class="col-avoir">j'<u>ai</u></td></tr>
+          <tr><td class="cell-person">tu</td><td class="col-etre">tu <u>es</u></td><td class="col-avoir">tu <u>as</u></td></tr>
+          <tr><td class="cell-person">il/elle</td><td class="col-etre">il/elle <u>est</u></td><td class="col-avoir">il/elle <u>a</u></td></tr>
+          <tr><td class="cell-person">nous</td><td class="col-etre">nous <u>sommes</u></td><td class="col-avoir">nous <u>avons</u></td></tr>
+          <tr><td class="cell-person">vous</td><td class="col-etre">vous <u>êtes</u></td><td class="col-avoir">vous <u>avez</u></td></tr>
+          <tr><td class="cell-person">ils/elles</td><td class="col-etre">ils/elles <u>sont</u></td><td class="col-avoir">ils/elles <u>ont</u></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gc-rules cols-2">
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-orange">être用法</span></div>
+        身份/状态/职业：<div class="gc-ex">Je suis chinoise. Il est médecin. Nous sommes amis.</div>
+        地点：<div class="gc-ex">Elle est à Paris. Je suis chez moi.</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-blue">avoir用法</span></div>
+        拥有：<div class="gc-ex">J'ai un chat. Tu as une voiture.</div>
+        年龄：<div class="gc-ex">J'ai 25 ans.（不用être！）</div>
+        感觉：<div class="gc-ex">J'ai faim/soif/chaud/froid/peur.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A1-0e. 指示形容词 ce/cette/ces/cet -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">🔷 Démonstratifs · 指示形容词</div>
+      <div class="gc-header-sub">ce / cet / cette / ces — 这个/那个</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-table-wrap">
+      <table class="gc-table">
+        <tr><th>性/数</th><th>形式</th><th>例句</th></tr>
+        <tr><td>阳性单数（辅音前）</td><td><strong>ce</strong></td><td>ce livre（这本书）· ce garçon</td></tr>
+        <tr><td>阳性单数（元音/哑音h前）</td><td><strong>cet</strong></td><td>cet homme · cet enfant · cet hôtel</td></tr>
+        <tr><td>阴性单数</td><td><strong>cette</strong></td><td>cette femme · cette idée</td></tr>
+        <tr><td>复数（阴阳）</td><td><strong>ces</strong></td><td>ces livres · ces femmes</td></tr>
+      </table>
+    </div>
+    <div class="gc-ex" style="margin:0.8rem 1.1rem">Ce livre est intéressant. · Cet homme est sympa. · Cette robe est belle. · Ces enfants jouent.</div>
+    <div class="gc-warn">⚠️ ce → cet 在元音/哑音h前：<del>ce homme</del> → <u>cet</u> homme</div>
+  </div>
+</div>
+
+<!-- A1-0f. aller + infinitif (futur proche) + venir de (passé récent) -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">🔷 Futur proche &amp; Passé récent · 近将来 / 近过去</div>
+      <div class="gc-header-sub">aller + inf（马上要做）· venir de + inf（刚刚做了）</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-rules cols-2">
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-blue">近将来</span>aller + infinitif</div>
+        表示即将发生或计划中的事
+        <div class="gc-ex">Je <u>vais partir</u> demain.（我明天要走）</div>
+        <div class="gc-ex">Il <u>va pleuvoir</u>.（快要下雨了）</div>
+        <div class="gc-ex">Nous <u>allons manger</u> maintenant.</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-orange">近过去</span>venir de + infinitif</div>
+        表示刚刚发生的事
+        <div class="gc-ex">Je <u>viens d'arriver</u>.（我刚刚到）</div>
+        <div class="gc-ex">Elle <u>vient de manger</u>.（她刚吃完）</div>
+        <div class="gc-ex">Nous <u>venons de finir</u>.</div>
+      </div>
+    </div>
+    <div class="gc-tip">💡 三时态口语最常用：viens de（刚做） · maintenant（正在，用présent） · vais（即将做）</div>
+  </div>
+</div>
+
+<!-- A1-0g. 数量表达 -->
+<div class="gc">
+  <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="gc-header-left">
+      <div class="gc-header-title">🔷 Expressions de quantité · 数量表达</div>
+      <div class="gc-header-sub">un peu de · beaucoup de · assez de · trop de · assez · pas du tout</div>
+    </div>
+    <span class="gc-arrow">▼</span>
+  </div>
+  <div class="gc-body">
+    <div class="gc-rules cols-2">
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-blue">量</span>数量副词 + de（后接名词，无冠词）</div>
+        <span class="gc-fr">un peu de</span>（一点）+ 不可数名词<br>
+        <span class="gc-fr">beaucoup de</span>（很多）<br>
+        <span class="gc-fr">assez de</span>（足够多）<br>
+        <span class="gc-fr">trop de</span>（太多）<br>
+        <span class="gc-fr">peu de</span>（很少）
+        <div class="gc-ex">J'ai <u>beaucoup de</u> travail. · Elle boit <u>un peu d'</u>eau.</div>
+      </div>
+      <div class="gc-rule">
+        <div class="gc-rule-title"><span class="gc-num c-orange">程度</span>修饰形容词/动词</div>
+        <span class="gc-fr">très</span>（非常）· <span class="gc-fr">assez</span>（相当）<br>
+        <span class="gc-fr">un peu</span>（有点）· <span class="gc-fr">trop</span>（太）<br>
+        <span class="gc-fr">pas du tout</span>（一点都不）
+        <div class="gc-ex">Il est <u>très</u> grand. · C'est <u>trop</u> cher ! · Je ne l'aime <u>pas du tout</u>.</div>
+      </div>
+    </div>
+    <div class="gc-warn">⚠️ 数量词后面接名词时用 de/d'，不加冠词！<br>❌ <del>beaucoup des amis</del> → ✅ <u>beaucoup d'amis</u></div>
+  </div>
+</div>
 
 <div class="gc-section">A1 · 基础</div>
 
@@ -1726,28 +1964,40 @@
   </div>
 </div>
 
+<div class="gc-section">动词变位表 · 5大时态</div>
+<p style="font-size:0.85rem;color:var(--grey);margin-bottom:1rem;">A1重点背 présent + passé composé，A2加 imparfait / futur / conditionnel。点「✅ 开始默写」可测试。</p>
+<div id="verbTables"></div>
+
+<div class="gc-section">主题词汇 · 12个场景</div>
+<div id="vocabContent"></div>
+
+<div class="gc-section">DELF A2 真题训练 · 写作范文</div>
+<p style="font-size:0.85rem;color:var(--grey);margin-bottom:1.5rem;">写作（2篇短文，45分钟）。先自己写，再对照参考范文。</p>
+
+<div class="day-card">
+  <div class="day-header"><div class="day-num">1</div><div class="day-topic">Inviter un ami · 邀请朋友</div></div>
+  <div class="grammar-block"><strong>Sujet：</strong>Vous organisez une fête pour votre anniversaire. Vous écrivez un message à un(e) ami(e) pour l'inviter. Vous donnez la date, l'heure, le lieu, et vous proposez d'apporter quelque chose.<br><strong>Écrivez 60 mots minimum.</strong></div>
+  <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?’隐藏范文 ▴\'\:\'查看范文 ▾’">查看范文 ▾</button>
+  <div class="answer"><span class="answer-fr">Salut Marie !<br><br>Je t’écris pour t’inviter à ma fête d’anniversaire. C’est samedi 15 juin à 20h chez moi, 12 rue des Lilas. Il y aura de la musique, des amis et un bon dîner. Si tu peux venir, est-ce que tu pourrais apporter une bouteille de jus de fruits ?<br><br>Dis-moi si tu es libre !<br>À bientôt,<br>Sophie</span><p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">&#x1f4cc; 套路：Salut + 目的 + 日期/时间/地点 + 请求带东西 + 让对方回复 + 签名。约 65 词。</p></div>
+</div>
+
+<div class="day-card">
+  <div class="day-header"><div class="day-num">2</div><div class="day-topic">Refuser une invitation · 拒绝邀请</div></div>
+  <div class="grammar-block"><strong>Sujet：</strong>Votre ami(e) vous invite à aller au cinéma samedi soir. Vous ne pouvez pas y aller. Vous répondez pour refuser poliment et vous proposez une autre date.<br><strong>Écrivez 60 mots minimum.</strong></div>
+  <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?’隐藏范文 ▴\'\:\'查看范文 ▾’">查看范文 ▾</button>
+  <div class="answer"><span class="answer-fr">Cher Paul,<br><br>Merci beaucoup pour ton invitation au cinéma ! Malheureusement, je ne peux pas venir samedi soir parce que je dois garder ma petite sœur.<br><br>Je suis vraiment désolé(e). Par contre, je suis libre dimanche après-midi. Ça te dirait d’y aller dimanche à la place ?<br><br>Tiens-moi au courant !<br>Amitiés,<br>Thomas</span><p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">&#x1f4cc; 套路：Merci + refus poli + raison simple + proposer alternative + amitiés。约 72 词。</p></div>
+</div>
+
+<div class="day-card">
+  <div class="day-header"><div class="day-num">3</div><div class="day-topic">Raconter un souvenir · 描述经历</div></div>
+  <div class="grammar-block"><strong>Sujet：</strong>Vous avez passé un week-end inoubliable. Vous racontez ce que vous avez fait, avec qui, et pourquoi c’était spécial.<br><strong>Écrivez 60 mots minimum. Utilisez le passé composé et l’imparfait.</strong></div>
+  <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?’隐藏范文 ▴\'\:\'查看范文 ▾’">查看范文 ▾</button>
+  <div class="answer"><span class="answer-fr">Le week-end dernier, je suis allé(e) à la montagne avec mes amis. Il faisait très beau et le soleil brillait. Nous avons marché pendant trois heures et nous avons découvert un petit lac magnifique.<br><br>Le soir, nous avons fait un barbecue et nous avons regardé les étoiles. C’était un moment magique parce que j’étais entouré(e) des personnes que j’aime. Je n’oublierai jamais ce week-end !</span><p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">&#x1f4cc; 套路：Quand + météo (imparfait) + activités (PC) + émotion (imparfait) + conclusion。约 80 词。</p></div>
+</div>
+
 </div><!-- /container -->
 </div><!-- /tab-grammar -->
 
-
-<!-- ═══════════════════════════════  VERBS ═══════════════════════════════ -->
-<div class="tab-content" id="tab-verbs">
-<div class="container">
-  <h1>A1–A2 动词变位表</h1>
-  <p class="subtitle">核心动词，五个核心时态。A1 重点背 présent + passé composé，A2 加 imparfait / futur / conditionnel。</p>
-
-  <div id="verbTables"></div>
-</div>
-</div>
-
-<!-- ═══════════════════════════════  VOCAB ═══════════════════════════════ -->
-<div class="tab-content" id="tab-vocab">
-<div class="container">
-  <h1>A1–A2 主题词汇表</h1>
-  <p class="subtitle">A1（自我介绍/家庭/食物/日常/交通/服装）+ A2（健康/住房/旅行/工作/消费/天气休闲）共 12 个主题。</p>
-  <div id="vocabContent"></div>
-</div>
-</div>
 
 <!-- ═══════════════════════════════  LISTEN ═══════════════════════════════ -->
 <!-- ════════════════════════════════  ORAL ════════════════════════════════ -->
@@ -2022,109 +2272,6 @@
 </div>
 </div>
 
-<div class="tab-content" id="tab-exam">
-<div class="container">
-  <h1>DELF A2 真题训练</h1>
-  <p class="subtitle">写作（Production écrite）+ 口语（Production orale）高频考题。先自己写/说，再对照参考范文。</p>
-
-  <h2>✍️ Production écrite · 写作</h2>
-  <p style="color:var(--grey);font-size:0.85rem;margin-bottom:1.5rem;">2 篇短文，45 分钟。第一篇 60+ 词，第二篇 60+ 词。先看题 → 写完 → 对范文。</p>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">1</div><div class="day-topic">Inviter un ami · 邀请朋友</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Vous organisez une fête pour votre anniversaire. Vous écrivez un message à un(e) ami(e) pour l'inviter. Vous donnez la date, l'heure, le lieu, et vous proposez d'apporter quelque chose.<br><strong>Écrivez 60 mots minimum.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Salut Marie !<br><br>Je t'écris pour t'inviter à ma fête d'anniversaire. C'est samedi 15 juin à 20h chez moi, 12 rue des Lilas. Il y aura de la musique, des amis et un bon dîner. Si tu peux venir, est-ce que tu pourrais apporter une bouteille de jus de fruits ?<br><br>Dis-moi si tu es libre !<br>À bientôt,<br>Sophie</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：Salut + 目的 + 日期/时间/地点 + 请求带东西 + 让对方回复 + 签名。约 65 词。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">2</div><div class="day-topic">Refuser une invitation · 拒绝邀请</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Votre ami(e) vous invite à aller au cinéma samedi soir. Vous ne pouvez pas y aller. Vous répondez pour refuser poliment et vous proposez une autre date.<br><strong>Écrivez 60 mots minimum.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Cher Paul,<br><br>Merci beaucoup pour ton invitation au cinéma ! Malheureusement, je ne peux pas venir samedi soir parce que je dois garder ma petite sœur.<br><br>Je suis vraiment désolé(e). Par contre, je suis libre dimanche après-midi. Ça te dirait d'y aller dimanche à la place ?<br><br>Tiens-moi au courant !<br>Amitiés,<br>Thomas</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：Merci + refus poli + raison simple + proposer alternative + amitiés。约 72 词。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">3</div><div class="day-topic">Raconter un souvenir · 描述经历</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Vous avez passé un week-end inoubliable. Vous racontez ce que vous avez fait, avec qui, et pourquoi c'était spécial.<br><strong>Écrivez 60 mots minimum. Utilisez le passé composé et l'imparfait.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Le week-end dernier, je suis allé(e) à la montagne avec mes amis. Il faisait très beau et le soleil brillait. Nous avons marché pendant trois heures et nous avons découvert un petit lac magnifique.<br><br>Le soir, nous avons fait un barbecue et nous avons regardé les étoiles. C'était un moment magique parce que j'étais entouré(e) des personnes que j'aime. Je n'oublierai jamais ce week-end !</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：Quand + météo (imparfait) + activités (PC) + émotion (imparfait) + conclusion。约 80 词。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">4</div><div class="day-topic">Demander des renseignements · 咨询信息</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Vous voulez suivre un cours de cuisine. Vous écrivez à l'école pour demander : les dates, les horaires, le prix, et s'il faut apporter quelque chose.<br><strong>Écrivez 60 mots minimum.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Madame, Monsieur,<br><br>Je vous écris pour avoir des informations sur vos cours de cuisine. Je voudrais savoir quand commencent les prochains cours et quels sont les horaires. Quel est le prix pour un mois de cours ? Est-ce que je dois apporter quelque chose (un tablier, des ingrédients) ?<br><br>Je vous remercie d'avance pour votre réponse.<br>Cordialement,<br>Julie Martin</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：formule de politesse + objet + questions (quand/combien/quoi) + remerciements + cordialement。约 75 词。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">5</div><div class="day-topic">Décrire une personne · 描述一个人</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Vous écrivez à un(e) ami(e) pour lui parler d'une personne que vous avez rencontrée récemment. Vous décrivez son apparence, son caractère, et pourquoi vous l'appréciez.<br><strong>Écrivez 60 mots minimum.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Salut Anna,<br><br>Je voulais te parler de ma nouvelle collègue, Léa. Elle est grande et elle a les cheveux bruns et les yeux verts. Elle est très gentille et toujours souriante. Elle est aussi très drôle — on rit beaucoup ensemble !<br><br>Ce que j'aime chez elle, c'est qu'elle aide toujours les autres. Elle m'a beaucoup aidé(e) pour mon projet. Je suis content(e) de l'avoir rencontrée.<br>À bientôt !</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：Présentation + apparence + caractère + exemple concret + sentiment。约 78 词。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">6</div><div class="day-topic">Proposer une sortie · 提议出行</div></div>
-    <div class="grammar-block"><strong>Sujet：</strong>Vous voulez organiser une sortie avec des amis. Vous proposez une activité, un jour, une heure, et un lieu de rendez-vous.<br><strong>Écrivez 60 mots minimum.</strong></div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏范文 ▴':'查看范文 ▾'">查看范文 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Salut tout le monde !<br><br>Je vous propose d'aller faire une randonnée dimanche prochain. Il y a un très beau chemin dans la forêt de Fontainebleau. On pourrait se retrouver à 10h devant la gare. Il faut juste apporter de l'eau et un pique-nique.<br><br>Le parcours fait environ 10 km, donc ce n'est pas trop difficile. Qui est partant ?<br>À dimanche j'espère !</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 套路：Proposition + activité + heure/lieu + matériel à prévoir + question finale。约 72 词。</p>
-    </div>
-  </div>
-
-  <h2>🗣️ Production orale · 口语</h2>
-  <p style="color:var(--grey);font-size:0.85rem;margin-bottom:1.5rem;">三部分：自我介绍（1-2 min）+ 独白（2 min，有10分钟准备）+ 角色扮演（3-4 min）。下面是高频考题和答题框架。</p>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">①</div><div class="day-topic">Entretien dirigé · 自我介绍（必考）</div></div>
-    <div class="grammar-block"><strong>考官常见问题：</strong><br>· Comment vous vous appelez ? / Pouvez-vous vous présenter ?<br>· Où habitez-vous ?<br>· Parlez-moi de votre famille.<br>· Qu'est-ce que vous faites dans la vie ? (études / travail)<br>· Pourquoi apprenez-vous le français ?<br>· Quels sont vos loisirs ?</div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏答题模板 ▴':'查看答题模板 ▾'">查看答题模板 ▾</button>
-    <div class="answer">
-      <span class="answer-fr">Je m'appelle [prénom]. J'ai [âge] ans et j'habite à [ville], en Chine. Je suis [profession/étudiant(e)].<br><br>Dans ma famille, il y a [nombre] personnes : mon père, ma mère, et [moi / mon frère / ma sœur]. Mon père est [métier] et ma mère est [métier].<br><br>J'apprends le français depuis [durée]. J'aime cette langue parce qu'elle est très belle. Aussi, je voudrais peut-être travailler avec des pays francophones un jour.<br><br>Pendant mon temps libre, j'aime [loisir 1] et [loisir 2]. Le week-end, je fais souvent [activité] avec mes amis.</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 替换 [ ] 里的内容为你的真实信息。背熟这段，Part 1 直接拿下。</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">②</div><div class="day-topic">Monologue suivi · 独白高频题</div></div>
-    <div class="grammar-block"><strong>高频话题（10分钟准备 → 说2分钟）：</strong><br>· Parlez de votre ville.<br>· Décrivez votre routine quotidienne.<br>· Quels sont vos projets pour les prochaines vacances ?<br>· Parlez d'une personne que vous admirez.<br>· Décrivez votre logement idéal.<br>· Qu'est-ce que vous aimez faire le week-end ?</div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏答题框架 ▴':'查看答题框架 ▾'">查看答题框架 ▾</button>
-    <div class="answer">
-      <span class="answer-fr"><strong>结构模板（任何话题都能套）：</strong><br><br>1️⃣ Introduction (15 sec)<br>Je vais vous parler de [sujet].<br><br>2️⃣ Point 1 + exemple (40 sec)<br>D'abord, ... Par exemple, ...<br><br>3️⃣ Point 2 + exemple (40 sec)<br>Ensuite, ... Notamment, ...<br><br>4️⃣ Opinion personnelle (25 sec)<br>Personnellement, je pense que ... / Pour moi, ...<br><br>5️⃣ Conclusion (10 sec)<br>Voilà, c'est tout ce que je voulais dire sur [sujet].</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 关键：分点 + 每个点给具体例子 + 用连接词（d'abord, ensuite, enfin, par exemple, personnellement）</p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num">③</div><div class="day-topic">Exercice en interaction · 角色扮演</div></div>
-    <div class="grammar-block"><strong>高频情境（3-4分钟，考官扮演对方）：</strong><br>· Vous êtes à l'office de tourisme, demandez des informations sur les activités.<br>· Vous voulez échanger un vêtement dans un magasin.<br>· Vous réservez une chambre d'hôtel par téléphone.<br>· Vous cherchez un colocataire, vous posez des questions au candidat.<br>· Vous êtes au restaurant, il y a un problème avec votre plat.</div>
-    <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show');this.textContent=this.nextElementSibling.classList.contains('show')?'隐藏答题技巧 ▴':'查看答题技巧 ▾'">查看答题技巧 ▾</button>
-    <div class="answer">
-      <span class="answer-fr"><strong>生存句式——每种场景都要会：</strong><br><br>🔹 <strong>问信息：</strong>Je voudrais savoir... / Est-ce que vous pouvez me dire... ? / Qu'est-ce que vous me conseillez ?<br><br>🔹 <strong>提要求：</strong>Je voudrais... / Est-ce que je peux... ? / Ça serait possible de... ?<br><br>🔹 <strong>有问题：</strong>Excusez-moi, il y a un problème... / Je suis désolé(e), mais... / Ce n'est pas ce que j'ai commandé.<br><br>🔹 <strong>讨价还价：</strong>Vous pouvez faire un prix ? / C'est un peu cher... / Est-ce qu'il y a une réduction ?<br><br>🔹 <strong>结束对话：</strong>Merci beaucoup ! / C'est parfait, je vous remercie. / Bonne journée !</span>
-      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--grey);">📌 判分标准：能完成交流任务 + 基本语法正确 + 发音能被理解。不用完美，能沟通就行。</p>
-    </div>
-  </div>
-
-</div>
-</div>
 </main>
 </div>
 
@@ -2413,369 +2560,366 @@ const grammarExplains = {
 };
 
 const planDays = [
-  // D1-10: 查漏补缺
-  {day:1, phase:'查漏补缺', grammar:'反身动词构成+变位', grammarNote:'se lever, se laver, s\'habiller — 所有反身动词PC用être，过去分词需配合主语性数', grammarTag:'反身动词',
-   vocab:['se lever（起床）','se coucher（睡觉）','se laver（洗漱）','s\'habiller（穿衣）','se reposer（休息）'],
-   sentences:['Je me lève à 7h.','Elle s\'est levée tôt.','Nous nous couchons tard.'],
-   listening:"y9SdKydb68w",
-   tasks:['背5个反身动词','造3句反身动词句子','听力第1集默写关键词'],
-   exercises:[
-     {q:'Je ___ lève à 7h. (me/te/se)', a:'me', tag:'反身动词'},
-     {q:'Elle s\'est ___. (lever→PC阴性)', a:'levée', tag:'反身动词'},
-     {q:'Il se lave 的否定式是？', a:'Il ne se lave pas', tag:'反身动词'},
-     {q:'反身动词PC用哪个助动词？', a:'être', tag:'反身动词'},
-     {q:'Nous ___ reposons. (nous/vous/se)', a:'nous', tag:'反身动词'},
-   ]},
-  {day:2, phase:'查漏补缺', grammar:'反身动词PC（se+être，配性数）', grammarNote:'PC中：je me suis levé(e)，阴性+e；ils se sont levés；elles se sont levées', grammarTag:'反身动词',
-   vocab:['se réveiller（醒来）','se dépêcher（赶快）','se souvenir（记得）','se promener（散步）','s\'amuser（玩得开心）'],
-   sentences:['Je me suis réveillé(e) tôt.','Elles se sont habillées vite.','Nous nous sommes promenés.'],
-   listening:"KVDTTbXOs7Q",
-   tasks:['练习反身动词PC变位','造句：阴性主语+反身动词PC','听力第2集'],
-   exercises:[
-     {q:'Ce matin, il ___ ___ levé à 6h.', a:'s\'est', tag:'反身动词'},
-     {q:'Elles ___ ___ réveillées. (se réveiller PC)', a:'se sont', tag:'反身动词'},
-     {q:'Nous ___ ___ promenés hier.', a:'nous sommes', tag:'反身动词'},
-     {q:'反身动词PC否定：Je ___ me suis ___ levé(e).', a:'ne / pas', tag:'反身动词'},
-     {q:'阴性单数+se lever PC的过去分词是？', a:'levée', tag:'反身动词'},
-   ]},
-  {day:3, phase:'查漏补缺', grammar:'命令式 affirmative（-ER/-IR/-RE三组）', grammarNote:'-ER动词tu形式去掉s：Parle！；nous建议：Parlons！；vous正式：Parlez！', grammarTag:'命令式',
-   vocab:['écouter（听）','regarder（看）','finir（完成）','vendre（卖）','venir（来）'],
-   sentences:['Parle plus fort !','Finissons nos devoirs !','Attendez un moment, s\'il vous plaît !'],
-   listening:"T2lxaxdW2VE",
-   tasks:['练习三组动词命令式','造5个肯定命令句','听力第3集'],
-   exercises:[
-     {q:'(Manger, tu) ___ tes légumes !', a:'Mange', tag:'命令式'},
-     {q:'(Finir, nous) ___ ce travail !', a:'Finissons', tag:'命令式'},
-     {q:'(Attendre, vous) ___ !', a:'Attendez', tag:'命令式'},
-     {q:'-ER动词tu命令式为什么去s？', a:'规则：-ER动词tu形式命令式去掉末尾的s', tag:'命令式'},
-     {q:'(Aller, nous) ___ au cinéma !', a:'Allons', tag:'命令式'},
-   ]},
-  {day:4, phase:'查漏补缺', grammar:'命令式 négative + 代词位置变化', grammarNote:'否定命令：Ne + 动词 + pas；代词：否定前置(Ne me dis pas)，肯定后置(Dis-le-moi)', grammarTag:'命令式',
-   vocab:['ne...pas（不要...）','se taire（安静）','se dépêcher（赶快）','s\'asseoir（坐下）','partir（离开）'],
-   sentences:['Ne parle pas pendant la classe !','Donne-le-moi !','Ne me le donne pas !'],
-   listening:"EkTZo_JoNa4",
-   tasks:['练习否定命令式','比较代词位置','听力第4集'],
-   exercises:[
-     {q:'(Ne pas manger, tu) ___ trop de sucre !', a:'Ne mange pas', tag:'命令式'},
-     {q:'(Ne pas partir, vous) ___ !', a:'Ne partez pas', tag:'命令式'},
-     {q:'肯定命令代词位置：Donne ___ (le livre à moi)', a:'Donne-le-moi', tag:'命令式'},
-     {q:'否定命令代词位置：___ me le donne pas.', a:'Ne', tag:'命令式'},
-     {q:'(Se taire, nous) ___ !', a:'Taisons-nous', tag:'命令式'},
-   ]},
-  {day:5, phase:'查漏补缺', grammar:'depuis/pendant/il y a 时间表达', grammarNote:'depuis=从那时起持续到现在（接现在时）；pendant=一段时间内；il y a=X时间前（接PC）', grammarTag:'depuis/pendant',
-   vocab:['depuis（从...起）','pendant（在...期间）','il y a（...前）','longtemps（很长时间）','déjà（已经）'],
-   sentences:['J\'apprends le français depuis six mois.','Il a travaillé pendant trois ans.','Il y a deux jours, j\'ai vu ce film.'],
-   listening:"ED70j_2Ra5s",
-   tasks:['造depuis/pendant/il y a各2句','听力第5集'],
-   exercises:[
-     {q:'J\'étudie le français ___ deux ans. (depuis/pendant)', a:'depuis', tag:'depuis/pendant'},
-     {q:'Elle a habité à Paris ___ dix ans. (période révolue)', a:'pendant', tag:'depuis/pendant'},
-     {q:'___ cinq jours, je suis parti en vacances.', a:'Il y a', tag:'depuis/pendant'},
-     {q:'depuis后面接哪个时态（动作持续到现在）？', a:'现在时（présent）', tag:'depuis/pendant'},
-     {q:'Il ___ trois heures qu\'il travaille.', a:'y a', tag:'depuis/pendant'},
-   ]},
-  {day:6, phase:'查漏补缺', grammar:'条件式 je voudrais/pourrais/aimerais', grammarNote:'条件式=futur词根+imparfait词尾；用于礼貌请求、建议、假设(si+imparfait)', grammarTag:'条件式',
-   vocab:['voudrais（想要）','pourrais（可以）','devrais（应该）','aimerais（想）','serait（会是）'],
-   sentences:['Je voudrais un café, s\'il vous plaît.','Tu devrais te reposer.','Si j\'avais le temps, je voyagerais.'],
-   listening:"WhN87vJoPqE",
-   tasks:['造5个条件式句子','练习si从句','听力第6集'],
-   exercises:[
-     {q:'Je ___ (vouloir, conditionnel) un thé.', a:'voudrais', tag:'条件式'},
-     {q:'Tu es fatigué, tu ___ (devoir, cond.) te reposer.', a:'devrais', tag:'条件式'},
-     {q:'Si j\'avais de l\'argent, je ___ (voyager, cond.).', a:'voyagerais', tag:'条件式'},
-     {q:'条件式比直陈式更___（礼貌/直接）？', a:'礼貌', tag:'条件式'},
-     {q:'Est-ce que vous ___ (pouvoir, cond.) m\'aider ?', a:'pourriez', tag:'条件式'},
-   ]},
-  {day:7, phase:'查漏补缺', grammar:'PC vs Imparfait 综合练习', grammarNote:'PC=具体事件/完成；Imparfait=背景/习惯/状态。画面法：Imparfait是背景，PC是事件', grammarTag:'PC vs Imparfait',
-   vocab:['soudain（突然）','tout à coup（忽然）','d\'habitude（通常）','quand j\'étais petit（小时候）','pendant que（正当...时）'],
-   sentences:['Il pleuvait quand je suis sorti.','Soudain, quelqu\'un a frappé à la porte.','Avant, je prenais le bus tous les jours.'],
-   listening:"5si-W8nPoCY",
-   tasks:['做PC vs Imparfait选择题10道','听力第7集'],
-   exercises:[
-     {q:'Hier, il ___ (pleuvoir) quand je ___ (sortir).', a:'pleuvait / suis sorti', tag:'PC vs Imparfait'},
-     {q:'Quand j\'étais enfant, je ___ (jouer) souvent dehors.', a:'jouais', tag:'PC vs Imparfait'},
-     {q:'Soudain, un homme ___ (entrer) dans la salle.', a:'est entré', tag:'PC vs Imparfait'},
-     {q:'Tous les étés, nous ___ (aller) à la mer.', a:'allions', tag:'PC vs Imparfait'},
-     {q:'Je ___ (lire) quand le téléphone ___ (sonner).', a:'lisais / a sonné', tag:'PC vs Imparfait'},
-   ]},
-  {day:8, phase:'查漏补缺', grammar:'否定句8种综合练习', grammarNote:'ne...pas/jamais/plus/rien/personne/aucun/ni...ni/ne...que；否定时des→de', grammarTag:'否定句',
-   vocab:['ne...jamais（从不）','ne...plus（不再）','ne...rien（什么都不）','ne...personne（没人）','ne...que（只）'],
-   sentences:['Je ne mange jamais de durian.','Il ne reste plus de pain.','Je n\'ai vu personne.'],
-   listening:"HKYj6EAzvo8",
-   tasks:['写8种否定形式各一句','听力第8集'],
-   exercises:[
-     {q:'Je ___ mange ___ de viande. (从不)', a:'ne / jamais', tag:'否定句'},
-     {q:'Il ___ reste ___ d\'eau. (不再)', a:'ne / plus', tag:'否定句'},
-     {q:'Elle n\'a vu ___. (没有人)', a:'personne', tag:'否定句'},
-     {q:'否定句中 des pommes 变成 ___？', a:'de pommes', tag:'否定句'},
-     {q:'Je ___ mange ___ des légumes. (只)', a:'ne / que', tag:'否定句'},
-   ]},
-  {day:9, phase:'查漏补缺', grammar:'关系代词 qui/que/où/dont', grammarNote:'qui=主语接动词；que=宾语接主语；où=地点/时间；dont=de+先行词', grammarTag:'关系代词',
-   vocab:['qui（关系主语）','que（关系宾语）','où（地点/时间）','dont（de+先行词）','lequel（哪一个）'],
-   sentences:['La femme qui parle est ma prof.','Le film que j\'ai vu était super.','C\'est la ville où je suis né.'],
-   listening:"2zdvOCZYa7Y",
-   tasks:['用四个关系代词各造两句','听力第9集'],
-   exercises:[
-     {q:'La femme ___ parle est ma prof. (关系主语)', a:'qui', tag:'关系代词'},
-     {q:'Le livre ___ je lis est intéressant. (关系宾语)', a:'que', tag:'关系代词'},
-     {q:'La ville ___ j\'habite est belle. (地点)', a:'où', tag:'关系代词'},
-     {q:'Le film ___ tu parles est célèbre. (de+先行词)', a:'dont', tag:'关系代词'},
-     {q:'C\'est l\'ami ___ la femme est médecin.', a:'dont', tag:'关系代词'},
-   ]},
-  {day:10, phase:'查漏补缺', grammar:'代词COD/COI/y/en综合', grammarNote:'COD(le/la/les)→直接宾语；COI(lui/leur)→à+人；y→à+地点/事物；en→de+名词；双代词顺序：me/te/se→le/la/les→lui/leur→y→en', grammarTag:'代词COD/COI',
-   vocab:['le/la/les（COD）','lui/leur（COI）','y（à+地点）','en（de+名词）','me/te/nous/vous'],
-   sentences:['Je le vois tous les jours.','Je lui parle souvent.','J\'y vais demain.'],
-   listening:"RiLKKIasG2Y",
-   tasks:['代词替换练习10题','听力第10集'],
-   exercises:[
-     {q:'Tu vois Marie ? — Oui, je ___ vois. (COD)', a:'la', tag:'代词COD/COI'},
-     {q:'Tu parles à Paul ? — Oui, je ___ parle. (COI)', a:'lui', tag:'代词COD/COI'},
-     {q:'Tu vas à Paris ? — Oui, j\'___ vais. (y)', a:'y', tag:'代词COD/COI'},
-     {q:'Tu veux du pain ? — Oui, j\'___ veux. (en)', a:'en', tag:'代词COD/COI'},
-     {q:'双代词顺序：Je ___ ___ donne. (le livre → à lui)', a:'le lui', tag:'代词COD/COI'},
-   ]},
-  // D11-20: 高频场景
-  {day:11, phase:'高频场景', grammar:'写作练习——描述一次旅行（PC+地点词汇）', grammarNote:'旅行写作套路：时间背景(Imparfait)+活动(PC)+感受(Imparfait)+总结', grammarTag:'写作',
-   vocab:['voyager（旅行）','visiter（参观）','découvrir（发现）','admirer（欣赏）','se souvenir（记得）'],
-   sentences:['J\'ai visité Paris l\'année dernière.','Le voyage était inoubliable.','Nous avons découvert de beaux endroits.'],
-   listening:"4vdX_ywX8Fc",
-   tasks:['写一篇60词旅行描述','用PC+Imparfait混合','听力第11集'],
-   exercises:[
-     {q:'L\'été dernier, je ___ (visiter, PC) Paris.', a:'ai visité', tag:'写作'},
-     {q:'Il ___ (faire) beau et le soleil ___ (briller). (背景)', a:'faisait / brillait', tag:'PC vs Imparfait'},
-     {q:'Nous ___ (découvrir, PC) un petit lac.', a:'avons découvert', tag:'写作'},
-     {q:'旅行写作中描述天气用哪个时态？', a:'Imparfait（背景）', tag:'PC vs Imparfait'},
-     {q:'C\'était un voyage ___. (填形容词：难忘的)', a:'inoubliable', tag:'写作'},
-   ]},
-  {day:12, phase:'高频场景', grammar:'写作练习——邀请函套路', grammarNote:'邀请函：Salut+姓名 → 目的 → 日期/时间/地点 → 请求 → 期待回复 → 签名', grammarTag:'写作',
-   vocab:['inviter（邀请）','organiser（组织）','participer（参加）','confirmer（确认）','apporter（带来）'],
-   sentences:['Je t\'invite à ma fête d\'anniversaire.','C\'est samedi à 20h chez moi.','Dis-moi si tu peux venir.'],
-   listening:"vcXFX7uT_4k",
-   tasks:['写一封60词邀请函','听力第12集'],
-   exercises:[
-     {q:'Je t\'___ (inviter) à une soirée.', a:'invite', tag:'写作'},
-     {q:'邀请函中如何礼貌请求对方带东西？', a:'Est-ce que tu pourrais apporter...? / Tu peux apporter...?', tag:'写作'},
-     {q:'邀请函结尾如何让对方回复？', a:'Dis-moi si tu peux venir. / Tiens-moi au courant.', tag:'写作'},
-     {q:'Vous ___ (pouvoir, conditionnel) venir samedi ?', a:'pourriez', tag:'条件式'},
-     {q:'邀请信的开头格式是？', a:'Salut + 姓名 / Cher(e) + 姓名', tag:'写作'},
-   ]},
-  {day:13, phase:'高频场景', grammar:'写作练习——感谢/道歉信', grammarNote:'感谢：Merci pour... + explication；道歉：Je suis désolé(e) + raison + solution', grammarTag:'写作',
-   vocab:['remercier（感谢）','s\'excuser（道歉）','malheureusement（不幸地）','désolé(e)（抱歉）','par contre（但是）'],
-   sentences:['Je te remercie pour ton aide.','Je suis vraiment désolé(e) de ne pas pouvoir venir.','Par contre, je suis libre dimanche.'],
-   listening:"nQGCj8w2IXw",
-   tasks:['写一封道歉信（拒绝邀请）','听力第13集'],
-   exercises:[
-     {q:'Je ___ beaucoup pour ton invitation. (感谢)', a:'te remercie', tag:'写作'},
-     {q:'Malheureusement, je ne ___ pas venir. (pouvoir)', a:'peux', tag:'写作'},
-     {q:'Je ___ (être) vraiment désolé(e).', a:'suis', tag:'写作'},
-     {q:'道歉信中如何提出替代方案？', a:'Par contre / Mais / En revanche + 替代时间', tag:'写作'},
-     {q:'道歉信结尾常用语是？', a:'Amitiés / Cordialement / À bientôt', tag:'写作'},
-   ]},
-  {day:14, phase:'高频场景', grammar:'口语练习——自我介绍1分30秒', grammarNote:'自我介绍：姓名+年龄+国籍 → 工作/学习 → 家庭 → 爱好 → 学法语原因', grammarTag:'口语',
-   vocab:['se présenter（自我介绍）','profession（职业）','loisir（爱好）','langue（语言）','nationalité（国籍）'],
-   sentences:['Je m\'appelle... J\'ai ... ans.','Je suis étudiant(e) en ...','J\'apprends le français depuis ...'],
-   listening:"nDnCTGPnhL8",
-   tasks:['录音：说1分30秒自我介绍','听力第14集'],
-   exercises:[
-     {q:'Je m\'___ (s\'appeler) Marie.', a:'appelle', tag:'口语'},
-     {q:'J\'___ le français depuis six mois. (apprendre)', a:'apprends', tag:'口语'},
-     {q:'口语自我介绍必提的5个内容是？', a:'姓名+年龄+职业+家庭+爱好', tag:'口语'},
-     {q:'Pourquoi ___ (apprendre, tu) le français ?', a:'apprends-tu / tu apprends', tag:'口语'},
-     {q:'自我介绍中如何说"我来自中国"？', a:'Je viens de Chine. / Je suis chinois(e).', tag:'口语'},
-   ]},
-  {day:15, phase:'高频场景', grammar:'口语练习——独白话题2分钟', grammarNote:'独白结构：Introduction(15s) → Point1+例子(40s) → Point2+例子(40s) → Opinion(25s) → Conclusion(10s)', grammarTag:'口语',
-   vocab:['d\'abord（首先）','ensuite（然后）','enfin（最后）','personnellement（个人来说）','par exemple（例如）'],
-   sentences:['Je vais vous parler de...','D\'abord... Par exemple...','Personnellement, je pense que...'],
-   listening:"VyiqIOFYkZk",
-   tasks:['练习独白：我的城市（2分钟）','听力第15集'],
-   exercises:[
-     {q:'独白开头标准句是？', a:'Je vais vous parler de [sujet].', tag:'口语'},
-     {q:'连接词d\'abord的意思是？', a:'首先', tag:'口语'},
-     {q:'D\'___ / Ensuite / Enfin 是哪类词？', a:'连接词（顺序连接词）', tag:'口语'},
-     {q:'如何在口语中表达个人意见？', a:'Personnellement / Pour moi / À mon avis', tag:'口语'},
-     {q:'独白结尾套路是？', a:'Voilà, c\'est tout ce que je voulais dire sur [sujet].', tag:'口语'},
-   ]},
-  {day:16, phase:'高频场景', grammar:'听力专项——数字/日期/时间听写', grammarNote:'数字：70=soixante-dix；80=quatre-vingts；90=quatre-vingt-dix；100=cent；时间：Il est 14h30=quatorze heures trente', grammarTag:'听力',
-   vocab:['soixante-dix（70）','quatre-vingts（80）','quatre-vingt-dix（90）','cent（100）','mille（1000）'],
-   sentences:['Il est quatorze heures trente.','Le train part à vingt et une heures.','Ça coûte quatre-vingt-cinq euros.'],
-   listening:"f0SCg0Inqhk",
-   tasks:['听写数字练习','听力第16集专项'],
-   exercises:[
-     {q:'75用法语怎么说？', a:'soixante-quinze', tag:'听力'},
-     {q:'92用法语怎么说？', a:'quatre-vingt-douze', tag:'听力'},
-     {q:'14h45用法语怎么说？', a:'quatorze heures quarante-cinq', tag:'听力'},
-     {q:'2500用法语怎么说？', a:'deux mille cinq cents', tag:'听力'},
-     {q:'听力中如何区分vingt(20)和cent(100)？', a:'注意上下文和数量单位', tag:'听力'},
-   ]},
-  {day:17, phase:'高频场景', grammar:'阅读理解——广告/邮件题型', grammarNote:'广告题：找关键信息（价格/日期/条件）；邮件题：判断目的（邀请/拒绝/询问）', grammarTag:'综合',
-   vocab:['une annonce（广告）','un courriel（邮件）','chercher（寻找）','proposer（提议）','gratuit（免费）'],
-   sentences:['On cherche un colocataire.','L\'entrée est gratuite pour les moins de 18 ans.','Veuillez confirmer votre réservation.'],
-   listening:"hf6Q4NPQhes",
-   tasks:['做阅读理解练习2篇','听力第17集'],
-   exercises:[
-     {q:'广告中 gratuit 是什么意思？', a:'免费', tag:'综合'},
-     {q:'邮件开头 Madame, Monsieur 是什么场合？', a:'正式场合（官方/商业邮件）', tag:'写作'},
-     {q:'veuillez + infinitif 表示什么？', a:'请...（礼貌请求）', tag:'综合'},
-     {q:'Une annonce de colocation 是什么类型广告？', a:'合租广告', tag:'综合'},
-     {q:'阅读题中如何快速找关键信息？', a:'先看问题，再找对应段落的关键词', tag:'综合'},
-   ]},
-  {day:18, phase:'高频场景', grammar:'综合场景——购物/问路', grammarNote:'购物：Je voudrais / C\'est combien ? / Je peux essayer ? 问路：Pour aller à... / Tournez à gauche', grammarTag:'综合',
-   vocab:['essayer（试穿）','la taille（尺码）','tourner（转）','continuer tout droit（直走）','au bout de（在...尽头）'],
-   sentences:['Je peux essayer cette robe ?','Pour aller à la gare, s\'il vous plaît ?','Tournez à droite après le feu.'],
-   listening:"4BNypRPg-x0",
-   tasks:['角色扮演：购物对话','问路练习','听力第18集'],
-   exercises:[
-     {q:'购物时如何问价格？', a:'C\'est combien ? / Quel est le prix ?', tag:'综合'},
-     {q:'Je cherche une veste en taille ___. (M号)', a:'M (medium)', tag:'综合'},
-     {q:'问路套路：Pour ___ à la gare ?', a:'aller', tag:'综合'},
-     {q:'Tournez à ___ (左) au prochain carrefour.', a:'gauche', tag:'综合'},
-     {q:'C\'est ___ ___ la rue. (在街道尽头)', a:'au bout de', tag:'综合'},
-   ]},
-  {day:19, phase:'高频场景', grammar:'综合场景——健康/看医生', grammarNote:'J\'ai mal à la tête/gorge/ventre；Je tousse/J\'ai de la fièvre；Vous devriez + infinitif', grammarTag:'综合',
-   vocab:['avoir mal à（...疼）','la gorge（喉咙）','tousser（咳嗽）','la fièvre（发烧）','une ordonnance（处方）'],
-   sentences:['J\'ai très mal à la gorge.','Je tousse depuis trois jours.','Vous devriez prendre ce médicament.'],
-   listening:"b80BHXgGJx0",
-   tasks:['模拟看医生对话','听力第19集'],
-   exercises:[
-     {q:'J\'___ mal à la tête. (avoir)', a:'ai', tag:'综合'},
-     {q:'Je tousse ___ deux jours. (depuis/pendant)', a:'depuis', tag:'depuis/pendant'},
-     {q:'医生建议用哪个语气表达？', a:'Vous devriez + infinitif（条件式）', tag:'条件式'},
-     {q:'À la pharmacie：Je voudrais quelque chose pour ___ la toux.', a:'soigner / calmer', tag:'综合'},
-     {q:'Il a de la ___ (发烧).', a:'fièvre', tag:'综合'},
-   ]},
-  {day:20, phase:'高频场景', grammar:'综合场景——描述人/地方（形容词变形）', grammarNote:'形容词性数配合：grand/grande；beau/belle；blanc/blanche；位置：大多数后置，BAGS类前置', grammarTag:'综合',
-   vocab:['grand/grande（大/高）','sympathique（友善）','moderne（现代）','animé（热闹）','calme（安静）'],
-   sentences:['C\'est une grande ville très animée.','Elle est grande avec les yeux bleus.','Le quartier est calme et agréable.'],
-   listening:"Idqdfdmriws",
-   tasks:['写一段人物描述（50词）','写一段地点描述（50词）','听力第20集'],
-   exercises:[
-     {q:'un homme ___ (grand, 阳性)', a:'grand', tag:'综合'},
-     {q:'une ville ___ (grand, 阴性)', a:'grande', tag:'综合'},
-     {q:'un ___ (beau, 阳性) garçon', a:'beau', tag:'综合'},
-     {q:'une ___ (beau, 阴性) maison', a:'belle', tag:'综合'},
-     {q:'形容词 blanc 阴性形式是？', a:'blanche', tag:'综合'},
-   ]},
-  // D21-30: 模拟冲刺
-  {day:21, phase:'模拟冲刺', grammar:'模拟听力1套', grammarNote:'听力考试：第1部分3题，第2部分4题，第3部分5题。每题听两遍，注意题目中的数字/地点/人名。', grammarTag:'听力',
-   vocab:['comprendre（理解）','répéter（重复）','noter（记录）','identifier（辨别）','un dialogue（对话）'],
-   sentences:['Écoutez et répondez aux questions.','La première partie : 3 enregistrements.','Vous avez 30 secondes pour lire les questions.'],
-   listening:"Az351m2PeqU",
-   tasks:['完整做一套听力真题','对答案分析错误','听力第21集'],
-   exercises:[
-     {q:'听力考试每段录音听几遍？', a:'两遍', tag:'听力'},
-     {q:'听力中出现数字要特别注意哪些混淆点？', a:'vingt/cent/mille；heures/minutes；prix/numéro', tag:'听力'},
-     {q:'听力第一部分通常是什么题型？', a:'判断正误 / 选择 / 连线', tag:'听力'},
-     {q:'Ne pas confondre：quinze(15) 和 soixante(60)', a:'quinze=15，soixante=60，注意语音区别', tag:'听力'},
-     {q:'听力中如何快速定位关键信息？', a:'先读题目，听时专注关键词（人名/地点/时间/数字）', tag:'听力'},
-   ]},
-  {day:22, phase:'模拟冲刺', grammar:'模拟听力2套', grammarNote:'重点练习：注意题目中否定句的陷阱；代词替换；同义表达', grammarTag:'听力',
-   vocab:['une émission（节目）','une publicité（广告）','un message（留言）','une annonce（广播）','une interview（采访）'],
-   sentences:['Vous allez entendre un message.','Répondez aux questions suivantes.','Cochez la bonne réponse.'],
-   listening:"jWPMYAXGMHI",
-   tasks:['第2套听力模拟','分析错题类型','听力第22集'],
-   exercises:[
-     {q:'听力中出现 ne...pas 要注意什么？', a:'否定意思，不要混淆为肯定', tag:'听力'},
-     {q:'une émission de radio 是什么？', a:'广播节目', tag:'听力'},
-     {q:'cochez la bonne réponse 的意思是？', a:'选出正确答案', tag:'听力'},
-     {q:'听力陷阱：答案常藏在___（开头/结尾/转折处）', a:'转折处（mais/par contre/en fait）', tag:'听力'},
-     {q:'听力中同义表达举例：maison=___？', a:'logement / domicile / habitation / chez soi', tag:'听力'},
-   ]},
-  {day:23, phase:'模拟冲刺', grammar:'模拟听力3套', grammarNote:'综合训练：数字类、判断类、多选类题型强化', grammarTag:'听力',
-   vocab:['vrai/faux（对/错）','exact（正确）','incorrect（不正确）','selon（根据）','d\'après（根据）'],
-   sentences:['D\'après le document, ...','Selon la personne interrogée,...','Cochez vrai ou faux.'],
-   listening:"wU0k0dhkD4M",
-   tasks:['第3套听力模拟','总结错题规律','听力第23集'],
-   exercises:[
-     {q:'vrai/faux题：如何判断？', a:'找到题目对应的录音句，逐字比对', tag:'听力'},
-     {q:'d\'après/selon 的意思是？', a:'根据...', tag:'听力'},
-     {q:'听力考试时间管理：每题平均___秒', a:'约30秒（听前读题15秒，听时答题15秒）', tag:'听力'},
-     {q:'听力中人名/地名听不清怎么办？', a:'根据上下文推断，注意首字母/音节', tag:'听力'},
-     {q:'第三套听力重点：__类题型最多', a:'选择题（三选一）', tag:'听力'},
-   ]},
-  {day:24, phase:'模拟冲刺', grammar:'模拟写作1套（2篇）', grammarNote:'写作考试：两篇各60+词；第1篇：非正式（邀请/感谢/道歉）；第2篇：正式（咨询/投诉）', grammarTag:'写作',
-   vocab:['rédiger（撰写）','un paragraphe（段落）','une introduction（引言）','une conclusion（结论）','un brouillon（草稿）'],
-   sentences:['Je vous écris pour vous informer de...','Je vous remercie d\'avance.','Dans l\'attente de votre réponse,...'],
-   listening:"E9xZWDixJi0",
-   tasks:['完整写作模拟：2篇限时45分钟','自我评分','听力第24集'],
-   exercises:[
-     {q:'正式邮件的结尾套语是？', a:'Cordialement / Dans l\'attente de votre réponse, veuillez agréer...', tag:'写作'},
-     {q:'写作中如何开头一封咨询信？', a:'Je vous écris pour avoir des informations sur...', tag:'写作'},
-     {q:'写作第1篇通常是什么类型？', a:'非正式：邀请/感谢/道歉/描述', tag:'写作'},
-     {q:'写作中时态选择：描述过去→___，表达愿望→___', a:'PC/Imparfait；条件式voudrais', tag:'写作'},
-     {q:'60词要求：大约几句话？', a:'约5-7句（每句约10词）', tag:'写作'},
-   ]},
-  {day:25, phase:'模拟冲刺', grammar:'模拟写作2套', grammarNote:'强化：连接词使用，时态一致性，词汇多样性', grammarTag:'写作',
-   vocab:['cependant（然而）','de plus（另外）','en effet（确实）','c\'est pourquoi（这就是为什么）','tout d\'abord（首先）'],
-   sentences:['De plus, je voudrais savoir...','Cependant, je ne peux pas...','C\'est pourquoi je vous écris.'],
-   listening:"3x5thw752VQ",
-   tasks:['写作模拟第2套','重点检查连接词和时态','听力第25集'],
-   exercises:[
-     {q:'de plus 的意思是？', a:'另外/此外', tag:'写作'},
-     {q:'cependant 的意思和用法？', a:'然而（表转折，用于正式书面语）', tag:'写作'},
-     {q:'c\'est pourquoi 的意思是？', a:'这就是为什么/因此', tag:'写作'},
-     {q:'写作中如何增加词汇多样性？', a:'用同义词：beau=magnifique/joli；bien=très/vraiment', tag:'写作'},
-     {q:'写作评分：除字数外还考察什么？', a:'语法正确性、词汇丰富性、连贯性', tag:'写作'},
-   ]},
-  {day:26, phase:'模拟冲刺', grammar:'模拟写作3套', grammarNote:'写作综合：检查常见错误（性数配合、助动词选择、冠词使用）', grammarTag:'写作',
-   vocab:['vérifier（检查）','corriger（纠正）','relire（重读）','améliorer（改善）','cohérent（连贯）'],
-   sentences:['Je relis ma lettre pour corriger les erreurs.','La réponse est cohérente et bien structurée.','J\'améliore mon vocabulaire chaque jour.'],
-   listening:"dHPueXh7maE",
-   tasks:['写作模拟第3套','建立个人错误清单','听力第26集'],
-   exercises:[
-     {q:'写作常见错误1：性数配合。une femme ___ (grand)', a:'grande', tag:'综合'},
-     {q:'写作常见错误2：助动词选择。Elle ___ (partir, PC)', a:'est partie', tag:'反身动词'},
-     {q:'写作常见错误3：否定时冠词。Je n\'ai pas ___ voiture.', a:'de', tag:'否定句'},
-     {q:'写作常见错误4：depuis vs il y a', a:'depuis接现在时（持续），il y a接PC（过去时间点）', tag:'depuis/pendant'},
-     {q:'写作审题步骤是什么？', a:'读题→确定类型→写草稿→检查字数→改错', tag:'写作'},
-   ]},
-  {day:27, phase:'模拟冲刺', grammar:'口语模拟（限时录音）', grammarNote:'口语考试：Part1自我介绍2min；Part2独白2min（10min准备）；Part3角色扮演3-4min', grammarTag:'口语',
-   vocab:['s\'exprimer（表达）','une interaction（互动）','un jeu de rôle（角色扮演）','proposer（提议）','négocier（协商）'],
-   sentences:['Excusez-moi, je voudrais savoir...','Est-ce que vous pourriez m\'aider ?','Je suis d\'accord avec vous.'],
-   listening:31,
-   tasks:['口语模拟：限时自我介绍2分钟（录音）','独白练习（话题：ma ville）','听力第27集'],
-   exercises:[
-     {q:'口语中如何礼貌询问？', a:'Je voudrais savoir... / Pourriez-vous m\'indiquer... ?', tag:'口语'},
-     {q:'角色扮演中遇到不懂的词怎么办？', a:'Comment dit-on... en français ? / Pouvez-vous répéter ?', tag:'口语'},
-     {q:'口语中如何表达赞同？', a:'Je suis d\'accord / Tout à fait / Exactement', tag:'口语'},
-     {q:'口语中如何表达不同意？', a:'Je ne suis pas d\'accord / Pas tout à fait / Au contraire', tag:'口语'},
-     {q:'口语评分标准包括？', a:'完成交际任务+词汇语法+发音流利度', tag:'口语'},
-   ]},
-  {day:28, phase:'模拟冲刺', grammar:'口语模拟（限时录音）', grammarNote:'强化：角色扮演常见场景（旅馆预订/问路/购物/看医生）的生存句式', grammarTag:'口语',
-   vocab:['réserver（预订）','annuler（取消）','se plaindre（抱怨）','expliquer（解释）','insister（坚持）'],
-   sentences:['Je voudrais réserver une chambre pour deux nuits.','Il y a un problème avec ma commande.','Je suis vraiment désolé pour ce contretemps.'],
-   listening:33,
-   tasks:['角色扮演：旅馆预订（5分钟）','角色扮演：餐厅投诉（5分钟）','听力第28集'],
-   exercises:[
-     {q:'旅馆预订：Je voudrais ___ une chambre pour deux nuits.', a:'réserver', tag:'口语'},
-     {q:'问题套路：Il y a un ___ avec ma commande.', a:'problème', tag:'口语'},
-     {q:'道歉套路：Je suis ___ pour ce contretemps.', a:'désolé(e)', tag:'口语'},
-     {q:'询问价格：C\'est ___ la nuit ? (combien)', a:'combien', tag:'口语'},
-     {q:'口语角色扮演最重要的是什么？', a:'完成交际任务（能沟通到位），不必追求完美语法', tag:'口语'},
-   ]},
-  {day:29, phase:'模拟冲刺', grammar:'弱点集中复习（看错题本）', grammarNote:'根据错题本重点复习薄弱语法点。今天不做新题，专攻错题！', grammarTag:'综合',
-   vocab:['réviser（复习）','consolider（巩固）','maîtriser（掌握）','s\'améliorer（进步）','réussir（成功）'],
-   sentences:['Je dois réviser mes points faibles.','J\'ai progressé grâce à mes révisions.','Je vais réussir l\'examen !'],
-   listening:35,
-   tasks:['翻看错题本所有错题','重点语法点精练','听力第29集'],
-   exercises:[
-     {q:'PC vs Imparfait：Hier, je ___ (marcher) quand je ___ (tomber).', a:'marchais / suis tombé(e)', tag:'PC vs Imparfait'},
-     {q:'反身动词PC：Elle ___ ___ (se lever) à 8h.', a:'s\'est levée', tag:'反身动词'},
-     {q:'代词：Tu as vu le film ? — Oui, je ___ ai vu.', a:'l\'', tag:'代词COD/COI'},
-     {q:'否定：Je ___ mange ___ de sucre. (plus)', a:'ne / plus', tag:'否定句'},
-     {q:'条件式：Est-ce que vous ___ (pouvoir) m\'aider ?', a:'pourriez', tag:'条件式'},
-   ]},
-  {day:30, phase:'模拟冲刺', grammar:'轻松收尾——只看词汇+听力，不做题', grammarNote:'考前一天：轻松复习词汇，听喜欢的法语歌或播客，保持状态，早点睡觉！', grammarTag:'综合',
-   vocab:['confiant(e)（自信的）','prêt(e)（准备好的）','courageux（勇敢的）','concentré(e)（专注的）','réussir（成功）'],
-   sentences:['Je suis prêt(e) pour l\'examen !','J\'ai bien travaillé ces 30 jours.','Je vais réussir !'],
-   listening:36,
-   tasks:['浏览词汇表（只看不写）','听力第30集放松听','早点睡觉！'],
-   exercises:[
-     {q:'Je suis ___ pour l\'examen ! (准备好的)', a:'prêt(e)', tag:'综合'},
-     {q:'Bonne ___ pour l\'examen ! (祝好运)', a:'chance', tag:'综合'},
-     {q:'今天的任务是什么？', a:'轻松复习，不焦虑，早睡觉！', tag:'综合'},
-     {q:'考试当天注意事项？', a:'带好证件+笔+手表；提前到达；深呼吸放松', tag:'综合'},
-     {q:'三十天的努力换来什么？', a:'Vous allez réussir ! 加油！', tag:'综合'},
-   ]},
+  {day:1,phase:'A1基础夯实',grammar:'字母与发音 · 省音与联诵',grammarNote:'法语26个字母，注意哑音字母（词尾s/t/d不发音），je+元音→j\'（省音），词尾辅音+元音开头下一词→联诵',grammarTag:'字母发音',vocab:['bonjour（你好）','merci（谢谢）','au revoir（再见）','s\'il vous plaît（请）','pardon（对不起）'],sentences:['Bonjour, je m\'appelle Rita.','Merci beaucoup !','Au revoir, à bientôt !'],listening:'4vdX_ywX8Fc',exercises:[
+    {q:'je aime → ___（省音）', a:'j\'aime', tag:'字母发音'},
+    {q:'les + amis → 联诵读作 les-___mis', a:'z', tag:'字母发音'},
+    {q:'petit 的词尾 t 发音吗？', a:'不发音（哑音）', tag:'字母发音'},
+    {q:'à bientôt 中 à 的中文意思', a:'（感叹词/再见用法）', tag:'字母发音'}
+  ]},
+  {day:2,phase:'A1基础夯实',grammar:'数字0-20 + 年龄/日期表达',grammarNote:'0-20必背；年龄用avoir：J\'ai 25 ans（不用être）；日期：le 2 mai 2026',grammarTag:'数字',vocab:['un/une（1）','deux（2）','cinq（5）','dix（10）','vingt（20）'],sentences:['J\'ai vingt-cinq ans.','Aujourd\'hui, c\'est le deux mai.','Il y a cinq personnes.'],listening:'vcXFX7uT_4k',exercises:[
+    {q:'「我15岁」用法语怎么说？', a:'J\'ai quinze ans.', tag:'数字'},
+    {q:'17 用法语怎么说？', a:'dix-sept', tag:'数字'},
+    {q:'3+5=?用法语写出等式', a:'trois plus cinq égal huit', tag:'数字'},
+    {q:'aujourd\'hui 的意思是？', a:'今天', tag:'数字'}
+  ]},
+  {day:3,phase:'A1基础夯实',grammar:'数字21-100 · soixante-dix/quatre-vingts',grammarNote:'70=soixante-dix(60+10)；80=quatre-vingts(4×20)；81=quatre-vingt-un(去掉s)；90=quatre-vingt-dix',grammarTag:'数字',vocab:['trente（30）','quarante（40）','cinquante（50）','soixante（60）','cent（100）'],sentences:['Il a quatre-vingt-cinq euros.','Le train part à soixante-dix-sept minutes.','C\'est le 31 décembre.'],listening:'nQGCj8w2IXw',exercises:[
+    {q:'75 用法语怎么说？', a:'soixante-quinze', tag:'数字'},
+    {q:'81 用法语怎么说？（注意quatre-vingts的s）', a:'quatre-vingt-un（无s）', tag:'数字'},
+    {q:'92 用法语怎么说？', a:'quatre-vingt-douze', tag:'数字'},
+    {q:'100 euros = ___', a:'cent euros', tag:'数字'}
+  ]},
+  {day:4,phase:'A1基础夯实',grammar:'être 完整变位 + 身份/状态表达',grammarNote:'être: suis/es/est/sommes/êtes/sont。用于：身份(Je suis chinoise)，状态(Elle est faiguée)，职业(Il est médecin)，地点(Je suis à Paris)',grammarTag:'être/avoir',vocab:['étudiant(e)（学生）','professeur（老师）','médecin（医生）','chinois(e)（中国人）','fatigué(e)（累的）'],sentences:['Je suis étudiante en français.','Elle est médecin à Shanghai.','Nous sommes amis.'],listening:'nDnCTGPnhL8',exercises:[
+    {q:'Je ___ (être) chinoise.', a:'suis', tag:'être/avoir'},
+    {q:'Vous ___ (être) professeur ?', a:'êtes', tag:'être/avoir'},
+    {q:'Ils ___ (être) fatigués.', a:'sont', tag:'être/avoir'},
+    {q:'être 的 nous 形式是？', a:'sommes', tag:'être/avoir'}
+  ]},
+  {day:5,phase:'A1基础夯实',grammar:'avoir 完整变位 + 年龄/感觉/拥有',grammarNote:'avoir: ai/as/a/avons/avez/ont。固定搭配：avoir faim/soif/chaud/froid/peur/raison/tort/besoin de',grammarTag:'être/avoir',vocab:['faim（饿）','soif（渴）','chaud（热）','froid（冷）','peur（害怕）'],sentences:['J\'ai faim, je vais manger.','Tu as quel âge ? — J\'ai vingt-cinq ans.','Il a une grande maison.'],listening:'VyiqIOFYkZk',exercises:[
+    {q:'J\'___ (avoir) vingt-cinq ans.', a:'ai', tag:'être/avoir'},
+    {q:'Elle ___ (avoir) soif.', a:'a', tag:'être/avoir'},
+    {q:'Nous ___ (avoir) besoin d\'aide.', a:'avons', tag:'être/avoir'},
+    {q:'「我饿了」用法语怎么说？（注意不用être）', a:'J\'ai faim.', tag:'être/avoir'}
+  ]},
+  {day:6,phase:'A1基础夯实',grammar:'星期/月份/季节 + 时间表达',grammarNote:'星期、月份都小写；季节介词：au printemps, en été/automne/hiver；时间：Il est + 数字 + heure(s)',grammarTag:'日期时间',vocab:['lundi（周一）','mars（三月）','été（夏天）','heure（小时）','minute（分钟）'],sentences:['Nous sommes le lundi 4 mai.','En été, il fait chaud à Shanghai.','Il est neuf heures et demie.'],listening:'f0SCg0Inqhk',exercises:[
+    {q:'「今天是星期五」用法语怎么说？', a:'Aujourd\'hui, c\'est vendredi.', tag:'日期时间'},
+    {q:'「在冬天」用哪个介词？', a:'en hiver', tag:'日期时间'},
+    {q:'14:30 用法语怎么说？', a:'Il est quatorze heures trente.', tag:'日期时间'},
+    {q:'「6月」用法语怎么说？', a:'juin', tag:'日期时间'}
+  ]},
+  {day:7,phase:'A1基础夯实',grammar:'现在时规则-ER动词 · parler/habiter/aimer',grammarNote:'-ER动词：词根+e/es/e/ons/ez/ent。主语je+元音动词要省音：j\'aime(非je aime)',grammarTag:'现在时',vocab:['parler（说话）','habiter（居住）','travailler（工作）','aimer（喜欢）','étudier（学习）'],sentences:['J\'habite à Shanghai depuis trois ans.','Tu parles bien français !','Nous aimons voyager.'],listening:'hf6Q4NPQhes',exercises:[
+    {q:'Je ___ (parler) français.', a:'parle', tag:'现在时'},
+    {q:'Elle ___ (habiter) à Paris.', a:'habite', tag:'现在时'},
+    {q:'Vous ___ (travailler) où ?', a:'travaillez', tag:'现在时'},
+    {q:'Ils ___ (aimer) le football.', a:'aiment', tag:'现在时'}
+  ]},
+  {day:8,phase:'A1基础夯实',grammar:'现在时 -IR/-RE动词 + aller/faire',grammarNote:'-IR：finir→finis/finis/finit/finissons/finissez/finissent；-RE：vendre→vends/vends/vend/vendons/vendez/vendent；aller和faire必须单独背',grammarTag:'现在时',vocab:['finir（完成）','choisir（选择）','faire（做）','aller（去）','vendre（卖）'],sentences:['Je finis mon travail à 18h.','Qu\'est-ce que tu fais ce soir ?','Nous allons au cinéma samedi.'],listening:'4BNypRPg-x0',exercises:[
+    {q:'Tu ___ (finir) à quelle heure ?', a:'finis', tag:'现在时'},
+    {q:'Il ___ (faire) du sport tous les jours.', a:'fait', tag:'现在时'},
+    {q:'Vous ___ (aller) où ce week-end ?', a:'allez', tag:'现在时'},
+    {q:'faire 的 nous 形式（不规则）是？', a:'faisons', tag:'现在时'}
+  ]},
+  {day:9,phase:'A1基础夯实',grammar:'冠词系统 · 定冠词/不定冠词/部分冠词',grammarNote:'定冠词(le/la/l\'/les)=已知或特指；不定冠词(un/une/des)=不特指；部分冠词(du/de la/de l\')=不可数；否定时冠词→de/d\'',grammarTag:'冠词',vocab:['le café（咖啡）','une pomme（一个苹果）','du lait（牛奶）','des amis（朋友们）','de l\'eau（水）'],sentences:['Je bois du café le matin.','Je n\'ai pas de sucre.','Les Français aiment le pain.'],listening:'b80BHXgGJx0',exercises:[
+    {q:'Je mange ___ pain. (部分冠词)', a:'du', tag:'冠词'},
+    {q:'Je n\'ai pas ___ voiture. (否定→de)', a:'de', tag:'冠词'},
+    {q:'Il boit ___ eau. (元音前)', a:'de l\'', tag:'冠词'},
+    {q:'Elle a ___ amis. (不定冠词复数)', a:'des', tag:'冠词'}
+  ]},
+  {day:10,phase:'A1基础夯实',grammar:'指示形容词 ce/cet/cette/ces',grammarNote:'ce(阳单)→cet(元音/哑h前)→cette(阴单)→ces(复数)；记忆法：这本书=ce livre，这个男人=cet homme，这条裙子=cette robe，这些书=ces livres',grammarTag:'指示形容词',vocab:['ce livre（这本书）','cet homme（这个男人）','cette robe（这条裙子）','ces enfants（这些孩子）','là（那里）'],sentences:['Je veux ce livre, pas celui-là.','Cet hôtel est très bien.','Ces chaussures sont trop chères.'],listening:'Idqdfdmriws',exercises:[
+    {q:'___ homme (cet/ce/cette) est gentil.', a:'Cet', tag:'指示形容词'},
+    {q:'___ femme (ce/cette/cet) est belle.', a:'Cette', tag:'指示形容词'},
+    {q:'___ livres (ces/ce/cette) sont intéressants.', a:'Ces', tag:'指示形容词'},
+    {q:'为什么 homme 前用 cet 不用 ce？', a:'homme 以哑音h开头，视为元音，用cet', tag:'指示形容词'}
+  ]},
+  {day:11,phase:'A1基础夯实',grammar:'所有格形容词 mon/ma/mes…',grammarNote:'所有格形容词随被修饰名词性数变化（非主语性数）：mon ami（阴性元音前用mon）；notre/votre/leur不区分性别',grammarTag:'所有格',vocab:['mon père（我父亲）','ma mère（我母亲）','mes parents（我父母）','son ami(e)（他/她的朋友）','leur maison（他们的房子）'],sentences:['Mon ami s\'appelle Paul.','Votre livre est sur la table.','Ses parents habitent à Lyon.'],listening:'Az351m2PeqU',exercises:[
+    {q:'___ (mon/ma/mes) amie s\'appelle Marie.（amie阴性但元音开头）', a:'Mon', tag:'所有格'},
+    {q:'Elle parle à ___ (son/sa) professeur.', a:'son（professeur阳性）', tag:'所有格'},
+    {q:'Nous habitons dans ___ (notre/nos) maison.', a:'notre', tag:'所有格'},
+    {q:'Ils ont perdu ___ (leur/leurs) clés.（复数名词）', a:'leurs', tag:'所有格'}
+  ]},
+  {day:12,phase:'A1基础夯实',grammar:'基础疑问句 · Est-ce que / Qu\'est-ce que',grammarNote:'口语：语调↗；常用：Est-ce que + 陈述句；Qu\'est-ce que = 什么；疑问词：qui/quoi/où/quand/comment/pourquoi/combien',grammarTag:'疑问句',vocab:['où（哪里）','quand（什么时候）','comment（怎么）','pourquoi（为什么）','combien（多少）'],sentences:['Est-ce que tu parles anglais ?','Qu\'est-ce que tu manges ?','Pourquoi tu es triste ?'],listening:'jWPMYAXGMHI',exercises:[
+    {q:'「你住在哪里？」用Est-ce que形式', a:'Est-ce que tu habites où ?', tag:'疑问句'},
+    {q:'Qu\'est-ce que tu ___ ? (faire, présent)', a:'fais', tag:'疑问句'},
+    {q:'「为什么你学法语？」用法语', a:'Pourquoi tu apprends le français ? / Pourquoi est-ce que tu apprends...?', tag:'疑问句'},
+    {q:'combien 用法：___ ça coûte ?', a:'Combien est-ce que ça coûte ? / C\'est combien ?', tag:'疑问句'}
+  ]},
+  {day:13,phase:'A1基础夯实',grammar:'基础介词 à/de/en/dans/sur/sous/avec/pour',grammarNote:'à+城市=在某城市；en+阴性国名；au+阳性国名；dans=在里面(封闭空间)；sur=在上面；sous=在下面；avec=和...一起；pour=为了',grammarTag:'介词',vocab:['à Paris（在巴黎）','en France（在法国）','dans le sac（在包里）','sur la table（在桌上）','avec toi（和你一起）'],sentences:['Je suis à Shanghai en ce moment.','Les clés sont dans mon sac.','Je travaille avec mes collègues.'],listening:'wU0k0dhkD4M',exercises:[
+    {q:'Je vis ___ Chine.（阴性国名）', a:'en', tag:'介词'},
+    {q:'Le livre est ___ la table.（在上面）', a:'sur', tag:'介词'},
+    {q:'Je vais ___ Japon.（阳性国名）', a:'au', tag:'介词'},
+    {q:'Il travaille ___ son ami.（和...一起）', a:'avec', tag:'介词'}
+  ]},
+  {day:14,phase:'A1基础夯实',grammar:'aller + infinitif · 近将来时',grammarNote:'aller（现在时）+ 动词不定式 = 即将发生的事。aller变位：vais/vas/va/allons/allez/vont。否定：ne...pas包围aller',grammarTag:'近将来',vocab:['aller（去）','bientôt（很快）','demain（明天）','ce soir（今晚）','la semaine prochaine（下周）'],sentences:['Je vais partir demain matin.','Il va pleuvoir ce soir.','Nous allons manger au restaurant.'],listening:'E9xZWDixJi0',exercises:[
+    {q:'Je ___ (aller) regarder un film ce soir.', a:'vais', tag:'近将来'},
+    {q:'Elle ___ (aller) partir bientôt.', a:'va', tag:'近将来'},
+    {q:'近将来的否定：Je ___ vais ___ partir.', a:'ne / pas', tag:'近将来'},
+    {q:'Ils ___ (aller) visiter Paris.', a:'vont', tag:'近将来'}
+  ]},
+  {day:15,phase:'A1基础夯实',grammar:'venir de + inf · 否定句 ne...pas 巩固',grammarNote:'venir de + inf = 刚刚...（近过去）；否定ne...pas：ne/n\' + 动词 + pas，be合时态ne包围助动词',grammarTag:'近过去',vocab:['venir（来）','rentrer（回家）','finir（完成）','arriver（到达）','commencer（开始）'],sentences:['Je viens de finir mon travail.','Tu viens d\'arriver ?','Il ne mange pas de viande.'],listening:'3x5thw752VQ',exercises:[
+    {q:'Je ___ ___ (venir de + manger) — 刚刚吃完', a:'viens de manger', tag:'近过去'},
+    {q:'Elle ___ ___ (venir de + partir) — 她刚走', a:'vient de partir', tag:'近过去'},
+    {q:'否定：Je ___ mange ___ de fromage.', a:'ne / pas', tag:'近过去'},
+    {q:'「我不喝酒」用法语', a:'Je ne bois pas d\'alcool.', tag:'近过去'}
+  ]},
+  {day:16,phase:'A1-A2过渡',grammar:'数量表达 · un peu de / beaucoup de / trop de',grammarNote:'数量词+de后直接接名词（不加冠词）：beaucoup d\'amis(非des)；程度副词修饰形容词：très/assez/un peu/trop/pas du tout',grammarTag:'数量表达',vocab:['beaucoup（很多）','un peu（一点）','trop（太多）','assez（足够）','pas du tout（一点都不）'],sentences:['J\'ai beaucoup de travail cette semaine.','Il boit un peu d\'eau.','C\'est trop cher pour moi !'],listening:'dHPueXh7maE',exercises:[
+    {q:'J\'ai ___ ___ amis. (beaucoup / 注意联诵)', a:'beaucoup d\'', tag:'数量表达'},
+    {q:'C\'est ___ cher !（太贵了）', a:'trop', tag:'数量表达'},
+    {q:'数量词后接名词，用de还是des？', a:'de / d\'（无冠词）', tag:'数量表达'},
+    {q:'Je n\'aime ___ ___ ___ le sport.（一点都不）', a:'pas du tout', tag:'数量表达'}
+  ]},
+  {day:17,phase:'A1-A2过渡',grammar:'形容词性数配合 · 位置规则',grammarNote:'形容词随名词性数变化：+e(阴)，+s(复)，+es(阴复)；常见不规则：beau/belle，vieux/vieille，bon/bonne；BAGS类前置（Beau/Âge/Goodness/Size）',grammarTag:'形容词',vocab:['grand/grande（大）','petit/petite（小）','beau/belle（美丽）','nouveau/nouvelle（新的）','vieux/vieille（老的）'],sentences:['C\'est une belle ville très animée.','Il a un nouveau téléphone.','Elle est grande et intelligente.'],listening:'y9SdKydb68w',exercises:[
+    {q:'un ___ (grand) appartement', a:'grand（阳性）', tag:'形容词'},
+    {q:'une ___ (beau) maison', a:'belle', tag:'形容词'},
+    {q:'des filles ___ (intelligent)', a:'intelligentes', tag:'形容词'},
+    {q:'un ___ (nouveau) livre（在名词前还是后？）', a:'un nouveau livre（BAGS前置）', tag:'形容词'}
+  ]},
+  {day:18,phase:'A1-A2过渡',grammar:'复合过去时 avoir助动词（大多数动词）',grammarNote:'助动词avoir(现在时)+过去分词；PP构成：-er→é，-ir→i，-re→u；不规则PP：avoir→eu，faire→fait，prendre→pris，voir→vu，mettre→mis，dire→dit',grammarTag:'复合过去时',vocab:['hier（昨天）','la semaine dernière（上周）','déjà（已经）','manger→mangé','finir→fini'],sentences:['Hier, j\'ai mangé une pizza.','Tu as déjà vu ce film ?','Nous avons fini notre projet.'],listening:'KVDTTbXOs7Q',exercises:[
+    {q:'Hier, je ___ ___ (manger) une pomme.', a:'ai mangé', tag:'复合过去时'},
+    {q:'Elle ___ ___ (finir) ses devoirs.', a:'a fini', tag:'复合过去时'},
+    {q:'prendre 的过去分词是？', a:'pris', tag:'复合过去时'},
+    {q:'faire 的过去分词是？', a:'fait', tag:'复合过去时'}
+  ]},
+  {day:19,phase:'A1-A2过渡',grammar:'复合过去时 être助动词（14个位移动词）',grammarNote:'DR MRS VANDERTRAMP的14个动词用être；PP需配合主语性数：allé/allée/allés/allées；代动词也用être',grammarTag:'复合过去时',vocab:['aller→allé(e)','venir→venu(e)','partir→parti(e)','arriver→arrivé(e)','rester→resté(e)'],sentences:['Elle est allée au marché ce matin.','Ils sont partis en vacances hier.','Je suis resté(e) à la maison.'],listening:'T2lxaxdW2VE',exercises:[
+    {q:'Elle ___ ___ (aller) au cinéma.', a:'est allée（être+阴性配合）', tag:'复合过去时'},
+    {q:'Ils ___ ___ (partir) tôt ce matin.', a:'sont partis', tag:'复合过去时'},
+    {q:'用être还是avoir：Elle a pris / Elle est venue？两者哪个正确？', a:'两个都正确：prendre用avoir，venir用être', tag:'复合过去时'},
+    {q:'阴性主语+être：Elle ___ ___ (arriver) hier.', a:'est arrivée', tag:'复合过去时'}
+  ]},
+  {day:20,phase:'A1-A2过渡',grammar:'代动词现在时 · se lever/se coucher等',grammarNote:'代动词：se+动词；变位时代词随主语变：je me/tu te/il se/nous nous/vous vous/ils se；PC用être，PP配合性数',grammarTag:'代动词',vocab:['se lever（起床）','se coucher（睡觉）','se laver（洗漱）','se souvenir（记得）','s\'habiller（穿衣）'],sentences:['Je me lève à sept heures tous les jours.','Tu te couches à quelle heure ?','Ils se lavent les mains avant de manger.'],listening:'EkTZo_JoNa4',exercises:[
+    {q:'Je ___ lève à 7h.', a:'me', tag:'代动词'},
+    {q:'Elle ___ (se coucher, présent) tôt.', a:'se couche', tag:'代动词'},
+    {q:'Nous ___ (se lever, présent) à 8h le week-end.', a:'nous levons', tag:'代动词'},
+    {q:'代动词否定：Il ___ se lave ___ les dents.', a:'ne / pas', tag:'代动词'}
+  ]},
+  {day:21,phase:'A1-A2过渡',grammar:'未完成过去时 Imparfait · 构成与用法',grammarNote:'imparfait=nous现在时词根+ais/ais/ait/ions/iez/aient；用于：过去持续/习惯/状态/背景；唯一不规则：être→étais',grammarTag:'未完成过去时',vocab:['quand j\'étais petit（小时候）','tous les jours（每天）','d\'habitude（通常）','souvent（经常）','toujours（总是）'],sentences:['Quand j\'étais petit, j\'aimais les gâteaux.','Il faisait beau ce jour-là.','Nous mangions ensemble tous les dimanches.'],listening:'ED70j_2Ra5s',exercises:[
+    {q:'Quand j\'étais enfant, je ___ (jouer) dehors.', a:'jouais', tag:'未完成过去时'},
+    {q:'Il ___ (faire) beau ce jour-là.', a:'faisait', tag:'未完成过去时'},
+    {q:'Imparfait的词根来自哪里？', a:'nous 形式的现在时词根', tag:'未完成过去时'},
+    {q:'être 的imparfait (je形式)是？', a:'j\'étais', tag:'未完成过去时'}
+  ]},
+  {day:22,phase:'A1-A2过渡',grammar:'PC vs Imparfait · 背景vs事件',grammarNote:'画面法：Imparfait=电影背景(持续/状态)，PC=事件发生(突然/完成)。信号词：imparfait→tous les jours/souvent/quand；PC→soudain/tout à coup/d\'abord',grammarTag:'PC vs Imparfait',vocab:['soudain（突然）','pendant que（正当...时）','d\'habitude（通常）','tout à coup（突然）','ensuite（然后）'],sentences:['Je lisais quand le téléphone a sonné.','Soudain, quelqu\'un a frappé à la porte.','D\'habitude, elle prenait le bus.'],listening:'WhN87vJoPqE',exercises:[
+    {q:'Il ___ (pleuvoir) quand je ___ (sortir). 选PC还是Imparfait', a:'pleuvait（背景）/ suis sorti（事件）', tag:'PC vs Imparfait'},
+    {q:'Tous les étés, nous ___ (aller) à la mer.', a:'allions（习惯→Imparfait）', tag:'PC vs Imparfait'},
+    {q:'Soudain, un homme ___ (entrer) dans la salle.', a:'est entré（突然事件→PC）', tag:'PC vs Imparfait'},
+    {q:'背景描述选哪个时态？', a:'Imparfait（未完成过去时）', tag:'PC vs Imparfait'}
+  ]},
+  {day:23,phase:'A1-A2过渡',grammar:'否定句8种形式综合',grammarNote:'ne...pas/jamais/plus/rien/personne/aucun/ni...ni/ne...que；否定时不定/部分冠词→de；ne+元音→n\'',grammarTag:'否定句',vocab:['ne...jamais（从不）','ne...plus（不再）','ne...rien（什么都不）','ne...personne（没人）','ne...que（只）'],sentences:['Je ne mange jamais de durian.','Il ne reste plus de pain.','Elle ne voit personne.'],listening:'5si-W8nPoCY',exercises:[
+    {q:'Je ___ mange ___ de viande.（从不）', a:'ne / jamais', tag:'否定句'},
+    {q:'Il ___ reste ___ d\'eau.（不再）', a:'ne / plus', tag:'否定句'},
+    {q:'否定时 des amis 变成？', a:'de amis → d\'amis', tag:'否定句'},
+    {q:'Je ___ mange ___ des légumes.（只）', a:'ne / que', tag:'否定句'}
+  ]},
+  {day:24,phase:'A1-A2过渡',grammar:'关系代词 qui/que/où/dont',grammarNote:'qui=主语（后接动词）；que=宾语（后接主语）；où=地点/时间；dont=de+先行词；PC中que在前，PP配合COD',grammarTag:'关系代词',vocab:['qui（主语关系词）','que（宾语关系词）','où（地点/时间）','dont（de+内容）','lequel（哪一个）'],sentences:['La femme qui parle est ma prof.','Le film que j\'ai vu était super.','C\'est la ville où je suis née.'],listening:'HKYj6EAzvo8',exercises:[
+    {q:'La femme ___ parle est ma prof.（主语）', a:'qui', tag:'关系代词'},
+    {q:'Le livre ___ je lis est intéressant.（宾语）', a:'que', tag:'关系代词'},
+    {q:'La ville ___ j\'habite est belle.（地点）', a:'où', tag:'关系代词'},
+    {q:'Le film ___ tu parles est célèbre.（dont=de+）', a:'dont', tag:'关系代词'}
+  ]},
+  {day:25,phase:'A1-A2过渡',grammar:'代词 COD/COI/y/en 系统',grammarNote:'COD(le/la/les)代替直接宾语；COI(lui/leur)代替à+人；y代替à+地点/事物；en代替de+名词。全部放动词前（命令否定式也是）',grammarTag:'代词',vocab:['le/la（COD单数）','lui（COI单数）','y（à+地点）','en（de+数量）','les（COD复数）'],sentences:['Tu vois Marie ? — Oui, je la vois.','Tu parles à Paul ? — Oui, je lui parle.','Tu vas à Paris ? — J\'y vais.'],listening:'2zdvOCZYa7Y',exercises:[
+    {q:'Tu vois Marie ? — Oui, je ___ vois.', a:'la', tag:'代词'},
+    {q:'Tu parles à Paul ? — Oui, je ___ parle.', a:'lui', tag:'代词'},
+    {q:'Tu veux du pain ? — Oui, j\'___ veux.', a:'en', tag:'代词'},
+    {q:'双代词顺序：Je ___ ___ donne.（le livre à lui）', a:'le lui', tag:'代词'}
+  ]},
+  {day:26,phase:'A1-A2过渡',grammar:'简单将来时 Futur simple · 构成',grammarNote:'futur=不定式(-re去e)+ai/as/a/ons/ez/ont；不规则词根：être→ser-，avoir→aur-，aller→ir-，faire→fer-，pouvoir→pourr-',grammarTag:'将来时',vocab:['demain（明天）','la semaine prochaine（下周）','l\'année prochaine（明年）','un jour（某一天）','bientôt（很快）'],sentences:['Je partirai demain matin.','Elle sera là à 9h.','Nous irons en France l\'année prochaine.'],listening:'RiLKKIasG2Y',exercises:[
+    {q:'Je ___ (partir, futur) demain.', a:'partirai', tag:'将来时'},
+    {q:'être 的futur (il形式) 是？', a:'il sera', tag:'将来时'},
+    {q:'aller 的futur (nous形式) 是？', a:'nous irons', tag:'将来时'},
+    {q:'futur 和 futur proche 各在什么场景用？', a:'futur proche=即将发生（口语），futur simple=将来某时（正式）', tag:'将来时'}
+  ]},
+  {day:27,phase:'A1-A2过渡',grammar:'条件式 · 礼貌/建议/假设',grammarNote:'conditionnel=futur词根+imparfait词尾；je voudrais（礼貌）；tu devrais（建议）；si+imparfait→conditionnel（假设）',grammarTag:'条件式',vocab:['voudrais（想要）','devrais（应该）','pourrais（可以）','aimerais（想）','serait（会是）'],sentences:['Je voudrais un café, s\'il vous plaît.','Tu devrais te reposer.','Si j\'avais le temps, je voyagerais.'],listening:'4vdX_ywX8Fc',exercises:[
+    {q:'Je ___ (vouloir, cond.) un thé.', a:'voudrais', tag:'条件式'},
+    {q:'Tu ___ (devoir, cond.) dormir plus tôt.', a:'devrais', tag:'条件式'},
+    {q:'Si j\'avais de l\'argent, je ___ (voyager, cond.).', a:'voyagerais', tag:'条件式'},
+    {q:'Est-ce que vous ___ (pouvoir, cond.) m\'aider ?', a:'pourriez', tag:'条件式'}
+  ]},
+  {day:28,phase:'A1-A2过渡',grammar:'depuis/pendant/il y a · 时间介词对比',grammarNote:'depuis+现在时=从那时起至今（持续）；pendant+任何时态=一段时间内；il y a+PC=X时间前（时间点）',grammarTag:'depuis/pendant',vocab:['depuis（从...起）','pendant（在...期间）','il y a（...前）','longtemps（很长时间）','déjà（已经）'],sentences:['J\'apprends le français depuis six mois.','Elle a habité à Paris pendant dix ans.','Il y a deux jours, j\'ai vu ce film.'],listening:'vcXFX7uT_4k',exercises:[
+    {q:'J\'étudie le français ___ deux ans.（持续到现在）', a:'depuis', tag:'depuis/pendant'},
+    {q:'Elle a travaillé ___ trois ans.（已结束的一段时间）', a:'pendant', tag:'depuis/pendant'},
+    {q:'___ cinq jours, il est parti.（5天前）', a:'Il y a', tag:'depuis/pendant'},
+    {q:'depuis 后面接什么时态？', a:'现在时（présent）', tag:'depuis/pendant'}
+  ]},
+  {day:29,phase:'A1-A2过渡',grammar:'比较级与最高级 · plus/moins/aussi + bon→meilleur',grammarNote:'比较：plus/moins/aussi + adj + que；最高级：le/la/les + plus/moins + adj；不规则：bon→meilleur，bien→mieux',grammarTag:'比较级',vocab:['plus...que（比...更）','moins...que（比...少）','aussi...que（和...一样）','meilleur（更好）','le plus（最...）'],sentences:['Marie est plus grande que Paul.','Ce restaurant est le meilleur de la ville.','Je cours moins vite que toi.'],listening:'nQGCj8w2IXw',exercises:[
+    {q:'Marie est ___ grande ___ Paul.（比较级）', a:'plus / que', tag:'比较级'},
+    {q:'C\'est ___ ___ (le plus) beau jour de ma vie.', a:'le plus beau', tag:'比较级'},
+    {q:'bon的比较级是？（不能用plus bon！）', a:'meilleur', tag:'比较级'},
+    {q:'bien的比较级是？', a:'mieux', tag:'比较级'}
+  ]},
+  {day:30,phase:'A1-A2过渡',grammar:'命令式 · tu/nous/vous + 代词位置',grammarNote:'tu形式-ER动词去s：Parle!；否定命令代词前置：Ne me le donne pas!；肯定命令代词后置+连字符：Donne-le-moi!',grammarTag:'命令式',vocab:['Parle !（说！）','Finissons !（让我们完成！）','Attendez !（等等！）','Donne-moi（给我）','Ne dis pas（不要说）'],sentences:['Parle plus fort, s\'il te plaît !','Finissons ce travail ensemble.','Ne regarde pas ton téléphone en classe !'],listening:'nDnCTGPnhL8',exercises:[
+    {q:'(Manger, tu形式命令式) ___ tes légumes !', a:'Mange（-ER去s）', tag:'命令式'},
+    {q:'(Finir, nous形式命令式) ___ !', a:'Finissons', tag:'命令式'},
+    {q:'(Ne pas parler, vous) ___ !', a:'Ne parlez pas', tag:'命令式'},
+    {q:'肯定命令式代词：Donne ___ ! (le livre à moi)', a:'Donne-le-moi', tag:'命令式'}
+  ]},
+  {day:31,phase:'A2核心',grammar:'代动词PC · être助动词 + 配性数',grammarNote:'代动词PC：je me suis levé(e)；PP配合主语：阴性+e，复数+s，阴复+es；否定：Je ne me suis pas levé(e)',grammarTag:'代动词',vocab:['se lever→levé(e)','se coucher→couché(e)','se réveiller→réveillé(e)','se promener→promené(e)','s\'habiller→habillé(e)'],sentences:['Je me suis levée à sept heures.','Elle s\'est habillée rapidement.','Ils se sont promenés dans le parc.'],listening:'VyiqIOFYkZk',exercises:[
+    {q:'Ce matin, je ___ ___ levé(e). (代动词PC)', a:'me suis', tag:'代动词'},
+    {q:'Elles ___ ___ réveillées tôt. (代动词PC)', a:'se sont', tag:'代动词'},
+    {q:'代动词PC否定：Elle ___ ___ ___ levée.', a:'ne s\'est pas', tag:'代动词'},
+    {q:'Nous ___ ___ promenés hier.', a:'nous sommes', tag:'代动词'}
+  ]},
+  {day:32,phase:'A2核心',grammar:'COD/COI代词 + PC配合规则',grammarNote:'PC中COD在助动词前时，PP配合COD性数：La pomme que j\'ai mangée（e因为la pomme阴性）；COI在前PP不配合',grammarTag:'代词',vocab:['la（COD阴性）','les（COD复数）','lui（COI单数）','leur（COI复数）','me/te（COD/COI第一二人称）'],sentences:['La pomme que j\'ai mangée était délicieuse.','Je l\'ai vue hier.','Les pommes que j\'ai achetées sont bonnes.'],listening:'f0SCg0Inqhk',exercises:[
+    {q:'Les livres que j\'ai ___ (acheter, PP配合). → ___', a:'achetés（les livres阳性复数）', tag:'代词'},
+    {q:'La robe que j\'ai ___ (mettre). → ___', a:'mise（la robe阴性）', tag:'代词'},
+    {q:'Je ___ ai vu ce matin. (Marie)', a:'l\'（COD阴性，PC前PP配合：l\'ai vue）', tag:'代词'},
+    {q:'COI在PC前，PP配合吗？', a:'不配合（COI不触发PP配合）', tag:'代词'}
+  ]},
+  {day:33,phase:'A2核心',grammar:'部分冠词 + 否定与数量表达综合',grammarNote:'du/de la/de l\'/des；否定→de；数量词后→de；介词en后接阴性名词无冠词（en France而非en la France）',grammarTag:'冠词',vocab:['du pain（面包）','de la viande（肉）','de l\'eau（水）','assez de（足够）','trop de（太多）'],sentences:['Je mange du riz tous les jours.','Je ne mange pas de viande le lundi.','Il y a beaucoup de monde aujourd\'hui.'],listening:'hf6Q4NPQhes',exercises:[
+    {q:'Je mange ___ pain. (部分冠词阳性)', a:'du', tag:'冠词'},
+    {q:'Je ne bois pas ___ café. (否定)', a:'de', tag:'冠词'},
+    {q:'Il y a beaucoup ___ monde.', a:'de（数量词后无冠词）', tag:'冠词'},
+    {q:'un kilo ___ pommes（de还是des？）', a:'de（数量表达后用de）', tag:'冠词'}
+  ]},
+  {day:34,phase:'A2核心',grammar:'口语场景 · 购物/问路生存句',grammarNote:'购物：Je voudrais / C\'est combien ? / Je peux essayer ?；问路：Pour aller à... / Tournez à gauche/droite / Continuez tout droit',grammarTag:'口语',vocab:['essayer（试穿）','la taille（尺码）','tourner（转）','tout droit（直走）','combien（多少钱）'],sentences:['Je peux essayer cette veste, s\'il vous plaît ?','Pour aller à la gare, s\'il vous plaît ?','Tournez à droite après le feu.'],listening:'4BNypRPg-x0',exercises:[
+    {q:'购物时询问价格：C\'est ___ ?', a:'combien', tag:'口语'},
+    {q:'问路套路：Pour ___ à la gare ?', a:'aller', tag:'口语'},
+    {q:'Tournez à ___ (左) au prochain carrefour.', a:'gauche', tag:'口语'},
+    {q:'「我在找M号的夹克」用法语', a:'Je cherche une veste en taille M.', tag:'口语'}
+  ]},
+  {day:35,phase:'A2核心',grammar:'口语场景 · 餐厅/健康/医生',grammarNote:'餐厅：Je voudrais commander... / L\'addition, s\'il vous plaît；看医生：J\'ai mal à + 身体部位；avoir de la fièvre',grammarTag:'口语',vocab:['commander（点菜）','l\'addition（账单）','avoir mal à（...疼）','la fièvre（发烧）','une ordonnance（处方）'],sentences:['Je voudrais commander une salade, s\'il vous plaît.','J\'ai très mal à la gorge depuis hier.','Vous devriez prendre ce médicament.'],listening:'b80BHXgGJx0',exercises:[
+    {q:'J\'___ mal à la tête.', a:'ai', tag:'口语'},
+    {q:'Je tousse ___ trois jours.（持续到现在）', a:'depuis', tag:'depuis/pendant'},
+    {q:'医生建议用哪个时态？', a:'Vous devriez + inf（条件式）', tag:'条件式'},
+    {q:'「我想要结账」用法语', a:'L\'addition, s\'il vous plaît.', tag:'口语'}
+  ]},
+  {day:36,phase:'A2核心',grammar:'写作练习 · 非正式信件（邀请/感谢/道歉）',grammarNote:'非正式信件：Salut/Cher(e) + 姓名 + 目的 + 正文 + 结尾(À bientôt/Amitiés) + 签名；60词以上',grammarTag:'写作',vocab:['inviter（邀请）','remercier（感谢）','s\'excuser（道歉）','malheureusement（不幸地）','confirmer（确认）'],sentences:['Je t\'invite à ma fête d\'anniversaire samedi soir.','Je te remercie pour ton aide précieuse.','Je suis désolé(e) de ne pas pouvoir venir.'],listening:'Idqdfdmriws',exercises:[
+    {q:'非正式信件开头常用语', a:'Salut Marie ! / Chère Anna,', tag:'写作'},
+    {q:'邀请信中如何给出时间地点', a:'C\'est le samedi 15 juin à 20h chez moi.', tag:'写作'},
+    {q:'道歉信中如何提替代方案', a:'Par contre / Mais je suis libre dimanche.', tag:'写作'},
+    {q:'非正式信件结尾常用语', a:'À bientôt ! / Amitiés, [prénom]', tag:'写作'}
+  ]},
+  {day:37,phase:'A2核心',grammar:'写作练习 · 正式信件（咨询/投诉）',grammarNote:'正式信：Madame/Monsieur + 目的(Je vous écris pour...) + 请求 + 结尾(Cordialement/Dans l\'attente)；使用vous',grammarTag:'写作',vocab:['renseignement（信息）','se plaindre（投诉）','cordial（友善）','dans l\'attente（期待中）','vous remercie（感谢您）'],sentences:['Je vous écris pour avoir des informations sur vos cours.','Je voudrais savoir quels sont les horaires.','Je vous remercie d\'avance pour votre réponse.'],listening:'4vdX_ywX8Fc',exercises:[
+    {q:'正式信件开头', a:'Madame, Monsieur,', tag:'写作'},
+    {q:'正式信件咨询开头句', a:'Je vous écris pour avoir des informations sur...', tag:'写作'},
+    {q:'正式信件结尾', a:'Cordialement, [nom] / Dans l\'attente de votre réponse...', tag:'写作'},
+    {q:'正式信件中用 tu 还是 vous？', a:'vous（必须！正式场合用vous）', tag:'写作'}
+  ]},
+  {day:38,phase:'A2核心',grammar:'阅读理解 · 广告/邮件题型技巧',grammarNote:'广告题：找关键信息（价格/日期/条件/限制）；邮件题：判断目的（邀请/拒绝/询问）；先看问题再找对应段落',grammarTag:'综合',vocab:['une annonce（广告）','un courriel（邮件）','gratuit（免费）','réservation（预订）','tarif（价格）'],sentences:['L\'entrée est gratuite pour les moins de 18 ans.','Veuillez confirmer votre réservation avant le 5 juin.','On cherche un(e) colocataire pour une chambre meublée.'],listening:'vcXFX7uT_4k',exercises:[
+    {q:'gratuit 的意思是？', a:'免费', tag:'综合'},
+    {q:'veuillez + infinitif 表示？', a:'请...（礼貌请求）', tag:'综合'},
+    {q:'阅读理解策略：先看___再看___', a:'先看问题，再找对应关键词', tag:'综合'},
+    {q:'une annonce de colocation 是？', a:'合租广告', tag:'综合'}
+  ]},
+  {day:39,phase:'A2核心',grammar:'听力专项 · 数字/时间/地点听写',grammarNote:'听力陷阱：否定句（别漏ne/pas）；数字（70/80/90）；同义表达；转折处(mais/par contre)藏着真实信息',grammarTag:'听力',vocab:['soixante-dix（70）','quatre-vingts（80）','quatre-vingt-dix（90）','d\'après（根据）','selon（根据）'],sentences:['Le train part à vingt et une heures trente.','Ça coûte quatre-vingt-cinq euros.','D\'après le message, la réunion est annulée.'],listening:'nQGCj8w2IXw',exercises:[
+    {q:'75 用法语怎么说？', a:'soixante-quinze', tag:'听力'},
+    {q:'92 用法语怎么说？', a:'quatre-vingt-douze', tag:'听力'},
+    {q:'14h45 用法语怎么说？', a:'quatorze heures quarante-cinq', tag:'听力'},
+    {q:'听力中转折处常用词有？', a:'mais / par contre / en fait / cependant', tag:'听力'}
+  ]},
+  {day:40,phase:'A2核心',grammar:'名词复数规则 + 动词组别综合回顾',grammarNote:'复数：+s（一般）；-al→-aux；-eau/-au→+x；-s/-x/-z结尾不变；动词：第1组(-er)，第2组(-ir/issons)，第3组（不规则）',grammarTag:'综合',vocab:['un animal→des animaux','un bateau→des bateaux','un festival→des festivals','un œil→des yeux','un homme→des hommes'],sentences:['Les animaux du zoo sont superbes.','Ces bateaux sont magnifiques.','Les yeux de mon chat sont verts.'],listening:'nDnCTGPnhL8',exercises:[
+    {q:'un animal → des ___', a:'animaux', tag:'综合'},
+    {q:'un bateau → des ___', a:'bateaux', tag:'综合'},
+    {q:'un festival → des ___ （例外！）', a:'festivals（不变，加s）', tag:'综合'},
+    {q:'un œil → des ___ （不规则！）', a:'yeux', tag:'综合'}
+  ]},
+  {day:41,phase:'A2核心',grammar:'高频场景口语 · 自我介绍1分30秒',grammarNote:'自我介绍框架：姓名+年龄+国籍/城市 → 工作/学习 → 家庭 → 爱好 → 学法语的原因。每段1-2句，共5-6句',grammarTag:'口语',vocab:['se présenter（自我介绍）','profession（职业）','loisir（爱好）','depuis（从...起）','parce que（因为）'],sentences:['Je m\'appelle Rita. J\'ai ... ans et j\'habite à Shanghai.','Je travaille chez Amer Sports.','J\'apprends le français parce que j\'aime le vin.'],listening:'VyiqIOFYkZk',exercises:[
+    {q:'Je m\'___ (s\'appeler) Rita.', a:'appelle', tag:'口语'},
+    {q:'J\'___ (apprendre) le français depuis six mois.', a:'apprends', tag:'口语'},
+    {q:'自我介绍必提的5个内容', a:'姓名+年龄+职业+爱好+学法语原因', tag:'口语'},
+    {q:'「因为我喜欢法国文化」用法语', a:'parce que j\'aime la culture française', tag:'口语'}
+  ]},
+  {day:42,phase:'A2核心',grammar:'DELF口语 · 独白Monologue结构',grammarNote:'独白框架：Introduction(15s) → Point1+例子(40s) → Point2+例子(40s) → Opinion personnelle(25s) → Conclusion(10s)；连接词：d\'abord/ensuite/enfin',grammarTag:'口语',vocab:['d\'abord（首先）','ensuite（然后）','enfin（最后）','personnellement（个人来说）','par exemple（例如）'],sentences:['Je vais vous parler de ma ville natale.','D\'abord, Shanghai est une ville très moderne.','Personnellement, j\'adore les musées.'],listening:'f0SCg0Inqhk',exercises:[
+    {q:'独白开头标准句', a:'Je vais vous parler de [sujet].', tag:'口语'},
+    {q:'d\'abord / ensuite / enfin 是什么词类', a:'顺序连接词', tag:'口语'},
+    {q:'如何在口语中表达个人意见', a:'Personnellement / Pour moi / À mon avis, je pense que...', tag:'口语'},
+    {q:'独白结尾套路', a:'Voilà ce que je voulais dire sur [sujet].', tag:'口语'}
+  ]},
+  {day:43,phase:'A2核心',grammar:'DELF口语 · 角色扮演Interaction',grammarNote:'角色扮演（3-4min）：问信息/提要求/有问题/讨价还价/结束对话。核心：能完成交际任务',grammarTag:'口语',vocab:['réserver（预订）','annuler（取消）','se plaindre（投诉）','renseignement（咨询）','réclamation（投诉）'],sentences:['Excusez-moi, je voudrais réserver une chambre.','Il y a un problème avec ma commande.','Est-ce que vous pourriez me rembourser ?'],listening:'hf6Q4NPQhes',exercises:[
+    {q:'礼貌询问句式', a:'Je voudrais savoir... / Est-ce que vous pourriez m\'indiquer...?', tag:'口语'},
+    {q:'遇到问题的套路句', a:'Excusez-moi, il y a un problème.../ Ce n\'est pas ce que j\'ai commandé.', tag:'口语'},
+    {q:'角色扮演评分最看重什么', a:'能完成交际任务（沟通到位）', tag:'口语'},
+    {q:'结束对话套路', a:'Merci beaucoup ! / Bonne journée !', tag:'口语'}
+  ]},
+  {day:44,phase:'A2核心',grammar:'写作综合 · 连接词与时态一致性',grammarNote:'写作加分连接词：de plus(另外)，cependant(然而)，c\'est pourquoi(因此)，en effet(确实)；时态一致：过去→PC+Imparfait，请求→条件式',grammarTag:'写作',vocab:['de plus（另外）','cependant（然而）','c\'est pourquoi（因此）','en effet（确实）','notamment（尤其是）'],sentences:['De plus, je voudrais savoir si...','Cependant, je ne peux pas venir.','C\'est pourquoi je vous écris aujourd\'hui.'],listening:'4BNypRPg-x0',exercises:[
+    {q:'de plus 的意思', a:'另外/此外', tag:'写作'},
+    {q:'cependant 的意思和用法', a:'然而（正式书面语转折词）', tag:'写作'},
+    {q:'描述过去旅行用哪两个时态混合', a:'PC（事件）+ Imparfait（背景/状态）', tag:'写作'},
+    {q:'正式信件表达请求用哪个时态', a:'条件式（je voudrais / pourriez-vous）', tag:'写作'}
+  ]},
+  {day:45,phase:'A2核心',grammar:'综合弱点回顾 · 错题本专攻',grammarNote:'今天根据错题本找出3个最常犯的错误，集中攻克。重点检查：助动词选择/PP配合/否定冠词变化',grammarTag:'综合',vocab:['réviser（复习）','consolider（巩固）','maîtriser（掌握）','progrès（进步）','confiance（自信）'],sentences:['J\'ai beaucoup progressé en français.','Je dois consolider mes points faibles.','Avec de la pratique, je vais maîtriser cela.'],listening:'b80BHXgGJx0',exercises:[
+    {q:'PC vs Imparfait：Hier, je ___ (marcher) quand je ___ (tomber).', a:'marchais / suis tombé(e)', tag:'PC vs Imparfait'},
+    {q:'代动词PC：Elle ___ ___ (se lever) à 8h.', a:'s\'est levée', tag:'代动词'},
+    {q:'否定：Je n\'ai pas ___ voiture.', a:'de', tag:'否定句'},
+    {q:'depuis vs il y a：J\'étudie ___ 2024. / Je suis parti ___ deux ans.', a:'depuis / il y a', tag:'depuis/pendant'}
+  ]},
+  {day:46,phase:'DELF专项',grammar:'听力Part1 · 日常对话题型精讲',grammarNote:'听力考试结构：Part1日常对话3道，Part2广播/留言4道，Part3文化/信息5道。每段录音听两遍。',grammarTag:'听力',vocab:['comprendre（理解）','écouter（听）','noter（记录）','identifier（辨认）','répéter（重复）'],sentences:['Écoutez et répondez aux questions.','Vous allez entendre deux enregistrements.','Cochez la bonne réponse.'],listening:'Idqdfdmriws',exercises:[
+    {q:'听力考试每段录音听几遍？', a:'两遍', tag:'听力'},
+    {q:'听力陷阱：否定句中 ne...pas 的坑是？', a:'一定要注意否定意思，不要误听为肯定', tag:'听力'},
+    {q:'cochez la bonne réponse 意思', a:'选出正确答案（打勾）', tag:'听力'},
+    {q:'听力中如何处理听不清的词？', a:'根据上下文推断，先完成能答的题', tag:'听力'}
+  ]},
+  {day:47,phase:'DELF专项',grammar:'听力Part2&3 · 广播/信息类题型',grammarNote:'广播类：注意数字/时间/地点；vrai/faux题：逐字比对；同义词陷阱：maison=logement/domicile',grammarTag:'听力',vocab:['une émission（节目）','une publicité（广告）','vrai/faux（对/错）','d\'après（根据）','selon（根据）'],sentences:['D\'après le message, la réunion est reportée.','Vrai ou faux : le musée est ouvert le lundi.','Selon la météo, il fera beau demain.'],listening:'Az351m2PeqU',exercises:[
+    {q:'vrai/faux题：如何判断？', a:'找录音中对应句子，逐字比对', tag:'听力'},
+    {q:'d\'après / selon 意思', a:'根据...', tag:'听力'},
+    {q:'听力中同义表达：maison = ？', a:'logement / domicile / habitation', tag:'听力'},
+    {q:'听力时间管理：每题答题时间约？', a:'约30秒（先读题15秒，听时答题15秒）', tag:'听力'}
+  ]},
+  {day:48,phase:'DELF专项',grammar:'阅读Part1 · 实用文档（广告/表格）',grammarNote:'阅读策略：先扫描问题，再快速定位答案。广告类：找价格/时间/条件/联系方式',grammarTag:'综合',vocab:['une offre（优惠）','un tarif（价格）','réserver（预订）','disponible（可用的）','valable（有效的）'],sentences:['Offre valable jusqu\'au 30 juin.','Tarif préférentiel pour les étudiants.','Réservez en ligne avant le 15 mai.'],listening:'jWPMYAXGMHI',exercises:[
+    {q:'valable 的意思？', a:'有效的（valable jusqu\'au = 有效至）', tag:'综合'},
+    {q:'tarif préférentiel 是什么意思？', a:'优惠价格', tag:'综合'},
+    {q:'阅读实用文档找答案步骤', a:'先看问题→定位段落→找关键词→对答案', tag:'综合'},
+    {q:'réserver en ligne 的意思？', a:'在线预订', tag:'综合'}
+  ]},
+  {day:49,phase:'DELF专项',grammar:'阅读Part2 · 信件/邮件题型',grammarNote:'邮件阅读：判断目的（邀请/拒绝/投诉/咨询）；注意情态动词表达的语气；找时间地点细节',grammarTag:'综合',vocab:['répondre（回复）','confirmer（确认）','annuler（取消）','proposer（提议）','demander（要求）'],sentences:['Je vous écris pour confirmer notre rendez-vous.','Suite à votre message, je souhaite...','En attente de votre réponse...'],listening:'wU0k0dhkD4M',exercises:[
+    {q:'在邮件阅读中如何判断邮件目的？', a:'看开头句：Je vous écris pour... / Suite à...', tag:'综合'},
+    {q:'suite à votre message 意思？', a:'根据您的消息/鉴于您的来信', tag:'综合'},
+    {q:'阅读题：细节题（时间/地点）策略', a:'扫描数字、专有名词、时间词', tag:'综合'},
+    {q:'confirmer 的名词形式', a:'la confirmation', tag:'综合'}
+  ]},
+  {day:50,phase:'DELF专项',grammar:'写作Part1 · 非正式信件模板',grammarNote:'写作评分：字数(60+)，完成任务，语法，词汇，连贯。非正式：开头Salut/Cher+结尾Amitiés/À bientôt',grammarTag:'写作',vocab:['organiser（组织）','participer（参加）','proposer（提议）','confirmer（确认）','apporter（带来）'],sentences:['Je t\'écris pour t\'inviter à ma fête.','Est-ce que tu pourrais apporter quelque chose ?','Dis-moi si tu es libre ce soir !'],listening:'E9xZWDixJi0',exercises:[
+    {q:'邀请信必须包含的4个信息', a:'日期+时间+地点+活动内容', tag:'写作'},
+    {q:'「你能带一瓶酒吗」（礼貌）', a:'Est-ce que tu pourrais apporter une bouteille de vin ?', tag:'写作'},
+    {q:'「期待你的回复」', a:'J\'attends ta réponse. / Dis-moi si tu es libre.', tag:'写作'},
+    {q:'写完信后检查什么？', a:'字数(60+)，时态，冠词，性数配合', tag:'写作'}
+  ]},
+  {day:51,phase:'DELF专项',grammar:'写作Part2 · 叙述/描述类（旅行/活动）',grammarNote:'叙事写作：用PC+Imparfait混合；Imparfait描述天气/背景，PC描述具体事件；结构：时间背景→事件→感受→总结',grammarTag:'写作',vocab:['inoubliable（难忘的）','magnifique（壮观的）','découvrir（发现）','se souvenir（记得）','partager（分享）'],sentences:['L\'été dernier, je suis allé(e) en Bretagne.','Il faisait beau et la mer était magnifique.','C\'était un voyage inoubliable !'],listening:'3x5thw752VQ',exercises:[
+    {q:'旅行写作时态选择：天气描述用___', a:'Imparfait（背景状态）', tag:'写作'},
+    {q:'旅行写作时态选择：具体活动用___', a:'Passé composé（完成事件）', tag:'写作'},
+    {q:'「难忘的旅行」用法语', a:'un voyage inoubliable', tag:'写作'},
+    {q:'写作结构：背景→___→感受→总结', a:'事件（用PC描述）', tag:'写作'}
+  ]},
+  {day:52,phase:'DELF专项',grammar:'口语Part1 · 自我介绍模拟（录音）',grammarNote:'Part1 Entretien dirigé（1min30）：自我介绍+考官追问3-4题。重点：流利自然，不用完美。',grammarTag:'口语',vocab:['nationalité（国籍）','profession（职业）','loisir（爱好）','langue（语言）','famille（家庭）'],sentences:['Je m\'appelle Rita. J\'ai ... ans et je viens de Shanghai.','Je travaille dans le secteur du sport.','J\'apprends le français parce que j\'aime la culture française.'],listening:'dHPueXh7maE',exercises:[
+    {q:'口语自我介绍：开头句', a:'Je m\'appelle... / Bonjour, je me présente : je m\'appelle...', tag:'口语'},
+    {q:'口语自我介绍：学法语原因', a:'J\'apprends le français parce que... / pour...', tag:'口语'},
+    {q:'考官追问「你喜欢做什么」口语答案框架', a:'J\'aime [activité]. Par exemple... / Le week-end, je...', tag:'口语'},
+    {q:'口语评分：最重要的一点是', a:'能完成交际任务，敢开口比发音完美重要', tag:'口语'}
+  ]},
+  {day:53,phase:'DELF专项',grammar:'口语Part2 · 独白模拟 · ma ville',grammarNote:'Part2 Monologue（2min，10min准备）：抽到话题后准备提纲，2分钟连续说。高频话题：城市/日常/假期/理想职业',grammarTag:'口语',vocab:['moderne（现代的）','animé(e)（热闹的）','culturel(le)（文化的）','pittoresque（风景如画）','cosmopolite（国际化的）'],sentences:['Shanghai est une grande métropole très moderne.','D\'abord, j\'aime les musées et les galeries d\'art.','En conclusion, c\'est une ville dynamique où j\'aime vivre.'],listening:'y9SdKydb68w',exercises:[
+    {q:'独白高频话题之一「我的城市」开头句', a:'Je vais vous parler de ma ville, Shanghai.', tag:'口语'},
+    {q:'如何在独白中说「首先」', a:'D\'abord / Tout d\'abord / Premièrement', tag:'口语'},
+    {q:'如何在独白中表达个人喜好', a:'Ce que j\'aime surtout, c\'est... / J\'adore particulièrement...', tag:'口语'},
+    {q:'独白结尾套路', a:'En conclusion / Voilà ce que je voulais dire sur [sujet].', tag:'口语'}
+  ]},
+  {day:54,phase:'DELF专项',grammar:'口语Part3 · 角色扮演模拟 · 旅馆预订',grammarNote:'Part3 Interaction（3-4min）：考官扮演服务员/店员/邻居等。你完成指定任务（预订/投诉/询问/购买）',grammarTag:'口语',vocab:['une chambre（房间）','pour deux nuits（两晚）','le petit-déjeuner inclus（含早餐）','un problème（问题）','le remboursement（退款）'],sentences:['Je voudrais réserver une chambre double pour deux nuits.','Est-ce que le petit-déjeuner est inclus ?','Je suis désolé(e), mais il y a un problème avec ma chambre.'],listening:'KVDTTbXOs7Q',exercises:[
+    {q:'预订旅馆：想要预订一间双人房', a:'Je voudrais réserver une chambre double.', tag:'口语'},
+    {q:'询问早餐是否含在内', a:'Est-ce que le petit-déjeuner est inclus ?', tag:'口语'},
+    {q:'提出问题套路', a:'Excusez-moi, il y a un problème... / Je ne suis pas satisfait(e) de...', tag:'口语'},
+    {q:'结束对话：感谢 + 告别', a:'Merci beaucoup pour votre aide. Bonne journée !', tag:'口语'}
+  ]},
+  {day:55,phase:'DELF专项',grammar:'四项综合模拟 · 计时练习',grammarNote:'今天模拟完整考试流程：听力（约25min）→阅读（45min）→写作（45min）。口语单独练习录音2分钟',grammarTag:'综合',vocab:['épreuve（考试项目）','performance（表现）','améliorer（改善）','préparer（准备）','réussir（成功）'],sentences:['Je me prépare sérieusement pour le DELF A2.','J\'ai amélioré mon niveau depuis deux mois.','Je vais réussir l\'examen le 29 juin !'],listening:'T2lxaxdW2VE',exercises:[
+    {q:'DELF A2 四个考试项目是什么？', a:'听力（Compréhension orale）+阅读（CO écrite）+写作（Production écrite）+口语（Production orale）', tag:'综合'},
+    {q:'写作考试时间？', a:'45分钟，两篇各60+词', tag:'综合'},
+    {q:'口语考试总时长约', a:'约6-8分钟（不含准备时间）', tag:'综合'},
+    {q:'今天完成综合模拟后，哪个部分最需要加强？', a:'（根据自己实际情况回答）', tag:'综合'}
+  ]},
+  {day:56,phase:'模拟冲刺',grammar:'全真模拟 · 听力+阅读 限时训练',grammarNote:'模拟考试1：听力25分钟（不暂停）+阅读45分钟。严格计时，模拟真实考场环境。对答案分析错误类型',grammarTag:'综合',vocab:['simuler（模拟）','minuterie（计时器）','analyser（分析）','les erreurs（错误）','le score（分数）'],sentences:['Je commence la simulation maintenant.','Je chronomètre chaque partie.','J\'analyse mes erreurs après.'],listening:'EkTZo_JoNa4',exercises:[
+    {q:'模拟考试策略：先做哪部分？', a:'先做有把握的题，难题最后做', tag:'综合'},
+    {q:'听力做完要做什么？', a:'对答案，标记错题，分析错误类型', tag:'综合'},
+    {q:'阅读中遇到不认识的词怎么办？', a:'根据上下文猜义，不要卡在一个词上', tag:'综合'},
+    {q:'听力Part1、2、3各几道题？', a:'约3道、4道、5道（具体看真题版本）', tag:'综合'}
+  ]},
+  {day:57,phase:'模拟冲刺',grammar:'全真模拟 · 写作+口语 限时训练',grammarNote:'模拟考试2：写作45分钟（2篇各限时22分钟）+口语录音练习。写完检查：字数/时态/性数配合/连贯性',grammarTag:'综合',vocab:['rédiger（撰写）','relire（重读）','vérifier（检查）','cohérence（连贯性）','brouillon（草稿）'],sentences:['Je rédige mon brouillon d\'abord.','Je relis et corrige avant de rendre.','Je vérifie : 60 mots minimum !'],listening:'ED70j_2Ra5s',exercises:[
+    {q:'写作考试：先写草稿还是直接写正稿？', a:'可以先写简短提纲，再直接写正稿节省时间', tag:'写作'},
+    {q:'写作检查清单（3项必查）', a:'字数60+、时态正确、性数配合', tag:'写作'},
+    {q:'口语录音练习：自我介绍几分钟？', a:'约1分30秒', tag:'口语'},
+    {q:'写作评分四个维度', a:'任务完成度+词汇丰富性+语法正确性+连贯性', tag:'写作'}
+  ]},
+  {day:58,phase:'模拟冲刺',grammar:'错题集中复习 · 薄弱点专攻',grammarNote:'今天只做错题本里的题。不做新题。每道错题再做一遍，直到能正确为止。重点：PC助动词/PP配合/否定冠词',grammarTag:'综合',vocab:['consolider（巩固）','maîtriser（掌握）','point faible（弱点）','acquis（已掌握的）','erreur（错误）'],sentences:['Je révise mes erreurs encore une fois.','Cette fois, je connais la réponse.','Je maîtrise ce point maintenant !'],listening:'WhN87vJoPqE',exercises:[
+    {q:'PC vs Imparfait综合：Hier soir, je ___ (lire) quand elle ___ (appeler).', a:'lisais / a appelé', tag:'PC vs Imparfait'},
+    {q:'代动词PC：Nous ___ ___ (se lever) tôt ce matin.', a:'nous sommes levé(e)s', tag:'代动词'},
+    {q:'否定：Je n\'ai pas ___ argent.', a:'d\'', tag:'否定句'},
+    {q:'条件式：Si tu avais faim, tu ___ (manger).', a:'mangerais', tag:'条件式'}
+  ]},
+  {day:59,phase:'模拟冲刺',grammar:'考前词汇 + 语法速记卡',grammarNote:'今天只做轻量复习：看词汇表、复习连接词表、快速过一遍语法卡片标题。不做新题，保持大脑清醒',grammarTag:'综合',vocab:['confiant(e)（自信的）','prêt(e)（准备好的）','calme（镇定的）','concentré(e)（专注的）','courageux（勇敢的）'],sentences:['Je suis prêt(e) pour l\'examen.','Je fais confiance à ma préparation.','Demain, je vais réussir !'],listening:'5si-W8nPoCY',exercises:[
+    {q:'连接词：D\'abord / ___ / Enfin', a:'Ensuite', tag:'综合'},
+    {q:'礼貌请求套路', a:'Je voudrais... / Est-ce que vous pourriez...?', tag:'综合'},
+    {q:'旅行描述时态', a:'PC（事件）+ Imparfait（背景）', tag:'综合'},
+    {q:'Bonne ___ pour demain !（祝好运）', a:'chance', tag:'综合'}
+  ]},
+  {day:60,phase:'模拟冲刺',grammar:'考试当天 · 放松+回顾策略',grammarNote:'考试当天：早起吃好早餐，提前到达考场。听力不要紧张，先读题；写作先写提纲；口语深呼吸，敢开口！',grammarTag:'综合',vocab:['Bonne chance !（祝好运！）','courage（勇气）','réussir（成功）','félicitations（祝贺）','bravo（干得好）'],sentences:['J\'ai travaillé dur pendant 60 jours.','Je suis prêt(e) et confiant(e).','Je vais réussir le DELF A2 !'],listening:'HKYj6EAzvo8',exercises:[
+    {q:'今天最重要的事是什么？', a:'带好证件+考场提前到达+深呼吸放松', tag:'综合'},
+    {q:'口语考试第一句话', a:'Bonjour, je m\'appelle...（微笑，自信开口）', tag:'口语'},
+    {q:'60天的努力值得吗？', a:'当然！Vous avez fait de grands progrès ! 加油！', tag:'综合'},
+    {q:'DELF A2 考试日期', a:'2026年6月29日', tag:'综合'}
+  ]},
 ];
 
 
@@ -2806,7 +2950,8 @@ function getPlanStartDate() {
 }
 function setPlanStartDate() {
   if (!getPlanStartDate()) {
-    localStorage.setItem('planStartDate', new Date().toISOString().slice(0,10));
+    // Plan starts 2026-05-01
+    localStorage.setItem('planStartDate', '2026-05-01');
   }
 }
 function getTodayDayIndex() {
@@ -2822,7 +2967,7 @@ function renderPlanNav() {
   const nav = document.getElementById('planDayNav');
   if (!nav) return;
   nav.innerHTML = planDays.map((d, i) => {
-    const phase = d.day <= 10 ? 'phase1' : d.day <= 20 ? 'phase2' : 'phase3';
+    const phase = d.day <= 15 ? 'phase1' : d.day <= 45 ? 'phase2' : 'phase3';
     let cls = `plan-dot ${phase}`;
     if (progress.has(d.day)) cls += ' done';
     if (i === todayIdx) cls += ' today';
@@ -2882,7 +3027,8 @@ function checkPlanAnswer(btn, dayIdx, exIdx) {
       userAnswer: userAnswer || '（未作答）',
       correctAnswer: correctAnswer,
       grammarTag: tag,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      addedAt: new Date().toISOString().slice(0,10)
     });
   }
   // Persist exercise answer & state
@@ -2933,6 +3079,12 @@ function saveWrongItem(item) {
   }
 }
 
+function checkReview(inputId, answer, ansId) {
+  const val = document.getElementById(inputId)?.value?.trim() || '';
+  const ans = document.getElementById(ansId);
+  if (ans) ans.style.display = 'block';
+}
+
 function renderPlan() {
   setPlanStartDate();
   renderPlanCalendar();
@@ -2947,37 +3099,27 @@ function renderPlanCalendar() {
   if (!nav) return;
   const progress = getPlanProgress();
   const todayIdx = getTodayDayIndex();
+  // 5个阶段
+  const phases = [
+    {label:'📚 A1基础天按 (D1–15)', start:0, end:15},
+    {label:'🔄 A1-A2过渡 (D16–30)', start:15, end:30},
+    {label:'⭐ A2核心 (D31–45)', start:30, end:45},
+    {label:'🎯 DELF专项 (D46–55)', start:45, end:55},
+    {label:'🚨 模拟冲刺 (D56–60)', start:55, end:60},
+  ];
   let html = '<div class="plan-calendar">';
-  // Phase 1: D1-10
-  html += '<div class="plan-phase-label">🔵 查漏补缺 (D1–D10)</div><div class="plan-day-grid">';
-  for (let i = 0; i < 10; i++) {
-    const d = planDays[i];
-    const cls = ['plan-cal-day'];
-    if (progress.has(d.day)) cls.push('done');
-    if (i === todayIdx) cls.push('today');
-    html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
-  }
+  phases.forEach(ph => {
+    html += `<div class="plan-phase-label">${ph.label}</div><div class="plan-day-grid">`;
+    for (let i = ph.start; i < ph.end; i++) {
+      const d = planDays[i];
+      const cls = ['plan-cal-day'];
+      if (progress.has(d.day)) cls.push('done');
+      if (i === todayIdx) cls.push('today');
+      html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
+    }
+    html += '</div>';
+  });
   html += '</div>';
-  // Phase 2: D11-20
-  html += '<div class="plan-phase-label">🟢 专项突破 (D11–D20)</div><div class="plan-day-grid">';
-  for (let i = 10; i < 20; i++) {
-    const d = planDays[i];
-    const cls = ['plan-cal-day'];
-    if (progress.has(d.day)) cls.push('done');
-    if (i === todayIdx) cls.push('today');
-    html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
-  }
-  html += '</div>';
-  // Phase 3: D21-30
-  html += '<div class="plan-phase-label">🔴 模拟冲刺 (D21–D30)</div><div class="plan-day-grid">';
-  for (let i = 20; i < 30; i++) {
-    const d = planDays[i];
-    const cls = ['plan-cal-day'];
-    if (progress.has(d.day)) cls.push('done');
-    if (i === todayIdx) cls.push('today');
-    html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
-  }
-  html += '</div></div>';
   nav.innerHTML = html;
 }
 
@@ -2989,7 +3131,7 @@ function showPlanDay(idx) {
   const content = document.getElementById('planContent');
   if (!content) return;
   const progress = getPlanProgress();
-  const phase = d.day <= 10 ? 1 : d.day <= 20 ? 2 : 3;
+  const phase = d.day <= 15 ? 1 : d.day <= 30 ? 2 : d.day <= 45 ? 3 : d.day <= 55 ? 3 : 3;
   const phaseClass = 'phase' + phase;
   const isDone = progress.has(d.day);
   const ytIdx = d.listening;
@@ -3083,6 +3225,29 @@ function showPlanDay(idx) {
   // Restore saved answers for this day
   loadDictations();
   restorePlanAnswers();
+
+  // 昨日错题复习
+  if (idx > 0) {
+    const startMs = new Date(getPlanStartDate()).getTime();
+    const prevDate = new Date(startMs + (idx - 1) * 86400000).toISOString().slice(0,10);
+    const allWrong = JSON.parse(localStorage.getItem('wrongItems') || '[]');
+    const prevWrong = allWrong.filter(w => w.addedAt === prevDate);
+    if (prevWrong.length > 0) {
+      const reviewHtml = `
+        <div class="review-card" style="margin-top:1.5rem;padding:1rem 1.2rem;background:#fff7ed;border-left:4px solid #F97316;border-radius:0 8px 8px 0;">
+          <div style="font-weight:700;color:#F97316;margin-bottom:0.8rem;">📌 来自昨天的错题（${prevWrong.length}题）</div>
+          ${prevWrong.map((w, i) => `
+            <div style="margin-bottom:1rem;padding:0.8rem;background:white;border-radius:6px;">
+              <p style="font-size:0.88rem;color:#555;margin:0 0 0.5rem;">📝 ${w.question}</p>
+              <input id="review_${idx}_${i}" type="text" placeholder="再做一遍..." style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ddd;border-radius:4px;font-size:0.88rem;box-sizing:border-box;" />
+              <button onclick="checkReview('review_${idx}_${i}', '${w.correctAnswer.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', 'reviewAns_${idx}_${i}')" style="margin-top:0.4rem;padding:0.3rem 0.8rem;background:#F97316;color:white;border:none;border-radius:4px;cursor:pointer;font-size:0.82rem;">检查</button>
+              <p id="reviewAns_${idx}_${i}" style="display:none;font-size:0.82rem;color:#2d6a4f;margin-top:0.4rem;">✅ 正确：${w.correctAnswer}</p>
+            </div>
+          `).join('')}
+        </div>`;
+      content.innerHTML += reviewHtml;
+    }
+  }
 }
 
 // ════════════════════════ WRONG ITEMS ════════════════════════
