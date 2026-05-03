@@ -2933,6 +2933,7 @@ function loadDictations() {
     if (saved) el.value = saved;
   });
 }
+let currentPlanDay = -1;
 renderPlan();
 restorePlanAnswers();
 loadDictations();
@@ -3123,7 +3124,6 @@ function renderPlanCalendar() {
   nav.innerHTML = html;
 }
 
-let currentPlanDay = -1;
 function showPlanDay(idx) {
   currentPlanDay = idx;
   const d = planDays[idx];
