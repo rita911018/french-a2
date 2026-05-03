@@ -596,6 +596,78 @@
   }
   .plan-ex-feedback.correct { background: #f0faf5; color: var(--green); }
   .plan-ex-feedback.wrong { background: #fff5f5; color: var(--red); }
+  /* ── 4-Module Layout ── */
+  .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  @media (max-width: 640px) { .module-grid { grid-template-columns: 1fr; } }
+  .module-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 0; }
+  .module-header { padding: 0.75rem 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; user-select: none; transition: background 0.15s; }
+  .module-header:hover { background: #faf8f3; }
+  .module-header .module-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .module-header .module-label { flex: 1; }
+  .module-header .module-arrow { font-size: 0.7rem; color: var(--grey); transition: transform 0.2s; }
+  .module-card.open .module-arrow { transform: rotate(180deg); }
+  .module-body { display: none; padding: 0 1rem 0.9rem; font-size: 0.85rem; line-height: 1.65; }
+  .module-card.open .module-body { display: block; }
+  .module-grammar { border-top: 3px solid #2c6fad; }
+  .module-grammar .module-header { background: #f0f5ff; color: #2c6fad; }
+  .module-listening { border-top: 3px solid #277a4e; }
+  .module-listening .module-header { background: #f0faf5; color: #277a4e; }
+  .module-speaking { border-top: 3px solid #c9a84c; }
+  .module-speaking .module-header { background: #fffdf0; color: #7a5500; }
+  .module-writing { border-top: 3px solid #7c3aed; }
+  .module-writing .module-header { background: #f5f3ff; color: #5b21b6; }
+
+  /* ── Speaking Module ── */
+  .speak-scenario { background: #fffdf0; border: 1px solid #f0e0a0; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; color: #7a5500; }
+  .speak-scenario strong { color: #5c3d00; }
+  .speak-prompt { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; }
+  .btn-record { padding: 0.55rem 1.2rem; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.4rem; }
+  .btn-record.start { background: var(--blue); color: white; }
+  .btn-record.start:hover { background: #1a2570; }
+  .btn-record.recording { background: var(--red); color: white; animation: pulse 0.8s infinite; }
+  .btn-record:disabled { opacity: 0.5; cursor: not-allowed; }
+  .speak-transcript { background: #fafafa; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; margin: 0.75rem 0; font-size: 0.88rem; color: var(--soft); min-height: 2.5rem; }
+  .speak-transcript:empty::after { content: '点击录音按钮开始说话...'; color: #c0bbb0; font-style: italic; }
+  .speak-keywords { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+  .speak-keyword { background: #f0ebe0; border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem; color: var(--soft); }
+  .speak-keyword.found { background: #d4edda; color: #155724; }
+  .speak-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .btn-speak-assess { padding: 0.4rem 0.9rem; border-radius: 8px; border: 2px solid var(--border); background: white; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  .btn-speak-assess.good:hover { border-color: var(--green); color: var(--green); background: #f0faf5; }
+  .btn-speak-assess.bad:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
+  .btn-play-model { padding: 0.4rem 0.9rem; border-radius: 8px; border: 2px solid var(--gold); background: white; color: #7a5500; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  .btn-play-model:hover { background: #fffdf0; border-color: #c9a84c; }
+  .btn-play-model.playing { background: #fef3c7; border-color: var(--gold); }
+  .speak-model { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; background: #f0faf5; border-radius: 8px; border-left: 3px solid var(--green); font-size: 0.85rem; }
+  .speak-model.show { display: block; }
+  .speak-manual { margin-top: 0.75rem; }
+  .speak-manual input { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: inherit; outline: none; }
+  .speak-manual input:focus { border-color: var(--blue); }
+
+  /* ── Writing Module ── */
+  .write-topic { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; color: #5b21b6; }
+  .write-textarea { width: 100%; min-height: 120px; padding: 0.7rem 0.85rem; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.85rem; font-family: inherit; line-height: 1.65; resize: vertical; outline: none; }
+  .write-textarea:focus { border-color: #7c3aed; }
+  .write-check-results { display: none; margin-top: 0.5rem; padding: 0.6rem 0.85rem; border-radius: 8px; font-size: 0.82rem; }
+  .write-check-results.show { display: block; }
+  .write-check-results.pass { background: #f0faf5; color: var(--green); }
+  .write-check-results.fail { background: #fff5f5; color: var(--red); }
+  .btn-write-check { padding: 0.4rem 0.9rem; border-radius: 8px; background: #7c3aed; color: white; border: none; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 0.5rem; }
+  .btn-write-check:hover { background: #6d28d9; }
+  .write-model { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; background: #faf8f3; border-radius: 8px; border: 1px solid var(--border); font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; }
+  .write-model.show { display: block; }
+  .btn-reveal-model { font-size: 0.8rem; color: var(--blue); cursor: pointer; font-weight: 600; background: none; border: none; padding: 0.25rem 0; margin-top: 0.4rem; }
+  .btn-reveal-model:hover { color: #1a2570; }
+
+  /* ── Listening Module ── */
+  .listen-question { background: #f0faf5; border-radius: 8px; padding: 0.6rem 0.85rem; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+  .listen-answer-input { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: inherit; outline: none; margin-bottom: 0.4rem; }
+  .listen-answer-input:focus { border-color: var(--green); }
+  .listen-answer-fb { display: none; font-size: 0.82rem; padding: 0.35rem 0.7rem; border-radius: 6px; }
+  .listen-answer-fb.show { display: block; }
+  .listen-answer-fb.correct { background: #f0faf5; color: var(--green); }
+  .listen-answer-fb.wrong { background: #fff5f5; color: var(--red); }
+
   /* Wrong tab */
   .wrong-group-title {
     font-size: 0.8rem;
@@ -933,8 +1005,6 @@
   <div class="sidebar-brand">Français A2</div>
   <div class="sidebar-tab active" data-tab="plan">📅 计划</div>
   <div class="sidebar-tab" data-tab="grammar">📖 语法</div>
-  <div class="sidebar-tab" data-tab="listen">🎧 听力</div>
-  <div class="sidebar-tab" data-tab="oral">🗣️ 口语</div>
   <div class="sidebar-tab" data-tab="wrong">❌ 错题本</div>
 </aside>
 <main class="main-content">
@@ -1999,265 +2069,9 @@
 </div><!-- /tab-grammar -->
 
 
-<!-- ═══════════════════════════════  LISTEN ═══════════════════════════════ -->
-<!-- ════════════════════════════════  ORAL ════════════════════════════════ -->
-<div class="tab-content" id="tab-oral">
-  <h1>🗣️ 口语对练 · DELF A2</h1>
-  <p class="subtitle">微信语音 + Cola 教练 · 实时模拟考试</p>
-
-  <!-- ── 今日练习 ── -->
-  <div class="day-card" style="border:2px solid var(--gold);background:#fffdf5;">
-    <div class="day-header"><div class="day-num">📅</div><div class="day-topic">2026-05-02 · Partie 1 — Entretien dirigé（自我介绍 + 问答）</div></div>
-    
-    <div class="grammar-block">
-      <strong>🎯 练习内容：</strong>模拟 DELF A2 口语考试第一部分。自我介绍 → 考官追问 3 题。
-    </div>
-
-    <div style="background:var(--card);border-radius:8px;padding:1rem;margin:0.75rem 0;">
-      <strong style="color:var(--blue);">✅ 自我介绍（修正版）：</strong>
-      <p style="margin:0.5rem 0;font-size:0.9rem;line-height:1.8;">
-        Bonjour, je m'appelle <strong>Rita</strong>. Je viens de <strong>Shanghai</strong>. J'habite à Shanghai aussi. Je travaille chez <strong>Amer Sports</strong>. J'apprends le français parce que <strong>j'aime le vin</strong>.
-      </p>
-      <p style="font-size:0.75rem;color:var(--grey);margin:0;">📌 考试用时：约 30 秒 | 信息完整 ✅ | 连接自然 ✅</p>
-    </div>
-
-    <div style="background:var(--card);border-radius:8px;padding:1rem;margin:0.75rem 0;">
-      <strong style="color:var(--blue);">Q1 · 考官：Vous aimez le vin français ?</strong>
-      <p style="margin:0.5rem 0;font-size:0.9rem;">→ Oui, <strong>j'adore</strong> le vin rouge de <strong>Bourgogne</strong>.</p>
-    </div>
-
-    <div style="background:var(--card);border-radius:8px;padding:1rem;margin:0.75rem 0;">
-      <strong style="color:var(--blue);">Q2 · 考官：Qu'est-ce que vous faites le week-end ?</strong>
-      <p style="margin:0.5rem 0;font-size:0.9rem;line-height:1.8;">
-        → Le week-end, <strong>je me lève à sept heures</strong> et <strong>je fais du sport</strong> avant le petit déjeuner. <strong>Ensuite</strong>, je prends un café et du pain. L'après-midi, <strong>j'étudie le français</strong>, et le soir, <strong>je joue avec mon chat</strong>.
-      </p>
-    </div>
-  </div>
-
-  <!-- ── 今日要点 ── -->
-  <h2 style="margin-top:2rem;">📌 今日错题 & 注意点</h2>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num" style="background:var(--red);">🔴</div><div class="day-topic">je + 元音 = j'（省音）</div></div>
-    <div class="grammar-block">
-      两个元音不能撞在一起，法语会把 je 缩成 <strong>j'</strong>：
-      <table style="width:100%;margin-top:0.5rem;border-collapse:collapse;">
-        <tr><td style="padding:0.3rem 0.8rem;color:var(--red);text-decoration:line-through;">je aime</td><td style="padding:0.3rem 0.8rem;">→</td><td style="padding:0.3rem 0.8rem;color:var(--green);font-weight:700;">j'aime</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;color:var(--red);text-decoration:line-through;">je habite</td><td style="padding:0.3rem 0.8rem;">→</td><td style="padding:0.3rem 0.8rem;color:var(--green);font-weight:700;">j'habite</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;color:var(--red);text-decoration:line-through;">je étudie</td><td style="padding:0.3rem 0.8rem;">→</td><td style="padding:0.3rem 0.8rem;color:var(--green);font-weight:700;">j'étudie</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;color:var(--red);text-decoration:line-through;">je apprends</td><td style="padding:0.3rem 0.8rem;">→</td><td style="padding:0.3rem 0.8rem;color:var(--green);font-weight:700;">j'apprends</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num" style="background:#e67e22;">🟠</div><div class="day-topic">B ≠ P · 浊音 vs 送气</div></div>
-    <div class="grammar-block">
-      <strong>Bourgogne</strong>（"布赫-够涅"）第一个音是 <strong>B</strong>，嘴唇闭住、声带振动。中文没有 b 的浊音（中文拼音 b 实际上是清音不送气），要刻意练习：手放喉咙，感受到振动才是 B。
-      <p style="margin-top:0.3rem;font-size:0.85rem;">练习词：<strong>Bonjour</strong>、<strong>Bourgogne</strong>、<strong>beau</strong>、<strong>blanc</strong>、<strong>bien</strong></p>
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num" style="background:#277a4e;">🟢</div><div class="day-topic">du sport — 不是"deux sports"</div></div>
-    <div class="grammar-block">
-      <strong>du sport</strong> = 做运动（活动概念，不是数量）。<strong>deux sports</strong> = 两项运动（数量）。考试说 <strong>je fais du sport</strong>，不是"je fais deux sports"。
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num" style="background:var(--gold);">📝</div><div class="day-topic">petit déjeuner · 发音拆解</div></div>
-    <div class="grammar-block">
-      <strong>petit</strong>（"普-替"）+ <strong>déjeuner</strong>（"得-热-内"）= <strong>"普替-得热内"</strong>，一口气连读。后面可以加 <strong>déjeuner</strong>（午饭）和 <strong>dîner</strong>（晚饭），三顿饭一起记。
-    </div>
-  </div>
-
-  <div class="day-card">
-    <div class="day-header"><div class="day-num" style="background:var(--blue);">🔗</div><div class="day-topic">连接词 · 考试拿分利器</div></div>
-    <div class="grammar-block">
-      <table style="width:100%;border-collapse:collapse;">
-        <tr style="background:#f0f5ff;"><th style="padding:0.4rem 0.8rem;text-align:left;">连接词</th><th style="padding:0.4rem 0.8rem;text-align:left;">意思</th><th style="padding:0.4rem 0.8rem;text-align:left;">用法</th></tr>
-        <tr><td style="padding:0.3rem 0.8rem;"><strong>et</strong></td><td style="padding:0.3rem 0.8rem;">和、然后</td><td style="padding:0.3rem 0.8rem;">连接两个并列动作</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;"><strong>ensuite</strong></td><td style="padding:0.3rem 0.8rem;">接着</td><td style="padding:0.3rem 0.8rem;">时间顺序切换</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;"><strong>le soir</strong></td><td style="padding:0.3rem 0.8rem;">晚上</td><td style="padding:0.3rem 0.8rem;">自然过渡到晚上</td></tr>
-        <tr><td style="padding:0.3rem 0.8rem;"><strong>l'après-midi</strong></td><td style="padding:0.3rem 0.8rem;">下午</td><td style="padding:0.3rem 0.8rem;">时间标记</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- ── 教练评语 ── -->
-  <div class="day-card" style="border-left:4px solid var(--gold);background:#fffdf0;">
-    <div class="day-header"><div class="day-num" style="background:var(--gold);">💬</div><div class="day-topic">教练评语</div></div>
-    <div class="grammar-block">
-      Rita 今晚说了 <strong>6 句完整法语</strong>，从自我介绍到葡萄酒到周末日常，结构完整。敢开口比发音完美重要 100 倍。最大进步：5 次语音输入，每次都在尝试。明天重点：<strong>Partie 2 Monologue（独白）</strong> + 继续练 <strong>B ≠ P</strong>。
-    </div>
-  </div>
-
-  <!-- ── 考试结构速查 ── -->
-  <h2 style="margin-top:2rem;">📋 DELF A2 口语考试结构</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
-    <div style="background:var(--card);border-radius:12px;padding:1.2rem;border-top:3px solid var(--blue);">
-      <strong>Partie 1 · 1min30</strong>
-      <p style="font-size:0.82rem;color:var(--grey);margin-top:0.4rem;">Entretien dirigé<br>自我介绍 + 考官问答</p>
-    </div>
-    <div style="background:var(--card);border-radius:12px;padding:1.2rem;border-top:3px solid var(--gold);">
-      <strong>Partie 2 · 2min</strong>
-      <p style="font-size:0.82rem;color:var(--grey);margin-top:0.4rem;">Monologue suivi<br>抽题 → 准备10分钟 → 独白</p>
-    </div>
-    <div style="background:var(--card);border-radius:12px;padding:1.2rem;border-top:3px solid var(--green);">
-      <strong>Partie 3 · 3-4min</strong>
-      <p style="font-size:0.82rem;color:var(--grey);margin-top:0.4rem;">Exercice en interaction<br>角色扮演（餐厅/商店/问路）</p>
-    </div>
-  </div>
-</div>
-<!-- /tab-oral -->
-
-<div class="tab-content" id="tab-listen">
-<div class="container">
-  <h1>🎧 听力训练 · French Listening</h1>
-  <p class="subtitle">FrenchPod101 法语听力系列（共 95 集）。选集播放，从 Absolute Beginner 到 Beginner 循序渐进。</p>
-
-  <div class="listen-layout">
-    <!-- Player -->
-    <div>
-      <div class="listen-player-wrap">
-        <iframe id="yt-player" width="100%" height="360"
-          src="https://www.youtube-nocookie.com/embed/y9SdKydb68w?rel=0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen style="border:none;border-radius:12px;display:block;"></iframe>
-      </div>
-
-      <!-- 📝 听写练习 · 05/02 Dictation & Analysis -->
-      <div class="gc" style="margin-top:1.5rem;">
-        <div class="gc-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="gc-header-left">
-            <div class="gc-header-title">📝 05/02 听写原文 & 精讲</div>
-            <div class="gc-header-sub">双胞胎照片 · 粉色生词解释 + 语法标注</div>
-          </div>
-          <span class="gc-arrow">▼</span>
-        </div>
-        <div class="gc-body">
-          <!-- Passage -->
-          <h3 style="color:#2c3e8c;margin-top:0;">📅 05/02 — Le frère jumeau（双胞胎兄弟）</h3>
-          <p style="color:#888;font-style:italic;">Un homme et une femme <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">discutent</span> pendant qu'ils regardent une image.（一男一女在看照片时聊天）</p>
-          <p style="color:#c9a84c;font-weight:600;">❓ Qui est le frère de la femme ?（谁是这位女士的兄弟？）</p>
-          
-          <table style="width:100%;border-collapse:collapse;margin:0.75rem 0;">
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">J'ai <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">entendu</span> dire que tu as un <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">frère jumeau</span>.</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">我听说你有一个双胞胎兄弟。</td></tr>
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">Je ne <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">savais</span> pas ça.</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">我不知道这个。</td></tr>
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">Oui, mais les gens <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">disent</span> qu'on ne se ressemble pas.</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">是的，但人们说我们长得不像。</td></tr>
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">Tu vois, mon frère est dans cette image.</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">你看，我兄弟在这张照片里。</td></tr>
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">Mais peux-tu me dire qui il est ?</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">但你能告诉我他是谁吗？</td></tr>
-            <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;">Eh bien, je ne vois personne qui te <span style="background:#ffe0e0;padding:1px 4px;border-radius:3px;">ressemble</span>.</td><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #e8e3d7;color:#666;">嗯，我没看到任何人长得像你。</td></tr>
-          </table>
-
-          <!-- Vocabulary -->
-          <h3 style="color:#c0392b;margin-top:1.5rem;">🔴 粉色生词 · 详解+造句</h3>
-          
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:0.75rem 0;">
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>discuter</strong> <span style="color:#999;font-size:0.8rem;">v.</span><br>
-              <span style="color:#666;">讨论，聊天</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Nous discutons du projet ce soir.</em><br>
-              <span style="color:#888;font-size:0.8rem;">我们今晚讨论这个项目。</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>entendre</strong> <span style="color:#999;font-size:0.8rem;">v.</span><br>
-              <span style="color:#666;">听见（PC: entendu）</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">As-tu entendu cette chanson ?</em><br>
-              <span style="color:#888;font-size:0.8rem;">你听过这首歌吗？</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>frère jumeau</strong> <span style="color:#999;font-size:0.8rem;">n.m.</span><br>
-              <span style="color:#666;">双胞胎兄弟<br>(soeur jumelle = 双胞胎姐妹)</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Mon frère jumeau habite à Paris.</em><br>
-              <span style="color:#888;font-size:0.8rem;">我的双胞胎兄弟住在巴黎。</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>savoir</strong> <span style="color:#999;font-size:0.8rem;">v.</span><br>
-              <span style="color:#666;">知道（imparfait: savais）</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Je ne savais pas que tu étais là.</em><br>
-              <span style="color:#888;font-size:0.8rem;">我不知道你在这儿。</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>dire</strong> <span style="color:#999;font-size:0.8rem;">v.</span><br>
-              <span style="color:#666;">说（présent: ils disent）</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Qu'est-ce qu'ils disent ?</em><br>
-              <span style="color:#888;font-size:0.8rem;">他们在说什么？</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>ressembler à</strong> <span style="color:#999;font-size:0.8rem;">v.</span><br>
-              <span style="color:#666;">长得像，相似</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Tu ressembles à ta mère.</em><br>
-              <span style="color:#888;font-size:0.8rem;">你长得像你妈妈。</span>
-            </div>
-            <div style="background:#fff5f5;border-radius:8px;padding:0.75rem;">
-              <strong>personne (ne...personne)</strong> <span style="color:#999;font-size:0.8rem;">pron.</span><br>
-              <span style="color:#666;">没有人（否定结构）</span><br>
-              <em style="color:#2c3e8c;font-size:0.85rem;">Je ne vois personne dans la rue.</em><br>
-              <span style="color:#888;font-size:0.8rem;">我在街上没看到任何人。</span>
-            </div>
-          </div>
-
-          <!-- A2 Grammar Notes -->
-          <h3 style="color:#277a4e;margin-top:1.5rem;">🟢 A2 考试必考语法 · 本文出题点</h3>
-          
-          <div style="display:grid;grid-template-columns:1fr;gap:0.5rem;margin:0.75rem 0;">
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>① Passé Composé · j'ai entendu</strong> — <em>J'ai entendu dire que...</em><br>
-              <span style="color:#666;font-size:0.9rem;">entendre → entendu (avoir助动词，过去分词不配合)。写作常用"J'ai entendu dire que + 从句"。</span>
-            </div>
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>② Imparfait · je ne savais pas</strong> — <em>Je ne savais pas ça.</em><br>
-              <span style="color:#666;font-size:0.9rem;">savoir 的 imparfait：savais/savais/savait/savions/saviez/savaient。描述过去持续的状态。</span>
-            </div>
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>③ 否定句 · ne...personne</strong> — <em>Je ne vois personne qui te ressemble.</em><br>
-              <span style="color:#666;font-size:0.9rem;">A2否定句8种之一。ne...personne = 没有人，personne 放在动词后面。</span>
-            </div>
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>④ 关系代词 · qui</strong> — <em>Je ne vois personne qui te ressemble.</em><br>
-              <span style="color:#666;font-size:0.9rem;">qui = 主语关系代词，代替 personne，后面接动词。A2必考 qui / que / où / dont。</span>
-            </div>
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>⑤ 命令式 · 日常对话语气</strong> — <em>Tu vois / peux-tu me dire...</em><br>
-              <span style="color:#666;font-size:0.9em;">文中tu日常对话混合出现：陈述(Tu vois)与倒装疑问(peux-tu)。A2写作需要区分tu/vous两种人称。</span>
-            </div>
-            <div style="background:#f0faf3;border-left:4px solid #277a4e;border-radius:0 8px 8px 0;padding:0.6rem 0.8rem;">
-              <strong>⑥ 疑问句 · 倒装形式</strong> — <em>peux-tu me dire qui il est ?</em><br>
-              <span style="color:#666;font-size:0.9em;">日常倒装(peux-tu)。A2口语只需est-ce que，但阅读理解会遇到倒装。</span>
-            </div>
-          </div>
-
-          <p style="margin-top:1rem;padding:0.6rem 0.8rem;background:#fef9e7;border-radius:8px;font-size:0.9em;">
-            💡 <strong>听力技巧：</strong>这是 DELF A2 听力 Part 1 的经典题型——日常对话+人物识别。<br>
-            抓关键词：<em>frère jumeau / ressemble / image</em> → 答案不直接说，需要推理"没人长得像她 = 照片里没有双胞胎"。
-          </p>
-        </div>
-      </div>
-
-      <div class="listen-tip">
-        <strong>📝 使用技巧</strong><br>
-        🔹 第一遍不暂停，听大意<br>
-        🔹 逐句暂停，写下你听到的内容<br>
-        🔹 对照字幕，标记错误<br>
-        🔹 再听一遍，专攻错误处（联诵、哑音、同音词）<br>
-        <em style="color:var(--grey);">第 1–15 集：Absolute Beginner · 第 16–36 集：Beginner</em>
-      </div>
-    </div>
-
-    <!-- Episode list -->
-    <div class="episode-list" id="episodeList">
-      <div class="episode-group-label">Absolute Beginner · 第 1–15 集</div>
-
-      <!-- items injected by JS -->
-      <div class="episode-group-label" id="beginner-label" style="display:none">Beginner · 第 16–36 集</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ═══════════════════════════════  EXAM ═══════════════════════════════ -->
+<!-- ═══════════════════════════════  ORAL & LISTEN removed — merged into daily plan ═══════════════════════════════ -->
+<div class="tab-content" id="tab-oral" style="display:none;"></div>
+<div class="tab-content" id="tab-listen" style="display:none;"></div>
 
 <!-- ════════════════════════════════  WRONG ════════════════════════════════ -->
 <div class="tab-content" id="tab-wrong">
@@ -2547,381 +2361,108 @@ renderWrong();
 
 // ════════════════════════ 30-DAY PLAN DATA ════════════════════════
 const grammarExplains = {
-  '反身动词': '反身动词在PC中用être，过去分词需配合主语性数（阴性+e，复数+s）。',
-  '命令式': '命令式affirmative：tu/nous/vous形式，-ER动词tu去掉s；negative：ne + 原形 + pas，代词前置。',
-  'depuis/pendant': 'depuis=从那时起（状态持续到现在），pendant=一段时间内（强调时长），il y a=X时间前。',
-  '条件式': 'je voudrais（我想要）= vouloir的条件式，比je veux更礼貌。devrais=应该，pourrais=可以。',
-  'PC vs Imparfait': 'PC说具体事件（突然发生/完成），Imparfait说状态/习惯/背景。',
-  '否定句': '否定句中des→de；ne在元音前缩写为n\'；复合时态ne...pas包围助动词。',
-  '关系代词': 'qui=主语（后跟动词），que=宾语（后跟主语），où=地点/时间，dont=de+的内容。',
-  '代词COD/COI': '代词放在动词前；COD(le/la/les)直接代替物；COI(lui/leur)代替à+人；y=à+地点/事物；en=de+名词。',
-  '写作': '写作套路：问候+目的+具体信息+结束语。注意时态选择，字数60词以上。',
-  '口语': '口语结构：Introduction→Point 1+例子→Point 2+例子→Opinion→Conclusion。',
-  '听力': '听力技巧：第一遍听大意，第二遍逐句，重点标记数字/日期/地点。',
-  '综合': '综合练习：注意语法点的综合运用，尤其时态、代词、否定的混合。',
+  '字母发音': '法语元音字母结尾的单词遇到下一个元音开头时，需要省音（如je aime→j\'aime）和联诵。',
+  '数字': '注意70(sioxante-dix)、80(quatre-vingts)、90(quatre-vingt-dix)的特殊构成。',
+  'être/avoir': 'être用于身份/状态/地点，avoir用于年龄/感觉/拥有。固定搭配：avoir faim/soif/chaud/froid。',
+  '日期时间': '星期/月份小写。季节介词：au printemps, en été/automne/hiver。',
+  '现在时': '-ER动词规则变位：e/es/e/ons/ez/ent。-IR/-RE各有规则。aller/faire/être/avoir不规则必须背。',
+  '冠词': '定冠词(le/la/les)=特指，不定冠词(un/une/des)=不特指，部分冠词(du/de la)=不可数。否定时→de。',
+  '指示形容词': 'ce(阳单)/cet(元音前)/cette(阴单)/ces(复数)。元音/哑h前用cet。',
+  '所有格': 'mon/ma/mes，ton/ta/tes，son/sa/ses。阴性元音前用mon(如mon amie)。',
+  '疑问句': '口语用升调，正式用Est-ce que+陈述句。疑问词：qui/quoi/où/quand/comment/pourquoi/combien。',
+  '介词': 'à+城市，en+阴性国名，au+阳性国名，dans=在里面，sur=在上面，avec=和一起，pour=为了。',
+  '近将来': 'aller(现在时)+不定式=即将发生。否定ne...pas包围aller。',
+  '近过去': 'venir de+不定式=刚刚。否定ne...pas包围venir。',
+  '数量表达': '数量词(beaucoup/un peu/trop)+de直接接名词，不加冠词。程度副词修饰形容词。',
+  '形容词': '形容词随名词性数：+e(阴)，+s(复)，+es(阴复)。不规则：beau/belle，vieux/vieille。BAGS前置。',
+  '复合过去时': 'avoir助动词(大多数)+PP。PP构成：-er→é，-ir→i，-re→u。être助动词(14个位移动词)+PP配合。',
+  '代动词': 'se+动词，变位时代词随主语变。PC用être，PP配合主语性数。否定：ne...pas包围代动词+助动词。',
+  '未完成过去时': 'imparfait=nous现在时词根+ais/ais/ait/ions/iez/aient。用于过去持续/习惯/状态。不规则：être→étais。',
+  'PC vs Imparfait': 'PC=事件(突然/完成)，Imparfait=背景(持续/状态/习惯)。信号词：soudain→PC，tous les jours→Imparfait。',
+  '否定句': 'ne...pas/jamais/plus/rien/personne/aucun/ni...ni/ne...que。否定时des→de。',
+  '关系代词': 'qui=主语(后接动词)，que=宾语(后接主语)，où=地点/时间，dont=de+的内容。',
+  '代词': 'COD(le/la/les)，COI(lui/leur)，y=à+地点/事物，en=de+名词。代词放动词前。PC中COD在前→PP配合。',
+  '将来时': 'futur=不定式(-re去e)+ai/as/a/ons/ez/ont。不规则词根：ser-/aur-/ir-/fer-/pourr-。',
+  '条件式': 'conditionnel=futur词根+imparfait词尾。je voudrais(礼貌)，tu devrais(建议)。si+imparfait→conditionnel。',
+  'depuis/pendant': 'depuis+现在时=持续到现在，pendant+任何时态=一段时间内，il y a+PC=时间点前。',
+  '命令式': 'tu/nous/vous形式。-ER动词tu去s。肯定命令代词后置+连字符。否定命令代词前置。',
+  '比较级': 'plus/moins/aussi+adj+que。最高级：le/la/les+plus/moins+adj。不规则：bon→meilleur，bien→mieux。',
+  '写作': 'DELF A2写作：60+词，问候+目的+具体信息+结束语。非正式用Salut/Cher+À bientôt。正式用Madame/Monsieur+Cordialement。',
+  '口语': 'DELF A2口语三部分：Entretien dirigé(1min30自我介绍+问答)、Monologue(2min独白)、Interaction(3-4min角色扮演)。敢开口比完美重要。',
+  '听力': 'DELF A2听力：每段听两遍。先读题，再听。注意数字/时间/地点。转折词(mais/cependant)后有真实信息。',
+  '综合': 'DELF A2四项：听力(25min)+阅读(45min)+写作(45min)+口语(6-8min)。综合检查：时态一致、性数配合、否定冠词。',
 };
 
 const planDays = [
-  {day:1,phase:'A1基础夯实',grammar:'字母与发音 · 省音与联诵',grammarNote:'法语26个字母，注意哑音字母（词尾s/t/d不发音），je+元音→j\'（省音），词尾辅音+元音开头下一词→联诵',grammarTag:'字母发音',vocab:['bonjour（你好）','merci（谢谢）','au revoir（再见）','s\'il vous plaît（请）','pardon（对不起）'],sentences:['Bonjour, je m\'appelle Rita.','Merci beaucoup !','Au revoir, à bientôt !'],listening:'4vdX_ywX8Fc',exercises:[
-    {q:'je aime → ___（省音）', a:'j\'aime', tag:'字母发音'},
-    {q:'les + amis → 联诵读作 les-___mis', a:'z', tag:'字母发音'},
-    {q:'petit 的词尾 t 发音吗？', a:'不发音（哑音）', tag:'字母发音'},
-    {q:'à bientôt 中 à 的中文意思', a:'（感叹词/再见用法）', tag:'字母发音'}
-  ]},
-  {day:2,phase:'A1基础夯实',grammar:'数字0-20 + 年龄/日期表达',grammarNote:'0-20必背；年龄用avoir：J\'ai 25 ans（不用être）；日期：le 2 mai 2026',grammarTag:'数字',vocab:['un/une（1）','deux（2）','cinq（5）','dix（10）','vingt（20）'],sentences:['J\'ai vingt-cinq ans.','Aujourd\'hui, c\'est le deux mai.','Il y a cinq personnes.'],listening:'vcXFX7uT_4k',exercises:[
-    {q:'「我15岁」用法语怎么说？', a:'J\'ai quinze ans.', tag:'数字'},
-    {q:'17 用法语怎么说？', a:'dix-sept', tag:'数字'},
-    {q:'3+5=?用法语写出等式', a:'trois plus cinq égal huit', tag:'数字'},
-    {q:'aujourd\'hui 的意思是？', a:'今天', tag:'数字'}
-  ]},
-  {day:3,phase:'A1基础夯实',grammar:'数字21-100 · soixante-dix/quatre-vingts',grammarNote:'70=soixante-dix(60+10)；80=quatre-vingts(4×20)；81=quatre-vingt-un(去掉s)；90=quatre-vingt-dix',grammarTag:'数字',vocab:['trente（30）','quarante（40）','cinquante（50）','soixante（60）','cent（100）'],sentences:['Il a quatre-vingt-cinq euros.','Le train part à soixante-dix-sept minutes.','C\'est le 31 décembre.'],listening:'nQGCj8w2IXw',exercises:[
-    {q:'75 用法语怎么说？', a:'soixante-quinze', tag:'数字'},
-    {q:'81 用法语怎么说？（注意quatre-vingts的s）', a:'quatre-vingt-un（无s）', tag:'数字'},
-    {q:'92 用法语怎么说？', a:'quatre-vingt-douze', tag:'数字'},
-    {q:'100 euros = ___', a:'cent euros', tag:'数字'}
-  ]},
-  {day:4,phase:'A1基础夯实',grammar:'être 完整变位 + 身份/状态表达',grammarNote:'être: suis/es/est/sommes/êtes/sont。用于：身份(Je suis chinoise)，状态(Elle est faiguée)，职业(Il est médecin)，地点(Je suis à Paris)',grammarTag:'être/avoir',vocab:['étudiant(e)（学生）','professeur（老师）','médecin（医生）','chinois(e)（中国人）','fatigué(e)（累的）'],sentences:['Je suis étudiante en français.','Elle est médecin à Shanghai.','Nous sommes amis.'],listening:'nDnCTGPnhL8',exercises:[
-    {q:'Je ___ (être) chinoise.', a:'suis', tag:'être/avoir'},
-    {q:'Vous ___ (être) professeur ?', a:'êtes', tag:'être/avoir'},
-    {q:'Ils ___ (être) fatigués.', a:'sont', tag:'être/avoir'},
-    {q:'être 的 nous 形式是？', a:'sommes', tag:'être/avoir'}
-  ]},
-  {day:5,phase:'A1基础夯实',grammar:'avoir 完整变位 + 年龄/感觉/拥有',grammarNote:'avoir: ai/as/a/avons/avez/ont。固定搭配：avoir faim/soif/chaud/froid/peur/raison/tort/besoin de',grammarTag:'être/avoir',vocab:['faim（饿）','soif（渴）','chaud（热）','froid（冷）','peur（害怕）'],sentences:['J\'ai faim, je vais manger.','Tu as quel âge ? — J\'ai vingt-cinq ans.','Il a une grande maison.'],listening:'VyiqIOFYkZk',exercises:[
-    {q:'J\'___ (avoir) vingt-cinq ans.', a:'ai', tag:'être/avoir'},
-    {q:'Elle ___ (avoir) soif.', a:'a', tag:'être/avoir'},
-    {q:'Nous ___ (avoir) besoin d\'aide.', a:'avons', tag:'être/avoir'},
-    {q:'「我饿了」用法语怎么说？（注意不用être）', a:'J\'ai faim.', tag:'être/avoir'}
-  ]},
-  {day:6,phase:'A1基础夯实',grammar:'星期/月份/季节 + 时间表达',grammarNote:'星期、月份都小写；季节介词：au printemps, en été/automne/hiver；时间：Il est + 数字 + heure(s)',grammarTag:'日期时间',vocab:['lundi（周一）','mars（三月）','été（夏天）','heure（小时）','minute（分钟）'],sentences:['Nous sommes le lundi 4 mai.','En été, il fait chaud à Shanghai.','Il est neuf heures et demie.'],listening:'f0SCg0Inqhk',exercises:[
-    {q:'「今天是星期五」用法语怎么说？', a:'Aujourd\'hui, c\'est vendredi.', tag:'日期时间'},
-    {q:'「在冬天」用哪个介词？', a:'en hiver', tag:'日期时间'},
-    {q:'14:30 用法语怎么说？', a:'Il est quatorze heures trente.', tag:'日期时间'},
-    {q:'「6月」用法语怎么说？', a:'juin', tag:'日期时间'}
-  ]},
-  {day:7,phase:'A1基础夯实',grammar:'现在时规则-ER动词 · parler/habiter/aimer',grammarNote:'-ER动词：词根+e/es/e/ons/ez/ent。主语je+元音动词要省音：j\'aime(非je aime)',grammarTag:'现在时',vocab:['parler（说话）','habiter（居住）','travailler（工作）','aimer（喜欢）','étudier（学习）'],sentences:['J\'habite à Shanghai depuis trois ans.','Tu parles bien français !','Nous aimons voyager.'],listening:'hf6Q4NPQhes',exercises:[
-    {q:'Je ___ (parler) français.', a:'parle', tag:'现在时'},
-    {q:'Elle ___ (habiter) à Paris.', a:'habite', tag:'现在时'},
-    {q:'Vous ___ (travailler) où ?', a:'travaillez', tag:'现在时'},
-    {q:'Ils ___ (aimer) le football.', a:'aiment', tag:'现在时'}
-  ]},
-  {day:8,phase:'A1基础夯实',grammar:'现在时 -IR/-RE动词 + aller/faire',grammarNote:'-IR：finir→finis/finis/finit/finissons/finissez/finissent；-RE：vendre→vends/vends/vend/vendons/vendez/vendent；aller和faire必须单独背',grammarTag:'现在时',vocab:['finir（完成）','choisir（选择）','faire（做）','aller（去）','vendre（卖）'],sentences:['Je finis mon travail à 18h.','Qu\'est-ce que tu fais ce soir ?','Nous allons au cinéma samedi.'],listening:'4BNypRPg-x0',exercises:[
-    {q:'Tu ___ (finir) à quelle heure ?', a:'finis', tag:'现在时'},
-    {q:'Il ___ (faire) du sport tous les jours.', a:'fait', tag:'现在时'},
-    {q:'Vous ___ (aller) où ce week-end ?', a:'allez', tag:'现在时'},
-    {q:'faire 的 nous 形式（不规则）是？', a:'faisons', tag:'现在时'}
-  ]},
-  {day:9,phase:'A1基础夯实',grammar:'冠词系统 · 定冠词/不定冠词/部分冠词',grammarNote:'定冠词(le/la/l\'/les)=已知或特指；不定冠词(un/une/des)=不特指；部分冠词(du/de la/de l\')=不可数；否定时冠词→de/d\'',grammarTag:'冠词',vocab:['le café（咖啡）','une pomme（一个苹果）','du lait（牛奶）','des amis（朋友们）','de l\'eau（水）'],sentences:['Je bois du café le matin.','Je n\'ai pas de sucre.','Les Français aiment le pain.'],listening:'b80BHXgGJx0',exercises:[
-    {q:'Je mange ___ pain. (部分冠词)', a:'du', tag:'冠词'},
-    {q:'Je n\'ai pas ___ voiture. (否定→de)', a:'de', tag:'冠词'},
-    {q:'Il boit ___ eau. (元音前)', a:'de l\'', tag:'冠词'},
-    {q:'Elle a ___ amis. (不定冠词复数)', a:'des', tag:'冠词'}
-  ]},
-  {day:10,phase:'A1基础夯实',grammar:'指示形容词 ce/cet/cette/ces',grammarNote:'ce(阳单)→cet(元音/哑h前)→cette(阴单)→ces(复数)；记忆法：这本书=ce livre，这个男人=cet homme，这条裙子=cette robe，这些书=ces livres',grammarTag:'指示形容词',vocab:['ce livre（这本书）','cet homme（这个男人）','cette robe（这条裙子）','ces enfants（这些孩子）','là（那里）'],sentences:['Je veux ce livre, pas celui-là.','Cet hôtel est très bien.','Ces chaussures sont trop chères.'],listening:'Idqdfdmriws',exercises:[
-    {q:'___ homme (cet/ce/cette) est gentil.', a:'Cet', tag:'指示形容词'},
-    {q:'___ femme (ce/cette/cet) est belle.', a:'Cette', tag:'指示形容词'},
-    {q:'___ livres (ces/ce/cette) sont intéressants.', a:'Ces', tag:'指示形容词'},
-    {q:'为什么 homme 前用 cet 不用 ce？', a:'homme 以哑音h开头，视为元音，用cet', tag:'指示形容词'}
-  ]},
-  {day:11,phase:'A1基础夯实',grammar:'所有格形容词 mon/ma/mes…',grammarNote:'所有格形容词随被修饰名词性数变化（非主语性数）：mon ami（阴性元音前用mon）；notre/votre/leur不区分性别',grammarTag:'所有格',vocab:['mon père（我父亲）','ma mère（我母亲）','mes parents（我父母）','son ami(e)（他/她的朋友）','leur maison（他们的房子）'],sentences:['Mon ami s\'appelle Paul.','Votre livre est sur la table.','Ses parents habitent à Lyon.'],listening:'Az351m2PeqU',exercises:[
-    {q:'___ (mon/ma/mes) amie s\'appelle Marie.（amie阴性但元音开头）', a:'Mon', tag:'所有格'},
-    {q:'Elle parle à ___ (son/sa) professeur.', a:'son（professeur阳性）', tag:'所有格'},
-    {q:'Nous habitons dans ___ (notre/nos) maison.', a:'notre', tag:'所有格'},
-    {q:'Ils ont perdu ___ (leur/leurs) clés.（复数名词）', a:'leurs', tag:'所有格'}
-  ]},
-  {day:12,phase:'A1基础夯实',grammar:'基础疑问句 · Est-ce que / Qu\'est-ce que',grammarNote:'口语：语调↗；常用：Est-ce que + 陈述句；Qu\'est-ce que = 什么；疑问词：qui/quoi/où/quand/comment/pourquoi/combien',grammarTag:'疑问句',vocab:['où（哪里）','quand（什么时候）','comment（怎么）','pourquoi（为什么）','combien（多少）'],sentences:['Est-ce que tu parles anglais ?','Qu\'est-ce que tu manges ?','Pourquoi tu es triste ?'],listening:'jWPMYAXGMHI',exercises:[
-    {q:'「你住在哪里？」用Est-ce que形式', a:'Est-ce que tu habites où ?', tag:'疑问句'},
-    {q:'Qu\'est-ce que tu ___ ? (faire, présent)', a:'fais', tag:'疑问句'},
-    {q:'「为什么你学法语？」用法语', a:'Pourquoi tu apprends le français ? / Pourquoi est-ce que tu apprends...?', tag:'疑问句'},
-    {q:'combien 用法：___ ça coûte ?', a:'Combien est-ce que ça coûte ? / C\'est combien ?', tag:'疑问句'}
-  ]},
-  {day:13,phase:'A1基础夯实',grammar:'基础介词 à/de/en/dans/sur/sous/avec/pour',grammarNote:'à+城市=在某城市；en+阴性国名；au+阳性国名；dans=在里面(封闭空间)；sur=在上面；sous=在下面；avec=和...一起；pour=为了',grammarTag:'介词',vocab:['à Paris（在巴黎）','en France（在法国）','dans le sac（在包里）','sur la table（在桌上）','avec toi（和你一起）'],sentences:['Je suis à Shanghai en ce moment.','Les clés sont dans mon sac.','Je travaille avec mes collègues.'],listening:'wU0k0dhkD4M',exercises:[
-    {q:'Je vis ___ Chine.（阴性国名）', a:'en', tag:'介词'},
-    {q:'Le livre est ___ la table.（在上面）', a:'sur', tag:'介词'},
-    {q:'Je vais ___ Japon.（阳性国名）', a:'au', tag:'介词'},
-    {q:'Il travaille ___ son ami.（和...一起）', a:'avec', tag:'介词'}
-  ]},
-  {day:14,phase:'A1基础夯实',grammar:'aller + infinitif · 近将来时',grammarNote:'aller（现在时）+ 动词不定式 = 即将发生的事。aller变位：vais/vas/va/allons/allez/vont。否定：ne...pas包围aller',grammarTag:'近将来',vocab:['aller（去）','bientôt（很快）','demain（明天）','ce soir（今晚）','la semaine prochaine（下周）'],sentences:['Je vais partir demain matin.','Il va pleuvoir ce soir.','Nous allons manger au restaurant.'],listening:'E9xZWDixJi0',exercises:[
-    {q:'Je ___ (aller) regarder un film ce soir.', a:'vais', tag:'近将来'},
-    {q:'Elle ___ (aller) partir bientôt.', a:'va', tag:'近将来'},
-    {q:'近将来的否定：Je ___ vais ___ partir.', a:'ne / pas', tag:'近将来'},
-    {q:'Ils ___ (aller) visiter Paris.', a:'vont', tag:'近将来'}
-  ]},
-  {day:15,phase:'A1基础夯实',grammar:'venir de + inf · 否定句 ne...pas 巩固',grammarNote:'venir de + inf = 刚刚...（近过去）；否定ne...pas：ne/n\' + 动词 + pas，be合时态ne包围助动词',grammarTag:'近过去',vocab:['venir（来）','rentrer（回家）','finir（完成）','arriver（到达）','commencer（开始）'],sentences:['Je viens de finir mon travail.','Tu viens d\'arriver ?','Il ne mange pas de viande.'],listening:'3x5thw752VQ',exercises:[
-    {q:'Je ___ ___ (venir de + manger) — 刚刚吃完', a:'viens de manger', tag:'近过去'},
-    {q:'Elle ___ ___ (venir de + partir) — 她刚走', a:'vient de partir', tag:'近过去'},
-    {q:'否定：Je ___ mange ___ de fromage.', a:'ne / pas', tag:'近过去'},
-    {q:'「我不喝酒」用法语', a:'Je ne bois pas d\'alcool.', tag:'近过去'}
-  ]},
-  {day:16,phase:'A1-A2过渡',grammar:'数量表达 · un peu de / beaucoup de / trop de',grammarNote:'数量词+de后直接接名词（不加冠词）：beaucoup d\'amis(非des)；程度副词修饰形容词：très/assez/un peu/trop/pas du tout',grammarTag:'数量表达',vocab:['beaucoup（很多）','un peu（一点）','trop（太多）','assez（足够）','pas du tout（一点都不）'],sentences:['J\'ai beaucoup de travail cette semaine.','Il boit un peu d\'eau.','C\'est trop cher pour moi !'],listening:'dHPueXh7maE',exercises:[
-    {q:'J\'ai ___ ___ amis. (beaucoup / 注意联诵)', a:'beaucoup d\'', tag:'数量表达'},
-    {q:'C\'est ___ cher !（太贵了）', a:'trop', tag:'数量表达'},
-    {q:'数量词后接名词，用de还是des？', a:'de / d\'（无冠词）', tag:'数量表达'},
-    {q:'Je n\'aime ___ ___ ___ le sport.（一点都不）', a:'pas du tout', tag:'数量表达'}
-  ]},
-  {day:17,phase:'A1-A2过渡',grammar:'形容词性数配合 · 位置规则',grammarNote:'形容词随名词性数变化：+e(阴)，+s(复)，+es(阴复)；常见不规则：beau/belle，vieux/vieille，bon/bonne；BAGS类前置（Beau/Âge/Goodness/Size）',grammarTag:'形容词',vocab:['grand/grande（大）','petit/petite（小）','beau/belle（美丽）','nouveau/nouvelle（新的）','vieux/vieille（老的）'],sentences:['C\'est une belle ville très animée.','Il a un nouveau téléphone.','Elle est grande et intelligente.'],listening:'y9SdKydb68w',exercises:[
-    {q:'un ___ (grand) appartement', a:'grand（阳性）', tag:'形容词'},
-    {q:'une ___ (beau) maison', a:'belle', tag:'形容词'},
-    {q:'des filles ___ (intelligent)', a:'intelligentes', tag:'形容词'},
-    {q:'un ___ (nouveau) livre（在名词前还是后？）', a:'un nouveau livre（BAGS前置）', tag:'形容词'}
-  ]},
-  {day:18,phase:'A1-A2过渡',grammar:'复合过去时 avoir助动词（大多数动词）',grammarNote:'助动词avoir(现在时)+过去分词；PP构成：-er→é，-ir→i，-re→u；不规则PP：avoir→eu，faire→fait，prendre→pris，voir→vu，mettre→mis，dire→dit',grammarTag:'复合过去时',vocab:['hier（昨天）','la semaine dernière（上周）','déjà（已经）','manger→mangé','finir→fini'],sentences:['Hier, j\'ai mangé une pizza.','Tu as déjà vu ce film ?','Nous avons fini notre projet.'],listening:'KVDTTbXOs7Q',exercises:[
-    {q:'Hier, je ___ ___ (manger) une pomme.', a:'ai mangé', tag:'复合过去时'},
-    {q:'Elle ___ ___ (finir) ses devoirs.', a:'a fini', tag:'复合过去时'},
-    {q:'prendre 的过去分词是？', a:'pris', tag:'复合过去时'},
-    {q:'faire 的过去分词是？', a:'fait', tag:'复合过去时'}
-  ]},
-  {day:19,phase:'A1-A2过渡',grammar:'复合过去时 être助动词（14个位移动词）',grammarNote:'DR MRS VANDERTRAMP的14个动词用être；PP需配合主语性数：allé/allée/allés/allées；代动词也用être',grammarTag:'复合过去时',vocab:['aller→allé(e)','venir→venu(e)','partir→parti(e)','arriver→arrivé(e)','rester→resté(e)'],sentences:['Elle est allée au marché ce matin.','Ils sont partis en vacances hier.','Je suis resté(e) à la maison.'],listening:'T2lxaxdW2VE',exercises:[
-    {q:'Elle ___ ___ (aller) au cinéma.', a:'est allée（être+阴性配合）', tag:'复合过去时'},
-    {q:'Ils ___ ___ (partir) tôt ce matin.', a:'sont partis', tag:'复合过去时'},
-    {q:'用être还是avoir：Elle a pris / Elle est venue？两者哪个正确？', a:'两个都正确：prendre用avoir，venir用être', tag:'复合过去时'},
-    {q:'阴性主语+être：Elle ___ ___ (arriver) hier.', a:'est arrivée', tag:'复合过去时'}
-  ]},
-  {day:20,phase:'A1-A2过渡',grammar:'代动词现在时 · se lever/se coucher等',grammarNote:'代动词：se+动词；变位时代词随主语变：je me/tu te/il se/nous nous/vous vous/ils se；PC用être，PP配合性数',grammarTag:'代动词',vocab:['se lever（起床）','se coucher（睡觉）','se laver（洗漱）','se souvenir（记得）','s\'habiller（穿衣）'],sentences:['Je me lève à sept heures tous les jours.','Tu te couches à quelle heure ?','Ils se lavent les mains avant de manger.'],listening:'EkTZo_JoNa4',exercises:[
-    {q:'Je ___ lève à 7h.', a:'me', tag:'代动词'},
-    {q:'Elle ___ (se coucher, présent) tôt.', a:'se couche', tag:'代动词'},
-    {q:'Nous ___ (se lever, présent) à 8h le week-end.', a:'nous levons', tag:'代动词'},
-    {q:'代动词否定：Il ___ se lave ___ les dents.', a:'ne / pas', tag:'代动词'}
-  ]},
-  {day:21,phase:'A1-A2过渡',grammar:'未完成过去时 Imparfait · 构成与用法',grammarNote:'imparfait=nous现在时词根+ais/ais/ait/ions/iez/aient；用于：过去持续/习惯/状态/背景；唯一不规则：être→étais',grammarTag:'未完成过去时',vocab:['quand j\'étais petit（小时候）','tous les jours（每天）','d\'habitude（通常）','souvent（经常）','toujours（总是）'],sentences:['Quand j\'étais petit, j\'aimais les gâteaux.','Il faisait beau ce jour-là.','Nous mangions ensemble tous les dimanches.'],listening:'ED70j_2Ra5s',exercises:[
-    {q:'Quand j\'étais enfant, je ___ (jouer) dehors.', a:'jouais', tag:'未完成过去时'},
-    {q:'Il ___ (faire) beau ce jour-là.', a:'faisait', tag:'未完成过去时'},
-    {q:'Imparfait的词根来自哪里？', a:'nous 形式的现在时词根', tag:'未完成过去时'},
-    {q:'être 的imparfait (je形式)是？', a:'j\'étais', tag:'未完成过去时'}
-  ]},
-  {day:22,phase:'A1-A2过渡',grammar:'PC vs Imparfait · 背景vs事件',grammarNote:'画面法：Imparfait=电影背景(持续/状态)，PC=事件发生(突然/完成)。信号词：imparfait→tous les jours/souvent/quand；PC→soudain/tout à coup/d\'abord',grammarTag:'PC vs Imparfait',vocab:['soudain（突然）','pendant que（正当...时）','d\'habitude（通常）','tout à coup（突然）','ensuite（然后）'],sentences:['Je lisais quand le téléphone a sonné.','Soudain, quelqu\'un a frappé à la porte.','D\'habitude, elle prenait le bus.'],listening:'WhN87vJoPqE',exercises:[
-    {q:'Il ___ (pleuvoir) quand je ___ (sortir). 选PC还是Imparfait', a:'pleuvait（背景）/ suis sorti（事件）', tag:'PC vs Imparfait'},
-    {q:'Tous les étés, nous ___ (aller) à la mer.', a:'allions（习惯→Imparfait）', tag:'PC vs Imparfait'},
-    {q:'Soudain, un homme ___ (entrer) dans la salle.', a:'est entré（突然事件→PC）', tag:'PC vs Imparfait'},
-    {q:'背景描述选哪个时态？', a:'Imparfait（未完成过去时）', tag:'PC vs Imparfait'}
-  ]},
-  {day:23,phase:'A1-A2过渡',grammar:'否定句8种形式综合',grammarNote:'ne...pas/jamais/plus/rien/personne/aucun/ni...ni/ne...que；否定时不定/部分冠词→de；ne+元音→n\'',grammarTag:'否定句',vocab:['ne...jamais（从不）','ne...plus（不再）','ne...rien（什么都不）','ne...personne（没人）','ne...que（只）'],sentences:['Je ne mange jamais de durian.','Il ne reste plus de pain.','Elle ne voit personne.'],listening:'5si-W8nPoCY',exercises:[
-    {q:'Je ___ mange ___ de viande.（从不）', a:'ne / jamais', tag:'否定句'},
-    {q:'Il ___ reste ___ d\'eau.（不再）', a:'ne / plus', tag:'否定句'},
-    {q:'否定时 des amis 变成？', a:'de amis → d\'amis', tag:'否定句'},
-    {q:'Je ___ mange ___ des légumes.（只）', a:'ne / que', tag:'否定句'}
-  ]},
-  {day:24,phase:'A1-A2过渡',grammar:'关系代词 qui/que/où/dont',grammarNote:'qui=主语（后接动词）；que=宾语（后接主语）；où=地点/时间；dont=de+先行词；PC中que在前，PP配合COD',grammarTag:'关系代词',vocab:['qui（主语关系词）','que（宾语关系词）','où（地点/时间）','dont（de+内容）','lequel（哪一个）'],sentences:['La femme qui parle est ma prof.','Le film que j\'ai vu était super.','C\'est la ville où je suis née.'],listening:'HKYj6EAzvo8',exercises:[
-    {q:'La femme ___ parle est ma prof.（主语）', a:'qui', tag:'关系代词'},
-    {q:'Le livre ___ je lis est intéressant.（宾语）', a:'que', tag:'关系代词'},
-    {q:'La ville ___ j\'habite est belle.（地点）', a:'où', tag:'关系代词'},
-    {q:'Le film ___ tu parles est célèbre.（dont=de+）', a:'dont', tag:'关系代词'}
-  ]},
-  {day:25,phase:'A1-A2过渡',grammar:'代词 COD/COI/y/en 系统',grammarNote:'COD(le/la/les)代替直接宾语；COI(lui/leur)代替à+人；y代替à+地点/事物；en代替de+名词。全部放动词前（命令否定式也是）',grammarTag:'代词',vocab:['le/la（COD单数）','lui（COI单数）','y（à+地点）','en（de+数量）','les（COD复数）'],sentences:['Tu vois Marie ? — Oui, je la vois.','Tu parles à Paul ? — Oui, je lui parle.','Tu vas à Paris ? — J\'y vais.'],listening:'2zdvOCZYa7Y',exercises:[
-    {q:'Tu vois Marie ? — Oui, je ___ vois.', a:'la', tag:'代词'},
-    {q:'Tu parles à Paul ? — Oui, je ___ parle.', a:'lui', tag:'代词'},
-    {q:'Tu veux du pain ? — Oui, j\'___ veux.', a:'en', tag:'代词'},
-    {q:'双代词顺序：Je ___ ___ donne.（le livre à lui）', a:'le lui', tag:'代词'}
-  ]},
-  {day:26,phase:'A1-A2过渡',grammar:'简单将来时 Futur simple · 构成',grammarNote:'futur=不定式(-re去e)+ai/as/a/ons/ez/ont；不规则词根：être→ser-，avoir→aur-，aller→ir-，faire→fer-，pouvoir→pourr-',grammarTag:'将来时',vocab:['demain（明天）','la semaine prochaine（下周）','l\'année prochaine（明年）','un jour（某一天）','bientôt（很快）'],sentences:['Je partirai demain matin.','Elle sera là à 9h.','Nous irons en France l\'année prochaine.'],listening:'RiLKKIasG2Y',exercises:[
-    {q:'Je ___ (partir, futur) demain.', a:'partirai', tag:'将来时'},
-    {q:'être 的futur (il形式) 是？', a:'il sera', tag:'将来时'},
-    {q:'aller 的futur (nous形式) 是？', a:'nous irons', tag:'将来时'},
-    {q:'futur 和 futur proche 各在什么场景用？', a:'futur proche=即将发生（口语），futur simple=将来某时（正式）', tag:'将来时'}
-  ]},
-  {day:27,phase:'A1-A2过渡',grammar:'条件式 · 礼貌/建议/假设',grammarNote:'conditionnel=futur词根+imparfait词尾；je voudrais（礼貌）；tu devrais（建议）；si+imparfait→conditionnel（假设）',grammarTag:'条件式',vocab:['voudrais（想要）','devrais（应该）','pourrais（可以）','aimerais（想）','serait（会是）'],sentences:['Je voudrais un café, s\'il vous plaît.','Tu devrais te reposer.','Si j\'avais le temps, je voyagerais.'],listening:'4vdX_ywX8Fc',exercises:[
-    {q:'Je ___ (vouloir, cond.) un thé.', a:'voudrais', tag:'条件式'},
-    {q:'Tu ___ (devoir, cond.) dormir plus tôt.', a:'devrais', tag:'条件式'},
-    {q:'Si j\'avais de l\'argent, je ___ (voyager, cond.).', a:'voyagerais', tag:'条件式'},
-    {q:'Est-ce que vous ___ (pouvoir, cond.) m\'aider ?', a:'pourriez', tag:'条件式'}
-  ]},
-  {day:28,phase:'A1-A2过渡',grammar:'depuis/pendant/il y a · 时间介词对比',grammarNote:'depuis+现在时=从那时起至今（持续）；pendant+任何时态=一段时间内；il y a+PC=X时间前（时间点）',grammarTag:'depuis/pendant',vocab:['depuis（从...起）','pendant（在...期间）','il y a（...前）','longtemps（很长时间）','déjà（已经）'],sentences:['J\'apprends le français depuis six mois.','Elle a habité à Paris pendant dix ans.','Il y a deux jours, j\'ai vu ce film.'],listening:'vcXFX7uT_4k',exercises:[
-    {q:'J\'étudie le français ___ deux ans.（持续到现在）', a:'depuis', tag:'depuis/pendant'},
-    {q:'Elle a travaillé ___ trois ans.（已结束的一段时间）', a:'pendant', tag:'depuis/pendant'},
-    {q:'___ cinq jours, il est parti.（5天前）', a:'Il y a', tag:'depuis/pendant'},
-    {q:'depuis 后面接什么时态？', a:'现在时（présent）', tag:'depuis/pendant'}
-  ]},
-  {day:29,phase:'A1-A2过渡',grammar:'比较级与最高级 · plus/moins/aussi + bon→meilleur',grammarNote:'比较：plus/moins/aussi + adj + que；最高级：le/la/les + plus/moins + adj；不规则：bon→meilleur，bien→mieux',grammarTag:'比较级',vocab:['plus...que（比...更）','moins...que（比...少）','aussi...que（和...一样）','meilleur（更好）','le plus（最...）'],sentences:['Marie est plus grande que Paul.','Ce restaurant est le meilleur de la ville.','Je cours moins vite que toi.'],listening:'nQGCj8w2IXw',exercises:[
-    {q:'Marie est ___ grande ___ Paul.（比较级）', a:'plus / que', tag:'比较级'},
-    {q:'C\'est ___ ___ (le plus) beau jour de ma vie.', a:'le plus beau', tag:'比较级'},
-    {q:'bon的比较级是？（不能用plus bon！）', a:'meilleur', tag:'比较级'},
-    {q:'bien的比较级是？', a:'mieux', tag:'比较级'}
-  ]},
-  {day:30,phase:'A1-A2过渡',grammar:'命令式 · tu/nous/vous + 代词位置',grammarNote:'tu形式-ER动词去s：Parle!；否定命令代词前置：Ne me le donne pas!；肯定命令代词后置+连字符：Donne-le-moi!',grammarTag:'命令式',vocab:['Parle !（说！）','Finissons !（让我们完成！）','Attendez !（等等！）','Donne-moi（给我）','Ne dis pas（不要说）'],sentences:['Parle plus fort, s\'il te plaît !','Finissons ce travail ensemble.','Ne regarde pas ton téléphone en classe !'],listening:'nDnCTGPnhL8',exercises:[
-    {q:'(Manger, tu形式命令式) ___ tes légumes !', a:'Mange（-ER去s）', tag:'命令式'},
-    {q:'(Finir, nous形式命令式) ___ !', a:'Finissons', tag:'命令式'},
-    {q:'(Ne pas parler, vous) ___ !', a:'Ne parlez pas', tag:'命令式'},
-    {q:'肯定命令式代词：Donne ___ ! (le livre à moi)', a:'Donne-le-moi', tag:'命令式'}
-  ]},
-  {day:31,phase:'A2核心',grammar:'代动词PC · être助动词 + 配性数',grammarNote:'代动词PC：je me suis levé(e)；PP配合主语：阴性+e，复数+s，阴复+es；否定：Je ne me suis pas levé(e)',grammarTag:'代动词',vocab:['se lever→levé(e)','se coucher→couché(e)','se réveiller→réveillé(e)','se promener→promené(e)','s\'habiller→habillé(e)'],sentences:['Je me suis levée à sept heures.','Elle s\'est habillée rapidement.','Ils se sont promenés dans le parc.'],listening:'VyiqIOFYkZk',exercises:[
-    {q:'Ce matin, je ___ ___ levé(e). (代动词PC)', a:'me suis', tag:'代动词'},
-    {q:'Elles ___ ___ réveillées tôt. (代动词PC)', a:'se sont', tag:'代动词'},
-    {q:'代动词PC否定：Elle ___ ___ ___ levée.', a:'ne s\'est pas', tag:'代动词'},
-    {q:'Nous ___ ___ promenés hier.', a:'nous sommes', tag:'代动词'}
-  ]},
-  {day:32,phase:'A2核心',grammar:'COD/COI代词 + PC配合规则',grammarNote:'PC中COD在助动词前时，PP配合COD性数：La pomme que j\'ai mangée（e因为la pomme阴性）；COI在前PP不配合',grammarTag:'代词',vocab:['la（COD阴性）','les（COD复数）','lui（COI单数）','leur（COI复数）','me/te（COD/COI第一二人称）'],sentences:['La pomme que j\'ai mangée était délicieuse.','Je l\'ai vue hier.','Les pommes que j\'ai achetées sont bonnes.'],listening:'f0SCg0Inqhk',exercises:[
-    {q:'Les livres que j\'ai ___ (acheter, PP配合). → ___', a:'achetés（les livres阳性复数）', tag:'代词'},
-    {q:'La robe que j\'ai ___ (mettre). → ___', a:'mise（la robe阴性）', tag:'代词'},
-    {q:'Je ___ ai vu ce matin. (Marie)', a:'l\'（COD阴性，PC前PP配合：l\'ai vue）', tag:'代词'},
-    {q:'COI在PC前，PP配合吗？', a:'不配合（COI不触发PP配合）', tag:'代词'}
-  ]},
-  {day:33,phase:'A2核心',grammar:'部分冠词 + 否定与数量表达综合',grammarNote:'du/de la/de l\'/des；否定→de；数量词后→de；介词en后接阴性名词无冠词（en France而非en la France）',grammarTag:'冠词',vocab:['du pain（面包）','de la viande（肉）','de l\'eau（水）','assez de（足够）','trop de（太多）'],sentences:['Je mange du riz tous les jours.','Je ne mange pas de viande le lundi.','Il y a beaucoup de monde aujourd\'hui.'],listening:'hf6Q4NPQhes',exercises:[
-    {q:'Je mange ___ pain. (部分冠词阳性)', a:'du', tag:'冠词'},
-    {q:'Je ne bois pas ___ café. (否定)', a:'de', tag:'冠词'},
-    {q:'Il y a beaucoup ___ monde.', a:'de（数量词后无冠词）', tag:'冠词'},
-    {q:'un kilo ___ pommes（de还是des？）', a:'de（数量表达后用de）', tag:'冠词'}
-  ]},
-  {day:34,phase:'A2核心',grammar:'口语场景 · 购物/问路生存句',grammarNote:'购物：Je voudrais / C\'est combien ? / Je peux essayer ?；问路：Pour aller à... / Tournez à gauche/droite / Continuez tout droit',grammarTag:'口语',vocab:['essayer（试穿）','la taille（尺码）','tourner（转）','tout droit（直走）','combien（多少钱）'],sentences:['Je peux essayer cette veste, s\'il vous plaît ?','Pour aller à la gare, s\'il vous plaît ?','Tournez à droite après le feu.'],listening:'4BNypRPg-x0',exercises:[
-    {q:'购物时询问价格：C\'est ___ ?', a:'combien', tag:'口语'},
-    {q:'问路套路：Pour ___ à la gare ?', a:'aller', tag:'口语'},
-    {q:'Tournez à ___ (左) au prochain carrefour.', a:'gauche', tag:'口语'},
-    {q:'「我在找M号的夹克」用法语', a:'Je cherche une veste en taille M.', tag:'口语'}
-  ]},
-  {day:35,phase:'A2核心',grammar:'口语场景 · 餐厅/健康/医生',grammarNote:'餐厅：Je voudrais commander... / L\'addition, s\'il vous plaît；看医生：J\'ai mal à + 身体部位；avoir de la fièvre',grammarTag:'口语',vocab:['commander（点菜）','l\'addition（账单）','avoir mal à（...疼）','la fièvre（发烧）','une ordonnance（处方）'],sentences:['Je voudrais commander une salade, s\'il vous plaît.','J\'ai très mal à la gorge depuis hier.','Vous devriez prendre ce médicament.'],listening:'b80BHXgGJx0',exercises:[
-    {q:'J\'___ mal à la tête.', a:'ai', tag:'口语'},
-    {q:'Je tousse ___ trois jours.（持续到现在）', a:'depuis', tag:'depuis/pendant'},
-    {q:'医生建议用哪个时态？', a:'Vous devriez + inf（条件式）', tag:'条件式'},
-    {q:'「我想要结账」用法语', a:'L\'addition, s\'il vous plaît.', tag:'口语'}
-  ]},
-  {day:36,phase:'A2核心',grammar:'写作练习 · 非正式信件（邀请/感谢/道歉）',grammarNote:'非正式信件：Salut/Cher(e) + 姓名 + 目的 + 正文 + 结尾(À bientôt/Amitiés) + 签名；60词以上',grammarTag:'写作',vocab:['inviter（邀请）','remercier（感谢）','s\'excuser（道歉）','malheureusement（不幸地）','confirmer（确认）'],sentences:['Je t\'invite à ma fête d\'anniversaire samedi soir.','Je te remercie pour ton aide précieuse.','Je suis désolé(e) de ne pas pouvoir venir.'],listening:'Idqdfdmriws',exercises:[
-    {q:'非正式信件开头常用语', a:'Salut Marie ! / Chère Anna,', tag:'写作'},
-    {q:'邀请信中如何给出时间地点', a:'C\'est le samedi 15 juin à 20h chez moi.', tag:'写作'},
-    {q:'道歉信中如何提替代方案', a:'Par contre / Mais je suis libre dimanche.', tag:'写作'},
-    {q:'非正式信件结尾常用语', a:'À bientôt ! / Amitiés, [prénom]', tag:'写作'}
-  ]},
-  {day:37,phase:'A2核心',grammar:'写作练习 · 正式信件（咨询/投诉）',grammarNote:'正式信：Madame/Monsieur + 目的(Je vous écris pour...) + 请求 + 结尾(Cordialement/Dans l\'attente)；使用vous',grammarTag:'写作',vocab:['renseignement（信息）','se plaindre（投诉）','cordial（友善）','dans l\'attente（期待中）','vous remercie（感谢您）'],sentences:['Je vous écris pour avoir des informations sur vos cours.','Je voudrais savoir quels sont les horaires.','Je vous remercie d\'avance pour votre réponse.'],listening:'4vdX_ywX8Fc',exercises:[
-    {q:'正式信件开头', a:'Madame, Monsieur,', tag:'写作'},
-    {q:'正式信件咨询开头句', a:'Je vous écris pour avoir des informations sur...', tag:'写作'},
-    {q:'正式信件结尾', a:'Cordialement, [nom] / Dans l\'attente de votre réponse...', tag:'写作'},
-    {q:'正式信件中用 tu 还是 vous？', a:'vous（必须！正式场合用vous）', tag:'写作'}
-  ]},
-  {day:38,phase:'A2核心',grammar:'阅读理解 · 广告/邮件题型技巧',grammarNote:'广告题：找关键信息（价格/日期/条件/限制）；邮件题：判断目的（邀请/拒绝/询问）；先看问题再找对应段落',grammarTag:'综合',vocab:['une annonce（广告）','un courriel（邮件）','gratuit（免费）','réservation（预订）','tarif（价格）'],sentences:['L\'entrée est gratuite pour les moins de 18 ans.','Veuillez confirmer votre réservation avant le 5 juin.','On cherche un(e) colocataire pour une chambre meublée.'],listening:'vcXFX7uT_4k',exercises:[
-    {q:'gratuit 的意思是？', a:'免费', tag:'综合'},
-    {q:'veuillez + infinitif 表示？', a:'请...（礼貌请求）', tag:'综合'},
-    {q:'阅读理解策略：先看___再看___', a:'先看问题，再找对应关键词', tag:'综合'},
-    {q:'une annonce de colocation 是？', a:'合租广告', tag:'综合'}
-  ]},
-  {day:39,phase:'A2核心',grammar:'听力专项 · 数字/时间/地点听写',grammarNote:'听力陷阱：否定句（别漏ne/pas）；数字（70/80/90）；同义表达；转折处(mais/par contre)藏着真实信息',grammarTag:'听力',vocab:['soixante-dix（70）','quatre-vingts（80）','quatre-vingt-dix（90）','d\'après（根据）','selon（根据）'],sentences:['Le train part à vingt et une heures trente.','Ça coûte quatre-vingt-cinq euros.','D\'après le message, la réunion est annulée.'],listening:'nQGCj8w2IXw',exercises:[
-    {q:'75 用法语怎么说？', a:'soixante-quinze', tag:'听力'},
-    {q:'92 用法语怎么说？', a:'quatre-vingt-douze', tag:'听力'},
-    {q:'14h45 用法语怎么说？', a:'quatorze heures quarante-cinq', tag:'听力'},
-    {q:'听力中转折处常用词有？', a:'mais / par contre / en fait / cependant', tag:'听力'}
-  ]},
-  {day:40,phase:'A2核心',grammar:'名词复数规则 + 动词组别综合回顾',grammarNote:'复数：+s（一般）；-al→-aux；-eau/-au→+x；-s/-x/-z结尾不变；动词：第1组(-er)，第2组(-ir/issons)，第3组（不规则）',grammarTag:'综合',vocab:['un animal→des animaux','un bateau→des bateaux','un festival→des festivals','un œil→des yeux','un homme→des hommes'],sentences:['Les animaux du zoo sont superbes.','Ces bateaux sont magnifiques.','Les yeux de mon chat sont verts.'],listening:'nDnCTGPnhL8',exercises:[
-    {q:'un animal → des ___', a:'animaux', tag:'综合'},
-    {q:'un bateau → des ___', a:'bateaux', tag:'综合'},
-    {q:'un festival → des ___ （例外！）', a:'festivals（不变，加s）', tag:'综合'},
-    {q:'un œil → des ___ （不规则！）', a:'yeux', tag:'综合'}
-  ]},
-  {day:41,phase:'A2核心',grammar:'高频场景口语 · 自我介绍1分30秒',grammarNote:'自我介绍框架：姓名+年龄+国籍/城市 → 工作/学习 → 家庭 → 爱好 → 学法语的原因。每段1-2句，共5-6句',grammarTag:'口语',vocab:['se présenter（自我介绍）','profession（职业）','loisir（爱好）','depuis（从...起）','parce que（因为）'],sentences:['Je m\'appelle Rita. J\'ai ... ans et j\'habite à Shanghai.','Je travaille chez Amer Sports.','J\'apprends le français parce que j\'aime le vin.'],listening:'VyiqIOFYkZk',exercises:[
-    {q:'Je m\'___ (s\'appeler) Rita.', a:'appelle', tag:'口语'},
-    {q:'J\'___ (apprendre) le français depuis six mois.', a:'apprends', tag:'口语'},
-    {q:'自我介绍必提的5个内容', a:'姓名+年龄+职业+爱好+学法语原因', tag:'口语'},
-    {q:'「因为我喜欢法国文化」用法语', a:'parce que j\'aime la culture française', tag:'口语'}
-  ]},
-  {day:42,phase:'A2核心',grammar:'DELF口语 · 独白Monologue结构',grammarNote:'独白框架：Introduction(15s) → Point1+例子(40s) → Point2+例子(40s) → Opinion personnelle(25s) → Conclusion(10s)；连接词：d\'abord/ensuite/enfin',grammarTag:'口语',vocab:['d\'abord（首先）','ensuite（然后）','enfin（最后）','personnellement（个人来说）','par exemple（例如）'],sentences:['Je vais vous parler de ma ville natale.','D\'abord, Shanghai est une ville très moderne.','Personnellement, j\'adore les musées.'],listening:'f0SCg0Inqhk',exercises:[
-    {q:'独白开头标准句', a:'Je vais vous parler de [sujet].', tag:'口语'},
-    {q:'d\'abord / ensuite / enfin 是什么词类', a:'顺序连接词', tag:'口语'},
-    {q:'如何在口语中表达个人意见', a:'Personnellement / Pour moi / À mon avis, je pense que...', tag:'口语'},
-    {q:'独白结尾套路', a:'Voilà ce que je voulais dire sur [sujet].', tag:'口语'}
-  ]},
-  {day:43,phase:'A2核心',grammar:'DELF口语 · 角色扮演Interaction',grammarNote:'角色扮演（3-4min）：问信息/提要求/有问题/讨价还价/结束对话。核心：能完成交际任务',grammarTag:'口语',vocab:['réserver（预订）','annuler（取消）','se plaindre（投诉）','renseignement（咨询）','réclamation（投诉）'],sentences:['Excusez-moi, je voudrais réserver une chambre.','Il y a un problème avec ma commande.','Est-ce que vous pourriez me rembourser ?'],listening:'hf6Q4NPQhes',exercises:[
-    {q:'礼貌询问句式', a:'Je voudrais savoir... / Est-ce que vous pourriez m\'indiquer...?', tag:'口语'},
-    {q:'遇到问题的套路句', a:'Excusez-moi, il y a un problème.../ Ce n\'est pas ce que j\'ai commandé.', tag:'口语'},
-    {q:'角色扮演评分最看重什么', a:'能完成交际任务（沟通到位）', tag:'口语'},
-    {q:'结束对话套路', a:'Merci beaucoup ! / Bonne journée !', tag:'口语'}
-  ]},
-  {day:44,phase:'A2核心',grammar:'写作综合 · 连接词与时态一致性',grammarNote:'写作加分连接词：de plus(另外)，cependant(然而)，c\'est pourquoi(因此)，en effet(确实)；时态一致：过去→PC+Imparfait，请求→条件式',grammarTag:'写作',vocab:['de plus（另外）','cependant（然而）','c\'est pourquoi（因此）','en effet（确实）','notamment（尤其是）'],sentences:['De plus, je voudrais savoir si...','Cependant, je ne peux pas venir.','C\'est pourquoi je vous écris aujourd\'hui.'],listening:'4BNypRPg-x0',exercises:[
-    {q:'de plus 的意思', a:'另外/此外', tag:'写作'},
-    {q:'cependant 的意思和用法', a:'然而（正式书面语转折词）', tag:'写作'},
-    {q:'描述过去旅行用哪两个时态混合', a:'PC（事件）+ Imparfait（背景/状态）', tag:'写作'},
-    {q:'正式信件表达请求用哪个时态', a:'条件式（je voudrais / pourriez-vous）', tag:'写作'}
-  ]},
-  {day:45,phase:'A2核心',grammar:'综合弱点回顾 · 错题本专攻',grammarNote:'今天根据错题本找出3个最常犯的错误，集中攻克。重点检查：助动词选择/PP配合/否定冠词变化',grammarTag:'综合',vocab:['réviser（复习）','consolider（巩固）','maîtriser（掌握）','progrès（进步）','confiance（自信）'],sentences:['J\'ai beaucoup progressé en français.','Je dois consolider mes points faibles.','Avec de la pratique, je vais maîtriser cela.'],listening:'b80BHXgGJx0',exercises:[
-    {q:'PC vs Imparfait：Hier, je ___ (marcher) quand je ___ (tomber).', a:'marchais / suis tombé(e)', tag:'PC vs Imparfait'},
-    {q:'代动词PC：Elle ___ ___ (se lever) à 8h.', a:'s\'est levée', tag:'代动词'},
-    {q:'否定：Je n\'ai pas ___ voiture.', a:'de', tag:'否定句'},
-    {q:'depuis vs il y a：J\'étudie ___ 2024. / Je suis parti ___ deux ans.', a:'depuis / il y a', tag:'depuis/pendant'}
-  ]},
-  {day:46,phase:'DELF专项',grammar:'听力Part1 · 日常对话题型精讲',grammarNote:'听力考试结构：Part1日常对话3道，Part2广播/留言4道，Part3文化/信息5道。每段录音听两遍。',grammarTag:'听力',vocab:['comprendre（理解）','écouter（听）','noter（记录）','identifier（辨认）','répéter（重复）'],sentences:['Écoutez et répondez aux questions.','Vous allez entendre deux enregistrements.','Cochez la bonne réponse.'],listening:'Idqdfdmriws',exercises:[
-    {q:'听力考试每段录音听几遍？', a:'两遍', tag:'听力'},
-    {q:'听力陷阱：否定句中 ne...pas 的坑是？', a:'一定要注意否定意思，不要误听为肯定', tag:'听力'},
-    {q:'cochez la bonne réponse 意思', a:'选出正确答案（打勾）', tag:'听力'},
-    {q:'听力中如何处理听不清的词？', a:'根据上下文推断，先完成能答的题', tag:'听力'}
-  ]},
-  {day:47,phase:'DELF专项',grammar:'听力Part2&3 · 广播/信息类题型',grammarNote:'广播类：注意数字/时间/地点；vrai/faux题：逐字比对；同义词陷阱：maison=logement/domicile',grammarTag:'听力',vocab:['une émission（节目）','une publicité（广告）','vrai/faux（对/错）','d\'après（根据）','selon（根据）'],sentences:['D\'après le message, la réunion est reportée.','Vrai ou faux : le musée est ouvert le lundi.','Selon la météo, il fera beau demain.'],listening:'Az351m2PeqU',exercises:[
-    {q:'vrai/faux题：如何判断？', a:'找录音中对应句子，逐字比对', tag:'听力'},
-    {q:'d\'après / selon 意思', a:'根据...', tag:'听力'},
-    {q:'听力中同义表达：maison = ？', a:'logement / domicile / habitation', tag:'听力'},
-    {q:'听力时间管理：每题答题时间约？', a:'约30秒（先读题15秒，听时答题15秒）', tag:'听力'}
-  ]},
-  {day:48,phase:'DELF专项',grammar:'阅读Part1 · 实用文档（广告/表格）',grammarNote:'阅读策略：先扫描问题，再快速定位答案。广告类：找价格/时间/条件/联系方式',grammarTag:'综合',vocab:['une offre（优惠）','un tarif（价格）','réserver（预订）','disponible（可用的）','valable（有效的）'],sentences:['Offre valable jusqu\'au 30 juin.','Tarif préférentiel pour les étudiants.','Réservez en ligne avant le 15 mai.'],listening:'jWPMYAXGMHI',exercises:[
-    {q:'valable 的意思？', a:'有效的（valable jusqu\'au = 有效至）', tag:'综合'},
-    {q:'tarif préférentiel 是什么意思？', a:'优惠价格', tag:'综合'},
-    {q:'阅读实用文档找答案步骤', a:'先看问题→定位段落→找关键词→对答案', tag:'综合'},
-    {q:'réserver en ligne 的意思？', a:'在线预订', tag:'综合'}
-  ]},
-  {day:49,phase:'DELF专项',grammar:'阅读Part2 · 信件/邮件题型',grammarNote:'邮件阅读：判断目的（邀请/拒绝/投诉/咨询）；注意情态动词表达的语气；找时间地点细节',grammarTag:'综合',vocab:['répondre（回复）','confirmer（确认）','annuler（取消）','proposer（提议）','demander（要求）'],sentences:['Je vous écris pour confirmer notre rendez-vous.','Suite à votre message, je souhaite...','En attente de votre réponse...'],listening:'wU0k0dhkD4M',exercises:[
-    {q:'在邮件阅读中如何判断邮件目的？', a:'看开头句：Je vous écris pour... / Suite à...', tag:'综合'},
-    {q:'suite à votre message 意思？', a:'根据您的消息/鉴于您的来信', tag:'综合'},
-    {q:'阅读题：细节题（时间/地点）策略', a:'扫描数字、专有名词、时间词', tag:'综合'},
-    {q:'confirmer 的名词形式', a:'la confirmation', tag:'综合'}
-  ]},
-  {day:50,phase:'DELF专项',grammar:'写作Part1 · 非正式信件模板',grammarNote:'写作评分：字数(60+)，完成任务，语法，词汇，连贯。非正式：开头Salut/Cher+结尾Amitiés/À bientôt',grammarTag:'写作',vocab:['organiser（组织）','participer（参加）','proposer（提议）','confirmer（确认）','apporter（带来）'],sentences:['Je t\'écris pour t\'inviter à ma fête.','Est-ce que tu pourrais apporter quelque chose ?','Dis-moi si tu es libre ce soir !'],listening:'E9xZWDixJi0',exercises:[
-    {q:'邀请信必须包含的4个信息', a:'日期+时间+地点+活动内容', tag:'写作'},
-    {q:'「你能带一瓶酒吗」（礼貌）', a:'Est-ce que tu pourrais apporter une bouteille de vin ?', tag:'写作'},
-    {q:'「期待你的回复」', a:'J\'attends ta réponse. / Dis-moi si tu es libre.', tag:'写作'},
-    {q:'写完信后检查什么？', a:'字数(60+)，时态，冠词，性数配合', tag:'写作'}
-  ]},
-  {day:51,phase:'DELF专项',grammar:'写作Part2 · 叙述/描述类（旅行/活动）',grammarNote:'叙事写作：用PC+Imparfait混合；Imparfait描述天气/背景，PC描述具体事件；结构：时间背景→事件→感受→总结',grammarTag:'写作',vocab:['inoubliable（难忘的）','magnifique（壮观的）','découvrir（发现）','se souvenir（记得）','partager（分享）'],sentences:['L\'été dernier, je suis allé(e) en Bretagne.','Il faisait beau et la mer était magnifique.','C\'était un voyage inoubliable !'],listening:'3x5thw752VQ',exercises:[
-    {q:'旅行写作时态选择：天气描述用___', a:'Imparfait（背景状态）', tag:'写作'},
-    {q:'旅行写作时态选择：具体活动用___', a:'Passé composé（完成事件）', tag:'写作'},
-    {q:'「难忘的旅行」用法语', a:'un voyage inoubliable', tag:'写作'},
-    {q:'写作结构：背景→___→感受→总结', a:'事件（用PC描述）', tag:'写作'}
-  ]},
-  {day:52,phase:'DELF专项',grammar:'口语Part1 · 自我介绍模拟（录音）',grammarNote:'Part1 Entretien dirigé（1min30）：自我介绍+考官追问3-4题。重点：流利自然，不用完美。',grammarTag:'口语',vocab:['nationalité（国籍）','profession（职业）','loisir（爱好）','langue（语言）','famille（家庭）'],sentences:['Je m\'appelle Rita. J\'ai ... ans et je viens de Shanghai.','Je travaille dans le secteur du sport.','J\'apprends le français parce que j\'aime la culture française.'],listening:'dHPueXh7maE',exercises:[
-    {q:'口语自我介绍：开头句', a:'Je m\'appelle... / Bonjour, je me présente : je m\'appelle...', tag:'口语'},
-    {q:'口语自我介绍：学法语原因', a:'J\'apprends le français parce que... / pour...', tag:'口语'},
-    {q:'考官追问「你喜欢做什么」口语答案框架', a:'J\'aime [activité]. Par exemple... / Le week-end, je...', tag:'口语'},
-    {q:'口语评分：最重要的一点是', a:'能完成交际任务，敢开口比发音完美重要', tag:'口语'}
-  ]},
-  {day:53,phase:'DELF专项',grammar:'口语Part2 · 独白模拟 · ma ville',grammarNote:'Part2 Monologue（2min，10min准备）：抽到话题后准备提纲，2分钟连续说。高频话题：城市/日常/假期/理想职业',grammarTag:'口语',vocab:['moderne（现代的）','animé(e)（热闹的）','culturel(le)（文化的）','pittoresque（风景如画）','cosmopolite（国际化的）'],sentences:['Shanghai est une grande métropole très moderne.','D\'abord, j\'aime les musées et les galeries d\'art.','En conclusion, c\'est une ville dynamique où j\'aime vivre.'],listening:'y9SdKydb68w',exercises:[
-    {q:'独白高频话题之一「我的城市」开头句', a:'Je vais vous parler de ma ville, Shanghai.', tag:'口语'},
-    {q:'如何在独白中说「首先」', a:'D\'abord / Tout d\'abord / Premièrement', tag:'口语'},
-    {q:'如何在独白中表达个人喜好', a:'Ce que j\'aime surtout, c\'est... / J\'adore particulièrement...', tag:'口语'},
-    {q:'独白结尾套路', a:'En conclusion / Voilà ce que je voulais dire sur [sujet].', tag:'口语'}
-  ]},
-  {day:54,phase:'DELF专项',grammar:'口语Part3 · 角色扮演模拟 · 旅馆预订',grammarNote:'Part3 Interaction（3-4min）：考官扮演服务员/店员/邻居等。你完成指定任务（预订/投诉/询问/购买）',grammarTag:'口语',vocab:['une chambre（房间）','pour deux nuits（两晚）','le petit-déjeuner inclus（含早餐）','un problème（问题）','le remboursement（退款）'],sentences:['Je voudrais réserver une chambre double pour deux nuits.','Est-ce que le petit-déjeuner est inclus ?','Je suis désolé(e), mais il y a un problème avec ma chambre.'],listening:'KVDTTbXOs7Q',exercises:[
-    {q:'预订旅馆：想要预订一间双人房', a:'Je voudrais réserver une chambre double.', tag:'口语'},
-    {q:'询问早餐是否含在内', a:'Est-ce que le petit-déjeuner est inclus ?', tag:'口语'},
-    {q:'提出问题套路', a:'Excusez-moi, il y a un problème... / Je ne suis pas satisfait(e) de...', tag:'口语'},
-    {q:'结束对话：感谢 + 告别', a:'Merci beaucoup pour votre aide. Bonne journée !', tag:'口语'}
-  ]},
-  {day:55,phase:'DELF专项',grammar:'四项综合模拟 · 计时练习',grammarNote:'今天模拟完整考试流程：听力（约25min）→阅读（45min）→写作（45min）。口语单独练习录音2分钟',grammarTag:'综合',vocab:['épreuve（考试项目）','performance（表现）','améliorer（改善）','préparer（准备）','réussir（成功）'],sentences:['Je me prépare sérieusement pour le DELF A2.','J\'ai amélioré mon niveau depuis deux mois.','Je vais réussir l\'examen le 29 juin !'],listening:'T2lxaxdW2VE',exercises:[
-    {q:'DELF A2 四个考试项目是什么？', a:'听力（Compréhension orale）+阅读（CO écrite）+写作（Production écrite）+口语（Production orale）', tag:'综合'},
-    {q:'写作考试时间？', a:'45分钟，两篇各60+词', tag:'综合'},
-    {q:'口语考试总时长约', a:'约6-8分钟（不含准备时间）', tag:'综合'},
-    {q:'今天完成综合模拟后，哪个部分最需要加强？', a:'（根据自己实际情况回答）', tag:'综合'}
-  ]},
-  {day:56,phase:'模拟冲刺',grammar:'全真模拟 · 听力+阅读 限时训练',grammarNote:'模拟考试1：听力25分钟（不暂停）+阅读45分钟。严格计时，模拟真实考场环境。对答案分析错误类型',grammarTag:'综合',vocab:['simuler（模拟）','minuterie（计时器）','analyser（分析）','les erreurs（错误）','le score（分数）'],sentences:['Je commence la simulation maintenant.','Je chronomètre chaque partie.','J\'analyse mes erreurs après.'],listening:'EkTZo_JoNa4',exercises:[
-    {q:'模拟考试策略：先做哪部分？', a:'先做有把握的题，难题最后做', tag:'综合'},
-    {q:'听力做完要做什么？', a:'对答案，标记错题，分析错误类型', tag:'综合'},
-    {q:'阅读中遇到不认识的词怎么办？', a:'根据上下文猜义，不要卡在一个词上', tag:'综合'},
-    {q:'听力Part1、2、3各几道题？', a:'约3道、4道、5道（具体看真题版本）', tag:'综合'}
-  ]},
-  {day:57,phase:'模拟冲刺',grammar:'全真模拟 · 写作+口语 限时训练',grammarNote:'模拟考试2：写作45分钟（2篇各限时22分钟）+口语录音练习。写完检查：字数/时态/性数配合/连贯性',grammarTag:'综合',vocab:['rédiger（撰写）','relire（重读）','vérifier（检查）','cohérence（连贯性）','brouillon（草稿）'],sentences:['Je rédige mon brouillon d\'abord.','Je relis et corrige avant de rendre.','Je vérifie : 60 mots minimum !'],listening:'ED70j_2Ra5s',exercises:[
-    {q:'写作考试：先写草稿还是直接写正稿？', a:'可以先写简短提纲，再直接写正稿节省时间', tag:'写作'},
-    {q:'写作检查清单（3项必查）', a:'字数60+、时态正确、性数配合', tag:'写作'},
-    {q:'口语录音练习：自我介绍几分钟？', a:'约1分30秒', tag:'口语'},
-    {q:'写作评分四个维度', a:'任务完成度+词汇丰富性+语法正确性+连贯性', tag:'写作'}
-  ]},
-  {day:58,phase:'模拟冲刺',grammar:'错题集中复习 · 薄弱点专攻',grammarNote:'今天只做错题本里的题。不做新题。每道错题再做一遍，直到能正确为止。重点：PC助动词/PP配合/否定冠词',grammarTag:'综合',vocab:['consolider（巩固）','maîtriser（掌握）','point faible（弱点）','acquis（已掌握的）','erreur（错误）'],sentences:['Je révise mes erreurs encore une fois.','Cette fois, je connais la réponse.','Je maîtrise ce point maintenant !'],listening:'WhN87vJoPqE',exercises:[
-    {q:'PC vs Imparfait综合：Hier soir, je ___ (lire) quand elle ___ (appeler).', a:'lisais / a appelé', tag:'PC vs Imparfait'},
-    {q:'代动词PC：Nous ___ ___ (se lever) tôt ce matin.', a:'nous sommes levé(e)s', tag:'代动词'},
-    {q:'否定：Je n\'ai pas ___ argent.', a:'d\'', tag:'否定句'},
-    {q:'条件式：Si tu avais faim, tu ___ (manger).', a:'mangerais', tag:'条件式'}
-  ]},
-  {day:59,phase:'模拟冲刺',grammar:'考前词汇 + 语法速记卡',grammarNote:'今天只做轻量复习：看词汇表、复习连接词表、快速过一遍语法卡片标题。不做新题，保持大脑清醒',grammarTag:'综合',vocab:['confiant(e)（自信的）','prêt(e)（准备好的）','calme（镇定的）','concentré(e)（专注的）','courageux（勇敢的）'],sentences:['Je suis prêt(e) pour l\'examen.','Je fais confiance à ma préparation.','Demain, je vais réussir !'],listening:'5si-W8nPoCY',exercises:[
-    {q:'连接词：D\'abord / ___ / Enfin', a:'Ensuite', tag:'综合'},
-    {q:'礼貌请求套路', a:'Je voudrais... / Est-ce que vous pourriez...?', tag:'综合'},
-    {q:'旅行描述时态', a:'PC（事件）+ Imparfait（背景）', tag:'综合'},
-    {q:'Bonne ___ pour demain !（祝好运）', a:'chance', tag:'综合'}
-  ]},
-  {day:60,phase:'模拟冲刺',grammar:'考试当天 · 放松+回顾策略',grammarNote:'考试当天：早起吃好早餐，提前到达考场。听力不要紧张，先读题；写作先写提纲；口语深呼吸，敢开口！',grammarTag:'综合',vocab:['Bonne chance !（祝好运！）','courage（勇气）','réussir（成功）','félicitations（祝贺）','bravo（干得好）'],sentences:['J\'ai travaillé dur pendant 60 jours.','Je suis prêt(e) et confiant(e).','Je vais réussir le DELF A2 !'],listening:'HKYj6EAzvo8',exercises:[
-    {q:'今天最重要的事是什么？', a:'带好证件+考场提前到达+深呼吸放松', tag:'综合'},
-    {q:'口语考试第一句话', a:'Bonjour, je m\'appelle...（微笑，自信开口）', tag:'口语'},
-    {q:'60天的努力值得吗？', a:'当然！Vous avez fait de grands progrès ! 加油！', tag:'综合'},
-    {q:'DELF A2 考试日期', a:'2026年6月29日', tag:'综合'}
-  ]},
+  // ══════ 阶段1：A1基础夯实 (D1-15) ══════
+  {day:1,phase:'A1基础夯实',grammar:'字母与发音 · 省音与联诵',grammarNote:'法语26字母，哑音字母（词尾s/t/d不发音），je+元音→j\'（省音），词尾辅音+元音→联诵',grammarTag:'字母发音',grammarExercises:[{q:'je aime → ___ (省音)',a:'j\'aime',tag:'字母发音'},{q:'les + amis → 联诵读作 les-___mis',a:'z',tag:'字母发音'},{q:'petit 的词尾 t 发音吗？',a:'不发音（哑音）',tag:'字母发音'}],listening:'4vdX_ywX8Fc',listeningTitle:'French Alphabet & Pronunciation',listeningQuestion:'Combien de lettres dans l\'alphabet français ?',listeningAnswer:'26',speakingScenario:'你第一次见到一位法国朋友',speakingPrompt:'Bonjour ! Comment tu t\'appelles ?',speakingKeywords:['Bonjour','m\'appelle','Rita','enchanté(e)'],speakingModel:'Bonjour ! Je m\'appelle Rita. Je suis chinoise. Enchantée !',writingSujet:'Complétez la fiche : Nom, Nationalité, Ville',writingKeywords:['nom','nationalité','ville','Chine','Shanghai'],writingModelEssay:'Je m\'appelle Rita. Je suis chinoise. J\'habite à Shanghai.'},
+  {day:2,phase:'A1基础夯实',grammar:'数字0-20 + 年龄表达',grammarNote:'0-20必背；年龄用avoir：J\'ai 25 ans（不用être）；日期：le 2 mai 2026',grammarTag:'数字',grammarExercises:[{q:'「我15岁」用法语怎么说？',a:'J\'ai quinze ans.',tag:'数字'},{q:'17 用法语怎么说？',a:'dix-sept',tag:'数字'},{q:'3+5=? 用法语写出等式',a:'trois plus cinq égal huit',tag:'数字'}],listening:'vcXFX7uT_4k',listeningTitle:'French Numbers 0-20',listeningQuestion:'Quel âge a la personne dans le dialogue ?',listeningAnswer:'25 ans',speakingScenario:'有人问你的年龄',speakingPrompt:'Tu as quel âge ?',speakingKeywords:['ai','ans','vingt'],speakingModel:'J\'ai vingt-cinq ans. Et toi ?',writingSujet:'Écrivez votre âge et votre date de naissance en français.',writingKeywords:['ans','naissance','mai','2026'],writingModelEssay:'J\'ai vingt-cinq ans. Ma date de naissance est le 15 mars 2001.'},
+  {day:3,phase:'A1基础夯实',grammar:'数字21-100 · 70/80/90特殊',grammarNote:'70=soixante-dix(60+10)；80=quatre-vingts(4×20)；81=quatre-vingt-un(去s)；90=quatre-vingt-dix',grammarTag:'数字',grammarExercises:[{q:'75 用法语怎么说？',a:'soixante-quinze',tag:'数字'},{q:'81 用法语怎么说？（注意s）',a:'quatre-vingt-un',tag:'数字'},{q:'92 用法语怎么说？',a:'quatre-vingt-douze',tag:'数字'}],listening:'nQGCj8w2IXw',listeningTitle:'French Numbers 21-100',listeningQuestion:'Combien coûte le billet de train ?',listeningAnswer:'85 euros',speakingScenario:'你在商店买东西，询问价格',speakingPrompt:'Ça coûte combien ?',speakingKeywords:['euros','combien','coûte','cher'],speakingModel:'Ça coûte quatre-vingt-cinq euros. C\'est un peu cher !',writingSujet:'Écrivez les prix de trois articles en français.',writingKeywords:['euros','coûte','soixante','quatre-vingts','cent'],writingModelEssay:'Le livre coûte quinze euros. Le sac coûte soixante-dix euros. Le manteau coûte cent euros.'},
+  {day:4,phase:'A1基础夯实',grammar:'être 完整变位 + 身份/状态',grammarNote:'être: suis/es/est/sommes/êtes/sont。身份(Je suis chinoise)，状态(Elle est fatiguée)，地点(Je suis à Paris)',grammarTag:'être/avoir',grammarExercises:[{q:'Je ___ (être) chinoise.',a:'suis',tag:'être/avoir'},{q:'Vous ___ (être) professeur ?',a:'êtes',tag:'être/avoir'},{q:'Ils ___ (être) fatigués.',a:'sont',tag:'être/avoir'}],listening:'nDnCTGPnhL8',listeningTitle:'Verb Être - Identity & State',listeningQuestion:'Quelle est la profession de la femme ?',listeningAnswer:'Elle est médecin',speakingScenario:'自我介绍：姓名、国籍、职业',speakingPrompt:'Présentez-vous ! Qui êtes-vous ?',speakingKeywords:['m\'appelle','suis','chinoise','travaille','Shanghai'],speakingModel:'Je m\'appelle Rita. Je suis chinoise. J\'habite à Shanghai. Je travaille chez Amer Sports.',writingSujet:'Écrivez 3 phrases avec être : identité, état, lieu.',writingKeywords:['suis','est','sommes','fatigué','Paris'],writingModelEssay:'Je suis étudiante en français. Mon ami est fatigué aujourd\'hui. Nous sommes à la bibliothèque.'},
+  {day:5,phase:'A1基础夯实',grammar:'avoir 完整变位 + 常用短语',grammarNote:'avoir: ai/as/a/avons/avez/ont。固定搭配：avoir faim/soif/chaud/froid/peur/besoin de',grammarTag:'être/avoir',grammarExercises:[{q:'J\'___ (avoir) vingt-cinq ans.',a:'ai',tag:'être/avoir'},{q:'Elle ___ (avoir) soif.',a:'a',tag:'être/avoir'},{q:'「我饿了」用法语怎么说？',a:'J\'ai faim.',tag:'être/avoir'}],listening:'VyiqIOFYkZk',listeningTitle:'Verb Avoir - Age & Feelings',listeningQuestion:'Qu\'est-ce que la personne veut boire ?',listeningAnswer:'De l\'eau (elle a soif)',speakingScenario:'在咖啡厅，服务员问你要什么',speakingPrompt:'Vous avez faim ? Vous voulez quelque chose ?',speakingKeywords:['faim','voudrais','café','croissant','s\'il vous plaît'],speakingModel:'Oui, j\'ai un peu faim. Je voudrais un café et un croissant, s\'il vous plaît.',writingSujet:'Décrivez comment vous vous sentez aujourd\'hui (3 phrases avec avoir).',writingKeywords:['faim','soif','chaud','froid','sommeil'],writingModelEssay:'Aujourd\'hui, j\'ai faim parce que je n\'ai pas mangé. J\'ai aussi soif. Il fait chaud, j\'ai chaud !'},
+  {day:6,phase:'A1基础夯实',grammar:'星期/月份/季节 + 时间',grammarNote:'星期、月份都小写。季节介词：au printemps, en été/automne/hiver。Il est + 数字 + heure(s)',grammarTag:'日期时间',grammarExercises:[{q:'「今天是星期五」用法语',a:'Aujourd\'hui, c\'est vendredi.',tag:'日期时间'},{q:'「在冬天」用哪个介词？',a:'en hiver',tag:'日期时间'},{q:'14:30 用法语怎么说？',a:'Il est quatorze heures trente.',tag:'日期时间'}],listening:'f0SCg0Inqhk',listeningTitle:'Days, Months & Seasons',listeningQuestion:'Quel jour sommes-nous dans le dialogue ?',listeningAnswer:'Lundi 4 mai',speakingScenario:'有人问你今天星期几、几点了',speakingPrompt:'Quel jour sommes-nous ? Et quelle heure est-il ?',speakingKeywords:['lundi','mai','heures','demi'],speakingModel:'Nous sommes le lundi 4 mai. Il est neuf heures et demie.',writingSujet:'Écrivez la date d\'aujourd\'hui et votre saison préférée en français.',writingKeywords:['aujourd\'hui','mai','saison','été','automne'],writingModelEssay:'Aujourd\'hui, c\'est le lundi 4 mai 2026. Ma saison préférée est l\'automne parce qu\'il fait frais.'},
+  {day:7,phase:'A1基础夯实',grammar:'-ER动词现在时 · parler/aimer',grammarNote:'-ER动词：词根+e/es/e/ons/ez/ent。je+元音动词省音：j\'aime(非je aime)',grammarTag:'现在时',grammarExercises:[{q:'Je ___ (parler) français.',a:'parle',tag:'现在时'},{q:'Elle ___ (habiter) à Paris.',a:'habite',tag:'现在时'},{q:'Vous ___ (travailler) où ?',a:'travaillez',tag:'现在时'}],listening:'hf6Q4NPQhes',listeningTitle:'-ER Verbs Present Tense',listeningQuestion:'Où habite la personne ?',listeningAnswer:'À Paris',speakingScenario:'你遇到一个法国人，互相介绍居住地和工作',speakingPrompt:'Tu habites où ? Et tu travailles dans quel domaine ?',speakingKeywords:['habite','Shanghai','travaille','aime','français'],speakingModel:'J\'habite à Shanghai. Je travaille dans le sport. J\'aime apprendre le français.',writingSujet:'Écrivez 3 phrases avec des verbes -ER : habiter, aimer, travailler.',writingKeywords:['habite','aime','travaille','Paris','beaucoup'],writingModelEssay:'J\'habite à Shanghai. J\'aime beaucoup le cinéma français. Mon ami travaille dans une grande entreprise.'},
+  {day:8,phase:'A1基础夯实',grammar:'-IR/-RE动词 + aller/faire',grammarNote:'-IR：finir→finis/finis/finit/finissons/finissez/finissent。-RE：vendre→vends/vends/vend/vendons/vendez/vendent。aller/faire必须背',grammarTag:'现在时',grammarExercises:[{q:'Tu ___ (finir) à quelle heure ?',a:'finis',tag:'现在时'},{q:'Il ___ (faire) du sport tous les jours.',a:'fait',tag:'现在时'},{q:'Vous ___ (aller) où ?',a:'allez',tag:'现在时'}],listening:'4BNypRPg-x0',listeningTitle:'-IR/-RE Verbs & Irregular',listeningQuestion:'Qu\'est-ce que la personne fait le week-end ?',listeningAnswer:'Elle fait du sport et va au cinéma',speakingScenario:'朋友问你的日常安排',speakingPrompt:'Qu\'est-ce que tu fais le week-end ? Tu vas où ?',speakingKeywords:['fais','sport','vais','cinéma','parc'],speakingModel:'Le week-end, je fais du sport le matin et je vais au parc l\'après-midi. Parfois, je vais au cinéma.',writingSujet:'Écrivez ce que vous faites un jour typique (3 verbes différents).',writingKeywords:['finis','fais','vais','travail','soir'],writingModelEssay:'Je finis mon travail à 18 heures. Ensuite, je fais du sport pendant une heure. Le soir, je vais au restaurant avec des amis.'},
+  {day:9,phase:'A1基础夯实',grammar:'冠词系统 · 定/不定/部分',grammarNote:'定冠词(le/la/l\'/les)=特指。不定冠词(un/une/des)=不特指。部分冠词(du/de la/de l\')=不可数。否定→de',grammarTag:'冠词',grammarExercises:[{q:'Je mange ___ pain.（部分冠词）',a:'du',tag:'冠词'},{q:'Je n\'ai pas ___ voiture.（否定→de）',a:'de',tag:'冠词'},{q:'Il boit ___ eau.（元音前）',a:'de l\'',tag:'冠词'}],listening:'b80BHXgGJx0',listeningTitle:'French Articles - Definite & Partitive',listeningQuestion:'Qu\'est-ce que la personne boit le matin ?',listeningAnswer:'Du café (partitive)',speakingScenario:'你在超市买东西，描述你要买的食物',speakingPrompt:'Qu\'est-ce que vous achetez au supermarché ?',speakingKeywords:['du','de la','des','pain','lait'],speakingModel:'J\'achète du pain, de la viande, des œufs et du lait. Je ne prends pas de fromage.',writingSujet:'Écrivez votre liste de courses avec les bons articles (du/de la/des).',writingKeywords:['du','de la','des','pain','légumes'],writingModelEssay:'Je vais acheter du pain, de la salade, des tomates et du fromage. Je n\'achète pas de viande aujourd\'hui.'},
+  {day:10,phase:'A1基础夯实',grammar:'指示形容词 ce/cet/cette/ces',grammarNote:'ce(阳单)→cet(元音/哑h前)→cette(阴单)→ces(复数)。元音/哑h前必须用cet',grammarTag:'指示形容词',grammarExercises:[{q:'___ homme (cet/ce/cette) est gentil.',a:'Cet',tag:'指示形容词'},{q:'___ femme (ce/cette/cet) est belle.',a:'Cette',tag:'指示形容词'},{q:'为什么homme前用cet不用ce？',a:'homme以哑音h开头，视为元音',tag:'指示形容词'}],listening:'Idqdfdmriws',listeningTitle:'Demonstrative Adjectives',listeningQuestion:'De quel hôtel parlent-ils ?',listeningAnswer:'Cet hôtel près de la gare',speakingScenario:'你在逛街，指出你想买的东西',speakingPrompt:'Vous aimez cette robe ? Ou ce pantalon ?',speakingKeywords:['cette','ce','joli','aime','préfère'],speakingModel:'Cette robe est très jolie ! Mais je préfère ce pantalon bleu. Ces chaussures sont belles aussi.',writingSujet:'Écrivez 3 phrases avec ce/cette/ces pour décrire des objets.',writingKeywords:['ce','cette','ces','livre','robe'],writingModelEssay:'Ce livre est intéressant. Cette robe est élégante. Ces chaussures sont confortables mais un peu chères.'},
+  {day:11,phase:'A1基础夯实',grammar:'所有格 mon/ma/mes, ton/ta/tes...',grammarNote:'所有格随名词性数变。阴性元音前用mon(mon amie)。notre/votre/leur不区分性别',grammarTag:'所有格',grammarExercises:[{q:'___ (mon/ma/mes) amie s\'appelle Marie.',a:'Mon',tag:'所有格'},{q:'Elle parle à ___ (son/sa) professeur.',a:'son',tag:'所有格'},{q:'Ils ont perdu ___ (leur/leurs) clés.',a:'leurs',tag:'所有格'}],listening:'Az351m2PeqU',listeningTitle:'Possessive Adjectives',listeningQuestion:'De qui est le livre dans le dialogue ?',listeningAnswer:'C\'est son livre (à elle)',speakingScenario:'介绍你的家人：父母、兄弟姐妹',speakingPrompt:'Parlez-moi de votre famille !',speakingKeywords:['mon','ma','mes','père','mère'],speakingModel:'Mon père s\'appelle Paul. Ma mère est professeur. Mes parents habitent à Shanghai. Mon frère travaille à Beijing.',writingSujet:'Décrivez votre famille en 4 phrases avec mon/ma/mes/son/sa.',writingKeywords:['mon','ma','mes','famille','parents'],writingModelEssay:'Ma famille est petite. Mon père est ingénieur. Ma mère est professeur. Mes grands-parents habitent à la campagne.'},
+  {day:12,phase:'A1基础夯实',grammar:'基础疑问句 · Est-ce que',grammarNote:'口语：语调↗。Est-ce que + 陈述句。Qu\'est-ce que = 什么。疑问词：qui/quoi/où/quand/comment/pourquoi/combien',grammarTag:'疑问句',grammarExercises:[{q:'「你住在哪里？」用Est-ce que形式',a:'Est-ce que tu habites où ?',tag:'疑问句'},{q:'Qu\'est-ce que tu ___ ? (faire)',a:'fais',tag:'疑问句'},{q:'「为什么你学法语？」用法语',a:'Pourquoi tu apprends le français ?',tag:'疑问句'}],listening:'jWPMYAXGMHI',listeningTitle:'French Questions - Est-ce que',listeningQuestion:'Pourquoi la personne apprend-elle le français ?',listeningAnswer:'Pour son travail',speakingScenario:'你在法语课上，老师问你问题',speakingPrompt:'Pourquoi est-ce que vous apprenez le français ?',speakingKeywords:['apprends','parce que','aime','culture','français'],speakingModel:'J\'apprends le français parce que j\'aime la culture française et le vin. C\'est aussi utile pour mon travail.',writingSujet:'Écrivez 3 questions que vous voulez poser à un Français.',writingKeywords:['Est-ce que','Pourquoi','Où','Comment','Quel'],writingModelEssay:'Est-ce que vous aimez voyager ? Pourquoi les Français aiment-ils le fromage ? Où est-ce que je peux acheter un bon croissant ?'},
+  {day:13,phase:'A1基础夯实',grammar:'基础介词 à/de/en/dans/sur/avec',grammarNote:'à+城市；en+阴性国名；au+阳性国名；dans=在封闭空间里；sur=在上面；avec=和一起；pour=为了',grammarTag:'介词',grammarExercises:[{q:'Je vis ___ Chine.（阴性国名）',a:'en',tag:'介词'},{q:'Le livre est ___ la table.（在上面）',a:'sur',tag:'介词'},{q:'Je vais ___ Japon.（阳性国名）',a:'au',tag:'介词'}],listening:'wU0k0dhkD4M',listeningTitle:'Basic Prepositions - à, de, en, dans',listeningQuestion:'Où sont les clés dans le dialogue ?',listeningAnswer:'Dans le sac (sur la table)',speakingScenario:'有人问你东西在哪里',speakingPrompt:'Où sont mes clés ? Et mon téléphone ?',speakingKeywords:['sur','dans','sous','table','sac'],speakingModel:'Les clés sont sur la table. Le téléphone est dans ton sac. Le livre est sous le canapé.',writingSujet:'Décrivez où se trouvent 3 objets dans votre chambre.',writingKeywords:['sur','dans','sous','à côté de','devant'],writingModelEssay:'Mon ordinateur est sur le bureau. Mon sac est à côté de la porte. Le chat dort sous la chaise. Le miroir est devant la fenêtre.'},
+  {day:14,phase:'A1基础夯实',grammar:'近将来时 aller + infinitif',grammarNote:'aller(现在时)+不定式=即将发生。aller: vais/vas/va/allons/allez/vont。否定ne...pas包围aller',grammarTag:'近将来',grammarExercises:[{q:'Je ___ (aller) regarder un film ce soir.',a:'vais',tag:'近将来'},{q:'Elle ___ (aller) partir bientôt.',a:'va',tag:'近将来'},{q:'否定：Je ___ vais ___ partir.',a:'ne / pas',tag:'近将来'}],listening:'E9xZWDixJi0',listeningTitle:'Futur Proche - aller + infinitive',listeningQuestion:'Qu\'est-ce qu\'ils vont faire ce week-end ?',listeningAnswer:'Ils vont visiter un musée',speakingScenario:'朋友问你的周末计划',speakingPrompt:'Qu\'est-ce que tu vas faire ce week-end ?',speakingKeywords:['vais','aller','manger','film','parc'],speakingModel:'Ce week-end, je vais aller au parc avec des amis. Le soir, on va manger au restaurant. Dimanche, je vais regarder un film français.',writingSujet:'Écrivez 3 choses que vous allez faire demain.',writingKeywords:['vais','aller','manger','étudier','acheter'],writingModelEssay:'Demain, je vais me lever tôt. Je vais étudier le français pendant deux heures. L\'après-midi, je vais aller au supermarché pour acheter des fruits.'},
+  {day:15,phase:'A1基础夯实',grammar:'近过去 venir de + 否定句巩固',grammarNote:'venir de + inf = 刚刚。否定ne...pas：ne/n\'+动词+pas。复合时态ne包围助动词',grammarTag:'近过去',grammarExercises:[{q:'Je ___ ___ manger.（刚刚吃完）',a:'viens de',tag:'近过去'},{q:'否定：Je ___ mange ___ de fromage.',a:'ne / pas',tag:'近过去'},{q:'「我不喝酒」用法语',a:'Je ne bois pas d\'alcool.',tag:'近过去'}],listening:'3x5thw752VQ',listeningTitle:'Passé Récent - venir de',listeningQuestion:'Qu\'est-ce que la personne vient de faire ?',listeningAnswer:'Elle vient de finir son travail',speakingScenario:'有人问你是否完成了某件事',speakingPrompt:'Tu as fini tes devoirs de français ?',speakingKeywords:['viens','finir','déjà','oui','maintenant'],speakingModel:'Oui, je viens de finir mes devoirs. Je ne suis pas fatiguée, je peux continuer à étudier.',writingSujet:'Écrivez 3 phrases avec venir de + infinitif.',writingKeywords:['viens','vient','venons','finir','arriver'],writingModelEssay:'Je viens de finir mon dîner. Mon ami vient d\'arriver à la gare. Nous venons de commencer un nouveau projet au travail.'},
+
+  // ══════ 阶段2：A1-A2过渡 (D16-30) ══════
+  {day:16,phase:'A1-A2过渡',grammar:'数量表达 · beaucoup de / trop de',grammarNote:'数量词+de后直接接名词(不加冠词)：beaucoup d\'amis(非des)。程度副词：très/assez/un peu/trop',grammarTag:'数量表达',grammarExercises:[{q:'J\'ai ___ ___ amis.（beaucoup）',a:'beaucoup d\'',tag:'数量表达'},{q:'C\'est ___ cher !（太贵了）',a:'trop',tag:'数量表达'},{q:'数量词后接名词用de还是des？',a:'de（无冠词）',tag:'数量表达'}],listening:'dHPueXh7maE',listeningTitle:'Quantities - beaucoup de, trop de',listeningQuestion:'Pourquoi la personne ne peut-elle pas acheter le sac ?',listeningAnswer:'Il est trop cher',speakingScenario:'你在市场买东西，讨价还价',speakingPrompt:'Ce sac coûte 100 euros. Vous le prenez ?',speakingKeywords:['trop','cher','beaucoup','euros','moins'],speakingModel:'C\'est trop cher ! Vous avez quelque chose de moins cher ? Je peux payer 60 euros maximum.',writingSujet:'Décrivez votre ville : il y a beaucoup de..., un peu de...',writingKeywords:['beaucoup','un peu','trop','monde','arbres'],writingModelEssay:'À Shanghai, il y a beaucoup de monde et beaucoup de voitures. Il y a un peu de pollution mais aussi beaucoup de beaux parcs. Il y a trop de bruit parfois.'},
+  {day:17,phase:'A1-A2过渡',grammar:'形容词性数配合 · BAGS前置',grammarNote:'形容词随名词性数：+e(阴)，+s(复)，+es(阴复)。不规则：beau/belle, vieux/vieille。BAGS类前置(Beau/Âge/Goodness/Size)',grammarTag:'形容词',grammarExercises:[{q:'un ___ (grand) appartement',a:'grand',tag:'形容词'},{q:'une ___ (beau) maison',a:'belle',tag:'形容词'},{q:'des filles ___ (intelligent)',a:'intelligentes',tag:'形容词'}],listening:'y9SdKydb68w',listeningTitle:'Adjective Agreement',listeningQuestion:'Comment est la maison dans le dialogue ?',listeningAnswer:'Elle est grande et belle',speakingScenario:'描述你的房子或公寓',speakingPrompt:'Comment est votre appartement ?',speakingKeywords:['grand','petit','beau','moderne','confortable'],speakingModel:'Mon appartement n\'est pas très grand mais il est moderne et confortable. J\'ai une belle vue sur la ville.',writingSujet:'Décrivez une personne que vous admirez (4 adjectifs).',writingKeywords:['intelligent','gentil','beau','sympathique','drôle'],writingModelEssay:'Ma meilleure amie est très intelligente et gentille. Elle est aussi très belle et toujours souriante. Elle a de longs cheveux noirs et de grands yeux.'},
+  {day:18,phase:'A1-A2过渡',grammar:'复合过去时 · avoir助动词',grammarNote:'助动词avoir(现在时)+过去分词。PP：-er→é, -ir→i, -re→u。不规则PP：eu, fait, pris, vu, mis, dit',grammarTag:'复合过去时',grammarExercises:[{q:'Hier, je ___ ___ (manger) une pomme.',a:'ai mangé',tag:'复合过去时'},{q:'Elle ___ ___ (finir) ses devoirs.',a:'a fini',tag:'复合过去时'},{q:'faire的过去分词是？',a:'fait',tag:'复合过去时'}],listening:'KVDTTbXOs7Q',listeningTitle:'Passé Composé with Avoir',listeningQuestion:'Qu\'est-ce qu\'elle a mangé hier ?',listeningAnswer:'Elle a mangé une pizza',speakingScenario:'朋友问你昨天做了什么',speakingPrompt:'Qu\'est-ce que tu as fait hier ?',speakingKeywords:['ai','mangé','regardé','travaillé','hier'],speakingModel:'Hier, j\'ai travaillé toute la journée. Le soir, j\'ai mangé au restaurant avec des amis. Après, j\'ai regardé un film français.',writingSujet:'Racontez votre journée d\'hier (4 verbes au PC).',writingKeywords:['ai','mangé','vu','fini','pris'],writingModelEssay:'Hier, je me suis levée à 7 heures. J\'ai pris un café et j\'ai mangé du pain. Au travail, j\'ai fini un projet important. Le soir, j\'ai vu un film au cinéma.'},
+  {day:19,phase:'A1-A2过渡',grammar:'复合过去时 · être助动词',grammarNote:'DR MRS VANDERTRAMP的14个动词用être。PP配合主语性数：allé/allée/allés/allées。代动词也用être',grammarTag:'复合过去时',grammarExercises:[{q:'Elle ___ ___ (aller) au cinéma.',a:'est allée',tag:'复合过去时'},{q:'Ils ___ ___ (partir) tôt.',a:'sont partis',tag:'复合过去时'},{q:'prendre用avoir还是venir用être？',a:'prendre→avoir, venir→être',tag:'复合过去时'}],listening:'T2lxaxdW2VE',listeningTitle:'Passé Composé with Être',listeningQuestion:'Où est-elle allée hier ?',listeningAnswer:'Elle est allée au marché',speakingScenario:'讲述你上次旅行去了哪里',speakingPrompt:'Tu es allé(e) où pendant tes dernières vacances ?',speakingKeywords:['suis','allé(e)','parti(e)','resté(e)','vacances'],speakingModel:'Je suis allée à Paris l\'année dernière. Je suis restée une semaine. Je suis partie de Shanghai et je suis arrivée à Paris le matin.',writingSujet:'Racontez un voyage récent (être + PC, attention à lapplication).',writingKeywords:['suis','allé(e)','arrivé(e)','resté(e)','parti(e)'],writingModelEssay:'L\'été dernier, je suis allée en France avec ma famille. Nous sommes partis de Shanghai le 1er juillet. Nous sommes arrivés à Paris le soir. Nous sommes restés dix jours. C\'était magnifique !'},
+  {day:20,phase:'A1-A2过渡',grammar:'代动词现在时 · se lever/se coucher',grammarNote:'代动词：se+动词。变位时代词随主语：je me/tu te/il se/nous nous/vous vous/ils se。PC用être',grammarTag:'代动词',grammarExercises:[{q:'Je ___ lève à 7h.',a:'me',tag:'代动词'},{q:'Elle ___ (se coucher, présent) tôt.',a:'se couche',tag:'代动词'},{q:'Nous ___ (se lever, présent) à 8h.',a:'nous levons',tag:'代动词'}],listening:'EkTZo_JoNa4',listeningTitle:'Pronominal Verbs Present',listeningQuestion:'À quelle heure se lève-t-elle ?',listeningAnswer:'Elle se lève à 7 heures',speakingScenario:'描述你的早晨日常',speakingPrompt:'Qu\'est-ce que tu fais le matin ?',speakingKeywords:['lève','lave','habille','douche','petit déjeuner'],speakingModel:'Le matin, je me lève à sept heures. Je me lave le visage et je me brosse les dents. Ensuite, je m\'habille et je prends mon petit déjeuner.',writingSujet:'Décrivez votre routine du matin (4 verbes pronominaux).',writingKeywords:['lève','lave','habille','couche','réveille'],writingModelEssay:'Chaque matin, je me réveille à 6h30. Je me lève à 7h. Je me lave et je m\'habille rapidement. Je me prépare un café et je pars au travail à 8h.'},
+  {day:21,phase:'A1-A2过渡',grammar:'未完成过去时 Imparfait',grammarNote:'imparfait=nous现在时词根+ais/ais/ait/ions/iez/aient。用于过去持续/习惯/状态。唯一不规则：être→étais',grammarTag:'未完成过去时',grammarExercises:[{q:'Quand j\'étais enfant, je ___ (jouer) dehors.',a:'jouais',tag:'未完成过去时'},{q:'Il ___ (faire) beau ce jour-là.',a:'faisait',tag:'未完成过去时'},{q:'être的imparfait(je)是？',a:'j\'étais',tag:'未完成过去时'}],listening:'ED70j_2Ra5s',listeningTitle:'Imparfait - Past Habits',listeningQuestion:'Que faisait-elle quand elle était petite ?',listeningAnswer:'Elle jouait dans le jardin',speakingScenario:'描述你小时候的爱好',speakingPrompt:'Qu\'est-ce que tu aimais faire quand tu étais petit(e) ?',speakingKeywords:['étais','aimais','jouais','regardais','allais'],speakingModel:'Quand j\'étais petite, j\'aimais dessiner. Je jouais souvent dans le parc avec mes amis. Le week-end, j\'allais chez mes grands-parents.',writingSujet:'Décrivez votre enfance (5 verbes à l\'imparfait).',writingKeywords:['étais','habitais','aimais','allais','faisais'],writingModelEssay:'Quand j\'étais enfant, j\'habitais dans une petite ville. J\'allais à l\'école à pied. J\'aimais beaucoup les cours de dessin. Mes parents étaient très gentils. Nous voyagions souvent pendant les vacances.'},
+  {day:22,phase:'A1-A2过渡',grammar:'PC vs Imparfait · 背景vs事件',grammarNote:'Imparfait=电影背景(持续/状态)，PC=事件(突然/完成)。信号词：tous les jours→Imparfait，soudain→PC',grammarTag:'PC vs Imparfait',grammarExercises:[{q:'Il ___ (pleuvoir) quand je ___ (sortir).',a:'pleuvait / suis sorti(e)',tag:'PC vs Imparfait'},{q:'Tous les étés, nous ___ (aller) à la mer.',a:'allions',tag:'PC vs Imparfait'},{q:'Soudain, un homme ___ (entrer).',a:'est entré',tag:'PC vs Imparfait'}],listening:'WhN87vJoPqE',listeningTitle:'PC vs Imparfait - Background vs Event',listeningQuestion:'Que faisait-elle quand le téléphone a sonné ?',listeningAnswer:'Elle lisait un livre',speakingScenario:'讲述一个意外事件（背景+事件）',speakingPrompt:'Racontez-moi une surprise que vous avez eue !',speakingKeywords:['étais','faisais','soudain','ai','vu'],speakingModel:'Je marchais dans la rue quand soudain, j\'ai vu mon ancien professeur. Il faisait beau et les gens se promenaient. J\'étais très surprise !',writingSujet:'Racontez une anecdote en mélangeant PC et Imparfait.',writingKeywords:['faisait','marchais','ai','soudain','suis'],writingModelEssay:'Il faisait très froid ce jour-là. Je marchais dans la rue et je pensais à mes vacances. Soudain, j\'ai rencontré une amie que je n\'avais pas vue depuis longtemps. Nous sommes allées boire un café ensemble.'},
+  {day:23,phase:'A1-A2过渡',grammar:'否定句8种形式 · ne...jamais/plus/rien',grammarNote:'ne...pas/jamais/plus/rien/personne/aucun/ni...ni/ne...que。否定时不定/部分冠词→de',grammarTag:'否定句',grammarExercises:[{q:'Je ___ mange ___ de viande.（从不）',a:'ne / jamais',tag:'否定句'},{q:'Il ___ reste ___ d\'eau.（不再）',a:'ne / plus',tag:'否定句'},{q:'Je ___ mange ___ des légumes.（只）',a:'ne / que',tag:'否定句'}],listening:'5si-W8nPoCY',listeningTitle:'Negation - 8 Forms',listeningQuestion:'Qu\'est-ce qu\'elle ne mange jamais ?',listeningAnswer:'Elle ne mange jamais de viande',speakingScenario:'在餐厅，服务员问你有什么不吃',speakingPrompt:'Vous avez des allergies ? Quelque chose que vous ne mangez pas ?',speakingKeywords:['mange','jamais','viande','rien','plus'],speakingModel:'Je ne mange jamais de viande, je suis végétarienne. Je ne bois plus de café le soir. Je ne veux rien de sucré, merci.',writingSujet:'Écrivez 4 phrases avec différentes négations (jamais, plus, rien, personne).',writingKeywords:['jamais','plus','rien','personne','que'],writingModelEssay:'Je ne fume jamais. Je ne bois plus d\'alcool. Je n\'ai rien compris dans ce film. Il n\'y a personne dans la salle. Je ne mange que des légumes le soir.'},
+  {day:24,phase:'A1-A2过渡',grammar:'关系代词 qui/que/où/dont',grammarNote:'qui=主语(后接动词)；que=宾语(后接主语)；où=地点/时间；dont=de+先行词',grammarTag:'关系代词',grammarExercises:[{q:'La femme ___ parle est ma prof.（主语）',a:'qui',tag:'关系代词'},{q:'Le livre ___ je lis est intéressant.（宾语）',a:'que',tag:'关系代词'},{q:'La ville ___ j\'habite est belle.（地点）',a:'où',tag:'关系代词'}],listening:'HKYj6EAzvo8',listeningTitle:'Relative Pronouns - qui, que, où',listeningQuestion:'De quel film parlent-ils ?',listeningAnswer:'Le film qu\'ils ont vu hier',speakingScenario:'描述你最喜欢的电影或书',speakingPrompt:'Quel est le film que tu as préféré cette année ?',speakingKeywords:['film','que','ai','vu','qui'],speakingModel:'Le film que j\'ai vu récemment est un film français. L\'actrice qui joue dedans est formidable. C\'est l\'histoire d\'une femme qui voyage à Paris.',writingSujet:'Écrivez 3 phrases avec qui, que, où pour décrire un lieu ou une personne.',writingKeywords:['qui','que','où','personne','ville'],writingModelEssay:'La personne qui m\'a aidée est très gentille. Le restaurant que je préfère est près de chez moi. Paris est la ville où je voudrais habiter un jour.'},
+  {day:25,phase:'A1-A2过渡',grammar:'代词 COD/COI/y/en 系统',grammarNote:'COD(le/la/les)代替直接宾语；COI(lui/leur)代替à+人；y代替à+地点/事物；en代替de+名词。放动词前',grammarTag:'代词',grammarExercises:[{q:'Tu vois Marie ? — Oui, je ___ vois.',a:'la',tag:'代词'},{q:'Tu parles à Paul ? — Oui, je ___ parle.',a:'lui',tag:'代词'},{q:'Tu veux du pain ? — Oui, j\'___ veux.',a:'en',tag:'代词'}],listening:'2zdvOCZYa7Y',listeningTitle:'Object Pronouns - le, la, lui, y, en',listeningQuestion:'Est-ce qu\'elle va à Paris ?',listeningAnswer:'Oui, elle y va demain',speakingScenario:'对话练习：回答关于物品的问题',speakingPrompt:'Tu as vu mon téléphone ? Tu vas au supermarché ?',speakingKeywords:['ai','vu','y','vais','en'],speakingModel:'Oui, je l\'ai vu sur la table. Et oui, j\'y vais maintenant. Tu veux du pain ? J\'en achète.',writingSujet:'Répondez à 3 questions en utilisant des pronoms COD/COI/y/en.',writingKeywords:['le','lui','y','en','donne'],writingModelEssay:'— Tu connais ce restaurant ? — Oui, je le connais bien. — Tu as parlé au directeur ? — Oui, je lui ai parlé. — Tu penses à tes vacances ? — Oui, j\'y pense souvent.'},
+  {day:26,phase:'A1-A2过渡',grammar:'简单将来时 Futur simple',grammarNote:'futur=不定式(-re去e)+ai/as/a/ons/ez/ont。不规则词根：ser-/aur-/ir-/fer-/pourr-',grammarTag:'将来时',grammarExercises:[{q:'Je ___ (partir, futur) demain.',a:'partirai',tag:'将来时'},{q:'être的futur(il)是？',a:'il sera',tag:'将来时'},{q:'aller的futur(nous)是？',a:'nous irons',tag:'将来时'}],listening:'RiLKKIasG2Y',listeningTitle:'Futur Simple',listeningQuestion:'Quand partiront-ils en vacances ?',listeningAnswer:'Ils partiront la semaine prochaine',speakingScenario:'说说你明年的计划',speakingPrompt:'Qu\'est-ce que tu feras l\'année prochaine ?',speakingKeywords:['voyagerai','apprendrai','parlerai','irai','serai'],speakingModel:'L\'année prochaine, je voyagerai en France. Je parlerai mieux français. Je serai plus confiante pour l\'examen DELF.',writingSujet:'Écrivez 4 phrases au futur simple sur vos projets.',writingKeywords:['partirai','visiterai','mangerai','serai','apprendrai'],writingModelEssay:'L\'été prochain, je partirai en Europe. Je visiterai Paris et Lyon. Je mangerai des croissants tous les matins. Je serai très heureuse de pratiquer mon français.'},
+  {day:27,phase:'A1-A2过渡',grammar:'条件式 · 礼貌/建议/假设',grammarNote:'conditionnel=futur词根+imparfait词尾。je voudrais(礼貌)，tu devrais(建议)。si+imparfait→conditionnel',grammarTag:'条件式',grammarExercises:[{q:'Je ___ (vouloir, cond.) un thé.',a:'voudrais',tag:'条件式'},{q:'Tu ___ (devoir, cond.) dormir plus.',a:'devrais',tag:'条件式'},{q:'Si j\'avais de l\'argent, je ___ (voyager).',a:'voyagerais',tag:'条件式'}],listening:'4vdX_ywX8Fc',listeningTitle:'Conditionnel - Politeness & Advice',listeningQuestion:'Que voudrait-elle commander ?',listeningAnswer:'Elle voudrait un café',speakingScenario:'在餐厅礼貌地点菜',speakingPrompt:'Bonjour, qu\'est-ce que vous prendrez ?',speakingKeywords:['voudrais','pourrais','apporter','addition','s\'il vous plaît'],speakingModel:'Je voudrais le menu du jour, s\'il vous plaît. Et pourriez-vous m\'apporter de l\'eau ? Je voudrais aussi l\'addition après.',writingSujet:'Écrivez une demande polie (conditionnel) pour réserver une chambre d\'hôtel.',writingKeywords:['voudrais','pourriez','aimerais','réserver','chambre'],writingModelEssay:'Bonjour, je voudrais réserver une chambre pour deux nuits, du 15 au 17 juin. Pourriez-vous me confirmer le prix ? J\'aimerais aussi savoir si le petit-déjeuner est inclus. Merci d\'avance.'},
+  {day:28,phase:'A1-A2过渡',grammar:'depuis/pendant/il y a · 时间对比',grammarNote:'depuis+现在时=持续到现在；pendant+任何时态=一段时间内；il y a+PC=时间点前',grammarTag:'depuis/pendant',grammarExercises:[{q:'J\'étudie le français ___ deux ans.',a:'depuis',tag:'depuis/pendant'},{q:'Elle a travaillé ___ trois ans.',a:'pendant',tag:'depuis/pendant'},{q:'___ cinq jours, il est parti.',a:'Il y a',tag:'depuis/pendant'}],listening:'vcXFX7uT_4k',listeningTitle:'Depuis, Pendant, Il y a',listeningQuestion:'Depuis quand apprend-elle le français ?',listeningAnswer:'Depuis six mois',speakingScenario:'面试时被问到你的法语学习经历',speakingPrompt:'Depuis quand apprenez-vous le français ?',speakingKeywords:['apprends','depuis','mois','pendant','il y a'],speakingModel:'J\'apprends le français depuis six mois. Avant, j\'ai étudié l\'anglais pendant dix ans. Il y a deux ans, j\'ai décidé de commencer le français.',writingSujet:'Écrivez 3 phrases : une avec depuis, une avec pendant, une avec il y a.',writingKeywords:['depuis','pendant','il y a','ans','mois'],writingModelEssay:'J\'habite à Shanghai depuis cinq ans. J\'ai vécu à Beijing pendant trois ans. Il y a deux mois, j\'ai commencé un nouveau travail.'},
+  {day:29,phase:'A1-A2过渡',grammar:'比较级与最高级 · meilleur/mieux',grammarNote:'比较：plus/moins/aussi+adj+que。最高级：le/la/les+plus/moins+adj。不规则：bon→meilleur，bien→mieux',grammarTag:'比较级',grammarExercises:[{q:'Marie est ___ grande ___ Paul.',a:'plus / que',tag:'比较级'},{q:'bon的比较级是？（不能用plus bon！）',a:'meilleur',tag:'比较级'},{q:'bien的比较级是？',a:'mieux',tag:'比较级'}],listening:'nQGCj8w2IXw',listeningTitle:'Comparatives & Superlatives',listeningQuestion:'Quel restaurant est le meilleur selon le dialogue ?',listeningAnswer:'Le restaurant italien (meilleur que le français)',speakingScenario:'比较两个你去过的城市',speakingPrompt:'Quelle ville préférez-vous : Shanghai ou Beijing ?',speakingKeywords:['plus','que','moins','meilleur','mieux'],speakingModel:'Shanghai est plus moderne que Beijing. Mais Beijing a plus d\'histoire. La nourriture est meilleure à Shanghai selon moi. Je dors mieux à Shanghai.',writingSujet:'Comparez deux choses que vous aimez (films, livres, sports).',writingKeywords:['plus','que','moins','meilleur','aussi'],writingModelEssay:'Le cinéma français est plus intéressant que le cinéma américain. Les films français sont moins rapides mais plus profonds. Pour moi, le meilleur film est "Le Fabuleux Destin d\'Amélie Poulain".'},
+  {day:30,phase:'A1-A2过渡',grammar:'命令式 · tu/nous/vous + 代词位置',grammarNote:'tu形式-ER动词去s：Parle!。肯定命令代词后置+连字符。否定命令代词前置',grammarTag:'命令式',grammarExercises:[{q:'(Manger, tu命令式) ___ tes légumes !',a:'Mange',tag:'命令式'},{q:'(Finir, nous命令式) ___ !',a:'Finissons',tag:'命令式'},{q:'(Ne pas parler, vous) ___ !',a:'Ne parlez pas',tag:'命令式'}],listening:'nDnCTGPnhL8',listeningTitle:'Imperative - Giving Instructions',listeningQuestion:'Qu\'est-ce que le professeur demande aux étudiants ?',listeningAnswer:'Écoutez et répétez',speakingScenario:'给一个迷路的游客指路',speakingPrompt:'Excusez-moi, pour aller à la gare, s\'il vous plaît ?',speakingKeywords:['tournez','continuez','allez','droite','gauche'],speakingModel:'Continuez tout droit pendant 200 mètres. Tournez à gauche au feu. Allez jusqu\'au bout de la rue. La gare est sur votre droite.',writingSujet:'Donnez 3 conseils à un ami qui veut apprendre le français (impératif).',writingKeywords:['Écoute','Regarde','Parle','Ne...pas','Lis'],writingModelEssay:'Écoute des podcasts français tous les jours. Regarde des films français avec sous-titres. Parle avec des natifs, n\'aie pas peur de faire des erreurs ! Lis des livres simples en français.'},
+
+  // ══════ 阶段3：A2核心 (D31-45) ══════
+  {day:31,phase:'A2核心',grammar:'代动词PC · être + 性数配合',grammarNote:'代动词PC：je me suis levé(e)。PP配合主语。否定：Je ne me suis pas levé(e)。',grammarTag:'代动词',grammarExercises:[{q:'Ce matin, je ___ ___ levé(e).（代动词PC）',a:'me suis',tag:'代动词'},{q:'Elles ___ ___ réveillées tôt.',a:'se sont',tag:'代动词'},{q:'代动词PC否定：Elle ___ ___ ___ levée.',a:'ne s\'est pas',tag:'代动词'}],listening:'VyiqIOFYkZk',listeningTitle:'Pronominal Verbs - Passé Composé',listeningQuestion:'À quelle heure s\'est-elle couchée hier ?',listeningAnswer:'Elle s\'est couchée à minuit',speakingScenario:'讲讲你最近一次早起的经历',speakingPrompt:'Tu t\'es levé(e) tôt ce matin ? Comment ça s\'est passé ?',speakingKeywords:['suis','levé(e)','réveillé(e)','couché(e)','matin'],speakingModel:'Ce matin, je me suis levée à six heures. Je me suis réveillée avant le réveil. Je me suis préparée rapidement et je suis partie au travail.',writingSujet:'Racontez votre matinée d\'aujourd\'hui (3 verbes pronominaux au PC).',writingKeywords:['suis','levé(e)','réveillé(e)','habillé(e)','préparé(e)'],writingModelEssay:'Ce matin, je me suis réveillée à 6h30. Je me suis levée tout de suite. Je me suis habillée et je me suis préparé un café. Je ne me suis pas maquillée aujourd\'hui.'},
+  {day:32,phase:'A2核心',grammar:'COD提前PC配合 + 双代词顺序',grammarNote:'PC中COD在助动词前→PP配合COD性数：La pomme que j\'ai mangée。COI在前PP不配合。双代词：me le, te la...',grammarTag:'代词',grammarExercises:[{q:'Les livres que j\'ai ___ (acheter) → ___',a:'achetés',tag:'代词'},{q:'La robe que j\'ai ___ (mettre) → ___',a:'mise',tag:'代词'},{q:'COI在PC前，PP配合吗？',a:'不配合',tag:'代词'}],listening:'f0SCg0Inqhk',listeningTitle:'COD Agreement in PC',listeningQuestion:'Qu\'est-ce qu\'elle a acheté et où ?',listeningAnswer:'Les pommes qu\'elle a achetées au marché',speakingScenario:'讲讲你最近买的东西',speakingPrompt:'Qu\'est-ce que tu as acheté récemment ?',speakingKeywords:['ai','acheté','robe','mise','aimée'],speakingModel:'J\'ai acheté une robe bleue. La vendeuse me l\'a montrée et je l\'ai tout de suite aimée. Je l\'ai mise pour une fête.',writingSujet:'Écrivez 3 phrases avec COD avant le PC (accord du PP).',writingKeywords:['que','ai','vue','achetée','mangée'],writingModelEssay:'La pomme que j\'ai mangée était délicieuse. Les chaussures que j\'ai achetées sont très confortables. La lettre que j\'ai écrite est pour mon amie française.'},
+  {day:33,phase:'A2核心',grammar:'部分冠词综合 · 否定+数量表达',grammarNote:'du/de la/de l\'/des→否定→de。数量词后→de。固定表达：faire du sport, jouer du piano',grammarTag:'冠词',grammarExercises:[{q:'Je mange ___ pain.（部分冠词阳性）',a:'du',tag:'冠词'},{q:'Il y a beaucoup ___ monde.',a:'de',tag:'冠词'},{q:'Elle fait ___ piano.（固定搭配）',a:'du',tag:'冠词'}],listening:'hf6Q4NPQhes',listeningTitle:'Partitive Articles Review',listeningQuestion:'Qu\'est-ce qu\'elle ne mange pas ?',listeningAnswer:'Elle ne mange pas de viande',speakingScenario:'你去朋友家吃饭，说说饮食偏好',speakingPrompt:'Tu manges de tout ? Tu as des préférences alimentaires ?',speakingKeywords:['mange','riz','légumes','viande','fromage'],speakingModel:'Je mange du riz tous les jours. Je mange beaucoup de légumes. Je ne mange pas de viande rouge. Mais j\'adore le fromage français !',writingSujet:'Décrivez ce que vous mangez typiquement en une journée.',writingKeywords:['du','de la','des','beaucoup','pas de'],writingModelEssay:'Le matin, je bois du café et je mange du pain avec de la confiture. Le midi, je mange du riz avec des légumes. Je ne mange pas de viande le soir. Je bois beaucoup d\'eau.'},
+  {day:34,phase:'A2核心',grammar:'口语场景 · 购物/问路生存句',grammarNote:'购物：Je voudrais.../C\'est combien?/Je peux essayer?。问路：Pour aller à.../Tournez à gauche/droite',grammarTag:'口语',grammarExercises:[{q:'购物时询问价格：C\'est ___ ?',a:'combien',tag:'口语'},{q:'问路：Pour ___ à la gare ?',a:'aller',tag:'口语'},{q:'Tournez à ___ au prochain carrefour.',a:'gauche',tag:'口语'}],listening:'4BNypRPg-x0',listeningTitle:'Survival French - Shopping & Directions',listeningQuestion:'Où se trouve la pharmacie ?',listeningAnswer:'Tournez à droite après le feu',speakingScenario:'你在巴黎一家服装店试衣服',speakingPrompt:'Bonjour ! Je peux vous aider ? Vous cherchez quelque chose ?',speakingKeywords:['cherche','taille','essayer','cabine','combien'],speakingModel:'Bonjour ! Je cherche une veste en taille M. Je peux l\'essayer ? Où est la cabine d\'essayage ? C\'est combien ?',writingSujet:'Écrivez un dialogue court dans un magasin (4 répliques).',writingKeywords:['voudrais','taille','essayer','combien','carte'],writingModelEssay:'— Bonjour, je voudrais essayer cette robe en taille 38.\n— Bien sûr, la cabine est au fond à droite.\n— Elle est parfaite ! C\'est combien ?\n— 45 euros. Vous payez par carte ?'},
+  {day:35,phase:'A2核心',grammar:'口语场景 · 餐厅/看医生',grammarNote:'餐厅：Je voudrais commander.../L\'addition,s\'il vous plaît。看医生：J\'ai mal à+部位。depuis+时间',grammarTag:'口语',grammarExercises:[{q:'J\'___ mal à la tête.',a:'ai',tag:'口语'},{q:'Je tousse ___ trois jours.',a:'depuis',tag:'口语'},{q:'「我想要结账」用法语',a:'L\'addition, s\'il vous plaît.',tag:'口语'}],listening:'b80BHXgGJx0',listeningTitle:'Survival French - Restaurant & Doctor',listeningQuestion:'Qu\'est-ce qu\'elle commande au restaurant ?',listeningAnswer:'Une salade et un verre de vin',speakingScenario:'你在餐厅吃饭，服务员来点菜',speakingPrompt:'Vous avez choisi ? Qu\'est-ce que je vous sers ?',speakingKeywords:['voudrais','entrée','plat','dessert','addition'],speakingModel:'Je voudrais la salade niçoise en entrée. En plat, le poulet rôti. Et pour le dessert, une crème brûlée, s\'il vous plaît. Et l\'addition à la fin.',writingSujet:'Écrivez un message à votre médecin pour expliquer vos symptômes.',writingKeywords:['mal','tousse','fièvre','depuis','rendez-vous'],writingModelEssay:'Bonjour Docteur, j\'ai mal à la gorge et je tousse depuis trois jours. J\'ai aussi un peu de fièvre. Est-ce que je peux prendre un rendez-vous cette semaine ? Merci.'},
+  {day:36,phase:'A2核心',grammar:'写作 · 非正式信件（邀请/感谢）',grammarNote:'非正式信：Salut/Cher(e)+目的+正文+结尾(À bientôt/Amitiés)+签名。60词以上',grammarTag:'写作',grammarExercises:[{q:'非正式信件开头常用语',a:'Salut Marie ! / Chère Anna,',tag:'写作'},{q:'邀请信如何给出时间地点',a:'C\'est le samedi 15 juin à 20h chez moi.',tag:'写作'},{q:'非正式结尾',a:'À bientôt ! / Amitiés,',tag:'写作'}],listening:'Idqdfdmriws',listeningTitle:'Informal Letter Writing',listeningQuestion:'Pour quelle occasion la lettre est-elle écrite ?',listeningAnswer:'Une invitation à une fête d\'anniversaire',speakingScenario:'口头邀请朋友参加你的派对',speakingPrompt:'Tu veux inviter ton ami(e) à ta fête d\'anniversaire !',speakingKeywords:['inviter','fête','samedi','apporter','libre'],speakingModel:'Salut ! Je t\'invite à ma fête d\'anniversaire samedi prochain. C\'est chez moi à 20h. Tu peux apporter une bouteille si tu veux. Dis-moi si tu es libre !',writingSujet:'Écrivez une invitation à un ami pour un pique-nique (60+ mots).',writingKeywords:['inviter','pique-nique','dimanche','parc','apporter'],writingModelEssay:'Salut Marie ! Je t\'invite à un pique-nique dimanche prochain au parc. On va se retrouver à midi près du lac. Tu peux apporter des boissons ? Moi, je prépare des sandwichs et des salades. J\'espère que tu es libre ! À bientôt, Rita'},
+  {day:37,phase:'A2核心',grammar:'写作 · 正式信件（咨询/投诉）',grammarNote:'正式信：Madame/Monsieur+目的(Je vous écris pour...)+请求+结尾(Cordialement)。必须用vous',grammarTag:'写作',grammarExercises:[{q:'正式信件开头',a:'Madame, Monsieur,',tag:'写作'},{q:'正式咨询开头句',a:'Je vous écris pour avoir des informations sur...',tag:'写作'},{q:'正式信件结尾',a:'Cordialement,',tag:'写作'}],listening:'4vdX_ywX8Fc',listeningTitle:'Formal Letter Writing',listeningQuestion:'Quel est le but de la lettre formelle ?',listeningAnswer:'Demander des informations sur un cours',speakingScenario:'你打电话给语言学校咨询课程',speakingPrompt:'Bonjour, école de langues. Comment puis-je vous aider ?',speakingKeywords:['voudrais','informations','cours','horaires','prix'],speakingModel:'Bonjour, je voudrais des informations sur vos cours de français. Quels sont les horaires ? Et quel est le prix pour un trimestre ?',writingSujet:'Écrivez une lettre formelle pour demander des informations sur un stage.',writingKeywords:['Madame','écris','informations','stage','réponse'],writingModelEssay:'Madame, Monsieur, je vous écris pour avoir des informations sur le stage de français intensif du mois de juillet. Je voudrais savoir les dates exactes, les horaires et le tarif. Je vous remercie d\'avance pour votre réponse. Cordialement, Rita'},
+  {day:38,phase:'A2核心',grammar:'阅读理解 · 广告/邮件题型',grammarNote:'广告题：找关键信息(价格/日期/条件)。邮件题：判断目的(邀请/拒绝/询问)。先看问题再找对应',grammarTag:'综合',grammarExercises:[{q:'gratuit 的意思是？',a:'免费',tag:'综合'},{q:'veuillez + infinitif 表示？',a:'请...（礼貌请求）',tag:'综合'},{q:'阅读策略：先看___再看___',a:'先看问题，再找对应关键词',tag:'综合'}],listening:'vcXFX7uT_4k',listeningTitle:'Reading Ads & Emails',listeningQuestion:'Quelle est la condition pour l\'offre spéciale ?',listeningAnswer:'Réservation avant le 15 juin',speakingScenario:'你看到一个法语广告，需要预约',speakingPrompt:'Vous appelez pour l\'offre spéciale que vous avez vue.',speakingKeywords:['appelle','offre','réserver','disponible','valable'],speakingModel:'Bonjour, je vous appelle pour l\'offre spéciale. Est-ce qu\'il y a encore des places disponibles ? L\'offre est valable jusqu\'à quand ?',writingSujet:'Lisez cette annonce et répondez : "Cours de français, 2 fois/semaine, 200€/mois, inscription avant le 30 mai."',writingKeywords:['cours','semaine','euros','mai','inscription'],writingModelEssay:'Ce cours de français a lieu deux fois par semaine. Il coûte 200 euros par mois. Il faut s\'inscrire avant le 30 mai. C\'est une bonne offre pour apprendre le français.'},
+  {day:39,phase:'A2核心',grammar:'听力专项 · 数字/时间/地点听写',grammarNote:'听力陷阱：否定句、数字(70/80/90)、同义表达、转折处(mais/par contre)藏着真实信息',grammarTag:'听力',grammarExercises:[{q:'75 用法语怎么说？',a:'soixante-quinze',tag:'听力'},{q:'92 用法语怎么说？',a:'quatre-vingt-douze',tag:'听力'},{q:'听力转折处常用词',a:'mais / par contre / en fait / cependant',tag:'听力'}],listening:'nQGCj8w2IXw',listeningTitle:'Listening - Numbers, Times, Places',listeningQuestion:'À quelle heure part le train selon le message ?',listeningAnswer:'Vingt et une heures trente (21h30)',speakingScenario:'你在火车站，询问出发时间',speakingPrompt:'Excusez-moi, le train pour Lyon part à quelle heure ?',speakingKeywords:['train','heure','part','quai','retard'],speakingModel:'Le train pour Lyon part à quatorze heures quarante-cinq, quai numéro cinq. Mais attention, il y a un retard de dix minutes.',writingSujet:'Écoutez et notez : "Le vol AF123 part à 18h30, porte 24. Embarquement à 17h45."',writingKeywords:['départ','vol','porte','embarquement','heure'],writingModelEssay:'Le vol AF123 part à dix-huit heures trente. L\'embarquement est à dix-sept heures quarante-cinq à la porte vingt-quatre.'},
+  {day:40,phase:'A2核心',grammar:'名词复数规则 + 动词组别综合',grammarNote:'复数：+s(一般)，-al→-aux，-eau/-au→+x，-s/-x/-z不变。动词3组：1(-er)、2(-ir/issons)、3(不规则)',grammarTag:'综合',grammarExercises:[{q:'un animal → des ___',a:'animaux',tag:'综合'},{q:'un bateau → des ___',a:'bateaux',tag:'综合'},{q:'un festival → des ___（例外）',a:'festivals',tag:'综合'}],listening:'nDnCTGPnhL8',listeningTitle:'Plural Nouns Review',listeningQuestion:'De quels animaux parlent-ils ?',listeningAnswer:'Des animaux du zoo (des lions, des éléphants)',speakingScenario:'描述你在动物园看到的动物',speakingPrompt:'Qu\'est-ce que tu as vu au zoo ?',speakingKeywords:['animaux','lions','oiseaux','éléphants','beaux'],speakingModel:'J\'ai vu beaucoup d\'animaux au zoo ! Les lions étaient magnifiques. Les oiseaux chantaient. Et les éléphants étaient énormes !',writingSujet:'Mettez au pluriel : un cheval, un journal, un œil, un monsieur.',writingKeywords:['chevaux','journaux','yeux','messieurs','animaux'],writingModelEssay:'Dans le pré, il y a des chevaux. Je lis plusieurs journaux le matin. Ses yeux sont très beaux. Les messieurs attendent à l\'entrée.'},
+  {day:41,phase:'A2核心',grammar:'口语 · 自我介绍1分30秒完整版',grammarNote:'DELF口语Part1框架：姓名+年龄+国籍→工作/学习→家庭→爱好→学法语原因。每段1-2句共5-6句',grammarTag:'口语',grammarExercises:[{q:'自我介绍开头句',a:'Je m\'appelle... / Bonjour, je me présente...',tag:'口语'},{q:'介绍爱好怎么说',a:'J\'aime... / Le week-end, je fais... / Mon loisir préféré est...',tag:'口语'},{q:'学法语原因',a:'J\'apprends le français parce que... / pour...',tag:'口语'}],listening:'VyiqIOFYkZk',listeningTitle:'DELF A2 - Self-Introduction',listeningQuestion:'Quelle est la profession de la candidate ?',listeningAnswer:'Elle travaille dans le commerce international',speakingScenario:'DELF口语考试Part1：完整的自我介绍',speakingPrompt:'Bonjour ! Présentez-vous, s\'il vous plaît.',speakingKeywords:['m\'appelle','ans','Shanghai','travaille','apprends'],speakingModel:'Bonjour ! Je m\'appelle Rita. J\'ai vingt-cinq ans et je viens de Shanghai. Je travaille chez Amer Sports. J\'apprends le français depuis six mois parce que j\'aime la culture française et le vin. Le week-end, j\'aime faire du sport et regarder des films.',writingSujet:'Écrivez votre présentation complète pour le DELF A2 (60 mots).',writingKeywords:['m\'appelle','ans','habite','travaille','apprends'],writingModelEssay:'Je m\'appelle Rita. J\'ai vingt-cinq ans et j\'habite à Shanghai. Je travaille dans le secteur du sport. J\'apprends le français depuis six mois parce que j\'aime la culture française. Pendant mon temps libre, j\'aime faire du sport et voyager.'},
+  {day:42,phase:'A2核心',grammar:'口语 · 独白Monologue结构',grammarNote:'独白框架：Introduction(15s)→Point1+例子(40s)→Point2+例子(40s)→Opinion(25s)→Conclusion(10s)。连接词：d\'abord/ensuite/enfin',grammarTag:'口语',grammarExercises:[{q:'独白开头标准句',a:'Je vais vous parler de [sujet].',tag:'口语'},{q:'d\'abord/ensuite/enfin的作用',a:'顺序连接词，让结构清晰',tag:'口语'},{q:'独白结尾套路',a:'Voilà ce que je voulais dire sur [sujet].',tag:'口语'}],listening:'f0SCg0Inqhk',listeningTitle:'DELF A2 - Monologue Structure',listeningQuestion:'Quel sujet la candidate a-t-elle choisi pour son monologue ?',listeningAnswer:'Sa ville natale (Shanghai)',speakingScenario:'DELF口语Part2：抽到话题"Ma ville"',speakingPrompt:'Vous avez 10 minutes de préparation. Sujet : Parlez de votre ville.',speakingKeywords:['parler','Shanghai','d\'abord','ensuite','enfin'],speakingModel:'Je vais vous parler de Shanghai. D\'abord, c\'est une grande ville moderne avec beaucoup de gratte-ciel. Ensuite, j\'aime les musées et les restaurants. Enfin, personnellement, je pense que Shanghai est une ville dynamique où il fait bon vivre. Voilà ce que je voulais dire.',writingSujet:'Préparez un plan de monologue sur "Mon plat préféré" (intro + 2 points + conclusion).',writingKeywords:['parler','plat','d\'abord','ensuite','enfin'],writingModelEssay:'Je vais vous parler de mon plat préféré. D\'abord, j\'adore le canard laqué de Beijing. La peau est croustillante et la viande est tendre. Ensuite, ce plat représente la cuisine chinoise traditionnelle. Pour moi, c\'est le meilleur plat du monde. Voilà pourquoi j\'aime ce plat.'},
+  {day:43,phase:'A2核心',grammar:'口语 · 角色扮演Interaction',grammarNote:'角色扮演(3-4min)：问信息/提要求/有问题/讨价还价/结束对话。核心：能完成交际任务',grammarTag:'口语',grammarExercises:[{q:'礼貌询问句式',a:'Je voudrais savoir... / Pourriez-vous m\'indiquer...?',tag:'口语'},{q:'遇到问题怎么说',a:'Excusez-moi, il y a un problème...',tag:'口语'},{q:'结束对话套路',a:'Merci beaucoup ! Bonne journée !',tag:'口语'}],listening:'hf6Q4NPQhes',listeningTitle:'DELF A2 - Role Play Interaction',listeningQuestion:'Quel problème la cliente a-t-elle rencontré ?',listeningAnswer:'Elle a reçu la mauvaise taille',speakingScenario:'DELF口语Part3：你在商店退货',speakingPrompt:'Bonjour, vous avez acheté ce pull hier et il y a un problème ?',speakingKeywords:['acheté','taille','échanger','rembourser','ticket'],speakingModel:'Oui, bonjour. J\'ai acheté ce pull hier mais la taille ne va pas. Je voudrais l\'échanger pour une taille plus grande. Voilà le ticket de caisse. Est-ce que c\'est possible ?',writingSujet:'Écrivez un dialogue de réclamation dans un hôtel (6 répliques).',writingKeywords:['réservé','chambre','problème','bruit','changer'],writingModelEssay:'— Bonsoir, j\'ai réservé une chambre calme mais il y a beaucoup de bruit.\n— Je suis désolé. Quel est le problème exactement ?\n— La chambre donne sur la rue et c\'est très bruyant.\n— Je comprends. Je peux vous changer de chambre.\n— Merci beaucoup, c\'est très gentil.\n— Je vous en prie. Bonne nuit !'},
+  {day:44,phase:'A2核心',grammar:'写作 · 连接词与时态一致性',grammarNote:'加分连接词：de plus(另外),cependant(然而),c\'est pourquoi(因此),en effet(确实)。时态一致：过去→PC+Imparfait',grammarTag:'写作',grammarExercises:[{q:'de plus 的意思',a:'另外/此外',tag:'写作'},{q:'cependant 的意思',a:'然而（正式书面转折）',tag:'写作'},{q:'描述过去旅行用哪两个时态',a:'PC（事件）+ Imparfait（背景）',tag:'写作'}],listening:'4BNypRPg-x0',listeningTitle:'Writing - Connectors & Tense Consistency',listeningQuestion:'Quels connecteurs la personne utilise-t-elle ?',listeningAnswer:'D\'abord, ensuite, enfin, c\'est pourquoi',speakingScenario:'口头总结你学法语的原因和计划',speakingPrompt:'Pourquoi apprenez-vous le français et quels sont vos projets ?',speakingKeywords:['apprends','parce que','de plus','c\'est pourquoi','enfin'],speakingModel:'J\'apprends le français parce que j\'aime la culture française. De plus, c\'est utile pour mon travail. C\'est pourquoi je vais passer le DELF A2 en juin. Enfin, j\'espère voyager en France bientôt.',writingSujet:'Écrivez un paragraphe sur vos loisirs avec 3 connecteurs différents.',writingKeywords:['d\'abord','ensuite','enfin','de plus','cependant'],writingModelEssay:'J\'ai plusieurs loisirs. D\'abord, j\'aime faire du sport, surtout la course à pied. Ensuite, je regarde des films français pour pratiquer la langue. De plus, j\'aime cuisiner le week-end. Cependant, je n\'ai pas toujours le temps de faire tout cela.'},
+  {day:45,phase:'A2核心',grammar:'综合弱点回顾 · 错题本专攻',grammarNote:'今天根据错题本找出3个最常犯的错误集中攻克。重点：助动词选择/PP配合/否定冠词变化',grammarTag:'综合',grammarExercises:[{q:'PC vs Imparfait：Hier, je ___ (marcher) quand je ___ (tomber).',a:'marchais / suis tombé(e)',tag:'PC vs Imparfait'},{q:'代动词PC：Elle ___ ___ (se lever) à 8h.',a:'s\'est levée',tag:'代动词'},{q:'depuis vs il y a：J\'étudie ___ 2024. / Je suis parti ___ deux jours.',a:'depuis / il y a',tag:'depuis/pendant'}],listening:'b80BHXgGJx0',listeningTitle:'Review - Common Mistakes',listeningQuestion:'Quelle erreur grammaticale la personne corrige-t-elle ?',listeningAnswer:'L\'accord du participe passé avec être',speakingScenario:'解释你学法语时最常犯的错误',speakingPrompt:'Quelle est l\'erreur que tu fais le plus souvent en français ?',speakingKeywords:['erreur','souvent','oublie','accord','participe'],speakingModel:'Mon erreur la plus fréquente, c\'est l\'accord du participe passé. J\'oublie souvent d\'ajouter le "e" quand le sujet est féminin avec l\'auxiliaire être. Par exemple, je dis "je suis allé" au lieu de "je suis allée".',writingSujet:'Identifiez 3 de vos erreurs fréquentes et écrivez la correction.',writingKeywords:['erreur','souvent','correction','accord','conjugaison'],writingModelEssay:'Mes trois erreurs les plus fréquentes : 1) L\'accord du participe passé — "je suis allée" et non "je suis allé". 2) Les articles après la négation — "je n\'ai pas de temps" et non "je n\'ai pas du temps". 3) Le choix entre PC et imparfait.'},
+
+  // ══════ 阶段4：DELF专项 (D46-55) ══════
+  {day:46,phase:'DELF专项',grammar:'听力Part1 · 日常対话题型',grammarNote:'听力考试结构：Part1日常对话3道，Part2广播/留言4道，Part3文化/信息5道。每段听两遍',grammarTag:'听力',grammarExercises:[{q:'听力考试每段录音听几遍？',a:'两遍',tag:'听力'},{q:'听力陷阱：否定句的坑',a:'一定要确认否定意思(ne...pas/plus/jamais)',tag:'听力'},{q:'cochez la bonne réponse 意思',a:'选出正确答案',tag:'听力'}],listening:'Idqdfdmriws',listeningTitle:'DELF A2 Listening Part 1 - Daily Dialogues',listeningQuestion:'Où se passe la conversation ?',listeningAnswer:'Dans un café (dialogue quotidien)',speakingScenario:'模拟听力Part1：听完回答考官问题',speakingPrompt:'Vous avez entendu le dialogue. Où se passe la scène ?',speakingKeywords:['dialogue','café','restaurant','magasin','rue'],speakingModel:'La scène se passe dans un café. La femme commande un café et un croissant. L\'homme lui demande l\'heure du train.',writingSujet:'Imaginez un dialogue court entendu dans un magasin (30 mots).',writingKeywords:['client','vendeur','taille','prix','payer'],writingModelEssay:'— Bonjour, je cherche un pantalon noir.\n— Quelle taille faites-vous ?\n— Du 38. Il coûte combien ?\n— 55 euros. Vous payez par carte ?'},
+  {day:47,phase:'DELF专项',grammar:'听力Part2&3 · 广播/信息类',grammarNote:'广播类：注意数字/时间/地点。vrai/faux题：逐字比对。同义词陷阱：maison=logement/domicile',grammarTag:'听力',grammarExercises:[{q:'vrai/faux题：如何判断？',a:'找录音中对应句子，逐字比对',tag:'听力'},{q:'d\'après/selon 意思',a:'根据...',tag:'听力'},{q:'听力同义表达：maison=?',a:'logement / domicile / habitation',tag:'听力'}],listening:'Az351m2PeqU',listeningTitle:'DELF A2 Listening Part 2 & 3',listeningQuestion:'Vrai ou faux : le musée est ouvert le lundi ?',listeningAnswer:'Faux - il est fermé le lundi',speakingScenario:'你听了一段广播，复述主要内容',speakingPrompt:'Vous venez d\'écouter un message radio. De quoi ça parle ?',speakingKeywords:['message','parle','annonce','information','d\'après'],speakingModel:'Le message parle d\'une exposition au musée. D\'après le message, l\'exposition est gratuite pour les étudiants. Elle est ouverte du mardi au dimanche.',writingSujet:'Écoutez et résumez : "Offre spéciale : 30% de réduction sur tous les manteaux, du 1er au 15 janvier."',writingKeywords:['offre','réduction','manteaux','janvier','valable'],writingModelEssay:'Le magasin propose une offre spéciale avec 30% de réduction sur tous les manteaux. Cette offre est valable du 1er au 15 janvier uniquement.'},
+  {day:48,phase:'DELF专项',grammar:'阅读Part1 · 实用文档（广告/表格）',grammarNote:'阅读策略：先扫描问题，再快速定位。广告类：找价格/时间/条件/联系方式',grammarTag:'综合',grammarExercises:[{q:'valable 的意思',a:'有效的（valable jusqu\'au=有效至）',tag:'综合'},{q:'tarif préférentiel 意思',a:'优惠价格',tag:'综合'},{q:'阅读实用文档找答案步骤',a:'先看问题→定位→找关键词→对答案',tag:'综合'}],listening:'jWPMYAXGMHI',listeningTitle:'Reading Part 1 - Ads & Forms',listeningQuestion:'Quelle est la date limite de l\'offre ?',listeningAnswer:'Le 30 juin (offre valable jusqu\'au 30 juin)',speakingScenario:'你看到一个广告，打电话咨询',speakingPrompt:'Vous appelez à propos de l\'annonce pour le cours de cuisine.',speakingKeywords:['appelle','annonce','cours','prix','inscription'],speakingModel:'Bonjour, je vous appelle à propos de l\'annonce pour le cours de cuisine. Est-ce qu\'il reste des places ? Et quel est le prix pour les débutants ?',writingSujet:'Lisez cette annonce : "Location studio 25m², 600€/mois, proche métro, disponible le 1er juin." Résumez en français.',writingKeywords:['studio','mètres','euros','métro','disponible'],writingModelEssay:'Un studio de 25 mètres carrés est à louer pour 600 euros par mois. Il est proche du métro et sera disponible à partir du 1er juin.'},
+  {day:49,phase:'DELF专项',grammar:'阅读Part2 · 信件/邮件题型',grammarNote:'邮件阅读：判断目的(邀请/拒绝/投诉/咨询)。注意情态动词语气。找时间地点细节',grammarTag:'综合',grammarExercises:[{q:'邮件阅读如何判断目的？',a:'看开头句：Je vous écris pour... / Suite à...',tag:'综合'},{q:'suite à votre message 意思',a:'根据您的消息/鉴于您的来信',tag:'综合'},{q:'阅读细节题（时间/地点）策略',a:'扫描数字、专有名词、时间词',tag:'综合'}],listening:'wU0k0dhkD4M',listeningTitle:'Reading Part 2 - Letters & Emails',listeningQuestion:'Quel est le but de cet email ?',listeningAnswer:'Confirmer un rendez-vous',speakingScenario:'你收到一封邮件，需要口头回复主要内容',speakingPrompt:'Vous avez reçu un email de votre professeur. Résumez-le.',speakingKeywords:['email','professeur','cours','annulé','semaine'],speakingModel:'Le professeur m\'a écrit pour dire que le cours de mardi est annulé. Il propose de le remplacer par un cours jeudi à la même heure. Il demande de confirmer si je suis disponible.',writingSujet:'Écrivez un email pour annuler un rendez-vous (40 mots).',writingKeywords:['Madame','désolé','annuler','rendez-vous','reporter'],writingModelEssay:'Madame, je suis désolé mais je dois annuler notre rendez-vous de mercredi. Est-ce que nous pourrions le reporter à vendredi à la même heure ? Merci de votre compréhension. Cordialement, Rita'},
+  {day:50,phase:'DELF专项',grammar:'写作Part1 · 非正式信件模板',grammarNote:'写作评分：字数(60+)，完成任务，语法，词汇，连贯。非正式：Salut/Cher+结尾Amitiés/À bientôt',grammarTag:'写作',grammarExercises:[{q:'邀请信必须包含4个信息',a:'日期+时间+地点+活动内容',tag:'写作'},{q:'「你能带一瓶酒吗」礼貌形式',a:'Est-ce que tu pourrais apporter du vin ?',tag:'写作'},{q:'写完信后检查什么？',a:'字数(60+)、时态、冠词、性数配合',tag:'写作'}],listening:'E9xZWDixJi0',listeningTitle:'Writing Part 1 - Informal Letter',listeningQuestion:'Quel type de lettre la candidate doit-elle écrire ?',listeningAnswer:'Une lettre d\'invitation à un ami',speakingScenario:'口述一封给朋友的感谢信内容',speakingPrompt:'Vous voulez remercier un ami pour son aide. Que dites-vous ?',speakingKeywords:['remercie','aide','grâce','gentil','inviter'],speakingModel:'Je te remercie beaucoup pour ton aide avec mon français. Grâce à toi, j\'ai beaucoup progressé. Tu es vraiment gentil. Je voudrais t\'inviter à dîner pour te remercier.',writingSujet:'Écrivez une lettre de remerciement à un ami (60+ mots).',writingKeywords:['remercier','aide','grâce','progrès','inviter'],writingModelEssay:'Salut Paul, je t\'écris pour te remercier de ton aide avec mon français. Grâce à nos conversations, j\'ai fait beaucoup de progrès. Tu es un très bon professeur ! Pour te remercier, je voudrais t\'inviter au restaurant samedi soir. Dis-moi si tu es libre ! Amitiés, Rita'},
+  {day:51,phase:'DELF专项',grammar:'写作Part2 · 叙述旅行/活动',grammarNote:'叙事写作：PC+Imparfait混合。Imparfait描述天气/背景，PC描述具体事件。结构：背景→事件→感受→总结',grammarTag:'写作',grammarExercises:[{q:'旅行写作：天气描述用___',a:'Imparfait（背景状态）',tag:'写作'},{q:'旅行写作：具体活动用___',a:'Passé composé（完成事件）',tag:'写作'},{q:'「难忘的旅行」用法语',a:'un voyage inoubliable',tag:'写作'}],listening:'3x5thw752VQ',listeningTitle:'Writing Part 2 - Narrative',listeningQuestion:'Quel temps faisait-il pendant le voyage ?',listeningAnswer:'Il faisait beau et chaud',speakingScenario:'口述你上次旅行的经历',speakingPrompt:'Racontez-moi votre dernier voyage !',speakingKeywords:['suis','allé(e)','faisait','beau','visité'],speakingModel:'L\'été dernier, je suis allée à Paris. Il faisait très beau. J\'ai visité la tour Eiffel et le Louvre. J\'ai mangé des croissants tous les jours. C\'était un voyage inoubliable !',writingSujet:'Racontez un voyage ou une sortie récente (70+ mots, PC+Imparfait).',writingKeywords:['été','suis','faisait','visité','inoubliable'],writingModelEssay:'Le mois dernier, je suis allée à Hangzhou avec des amis. Il faisait très beau et il y avait beaucoup de fleurs. Nous avons visité le lac de l\'Ouest et nous avons pris beaucoup de photos. Le soir, nous avons mangé dans un restaurant traditionnel. C\'était une journée inoubliable !'},
+  {day:52,phase:'DELF专项',grammar:'口语Part1 · 自我介绍模拟',grammarNote:'Part1 Entretien dirigé(1min30)：自我介绍+考官追问3-4题。流利自然，不用完美',grammarTag:'口语',grammarExercises:[{q:'自我介绍框架：开头句',a:'Bonjour, je m\'appelle... / Je me présente...',tag:'口语'},{q:'解释学法语原因',a:'J\'apprends le français parce que... / pour...',tag:'口语'},{q:'口语评分最重要的一点',a:'能完成交际任务，敢开口比发音完美重要',tag:'口语'}],listening:'dHPueXh7maE',listeningTitle:'DELF Oral Part 1 Simulation',listeningQuestion:'Combien de temps dure la Partie 1 ?',listeningAnswer:'Environ 1 minute 30',speakingScenario:'DELF口语Part1模拟：考官追问',speakingPrompt:'Qu\'est-ce que vous aimez faire pendant votre temps libre ?',speakingKeywords:['aime','sport','cinéma','amis','week-end'],speakingModel:'Pendant mon temps libre, j\'aime faire du sport, surtout courir le matin. J\'aime aussi regarder des films français pour pratiquer la langue. Le week-end, je sors avec mes amis.',writingSujet:'Préparez les réponses à 3 questions-type de l\'examinateur.',writingKeywords:['m\'appelle','habite','travaille','aime','apprends'],writingModelEssay:'1. Présentez-vous : Je m\'appelle Rita, j\'ai 25 ans, j\'habite à Shanghai.\n2. Que faites-vous dans la vie ? Je travaille chez Amer Sports.\n3. Pourquoi apprenez-vous le français ? Parce que j\'aime la culture française.'},
+  {day:53,phase:'DELF专项',grammar:'口语Part2 · 独白模拟 "Ma ville"',grammarNote:'Part2 Monologue(2min,10min准备)：抽话题→准备提纲→2分钟连续说。高频话题：城市/日常/假期/理想职业',grammarTag:'口语',grammarExercises:[{q:'独白高频话题开头句',a:'Je vais vous parler de ma ville, Shanghai.',tag:'口语'},{q:'如何表达个人喜好',a:'Ce que j\'aime surtout, c\'est... / J\'adore particulièrement...',tag:'口语'},{q:'独白结尾',a:'En conclusion / Voilà ce que je voulais dire.',tag:'口语'}],listening:'y9SdKydb68w',listeningTitle:'DELF Oral Part 2 - Monologue Practice',listeningQuestion:'Quel sujet la candidate doit-elle préparer ?',listeningAnswer:'Parler de sa ville ou de son quartier',speakingScenario:'DELF口语Part2模拟：抽到"Mon quartier"',speakingPrompt:'Parlez-moi de votre quartier. Vous avez 2 minutes.',speakingKeywords:['quartier','calme','commerces','parc','restaurants'],speakingModel:'Je vais vous parler de mon quartier. D\'abord, c\'est un quartier calme avec beaucoup d\'arbres. Ensuite, il y a des commerces et un grand parc à côté de chez moi. Enfin, j\'aime ce quartier parce qu\'il est pratique et agréable. Voilà.',writingSujet:'Écrivez un plan de monologue sur "Un voyage que j\'aimerais faire".',writingKeywords:['aimerais','voyager','Japon','culture','nourriture'],writingModelEssay:'Je vais vous parler d\'un voyage que j\'aimerais faire. D\'abord, j\'aimerais visiter le Japon parce que la culture japonaise me fascine. Ensuite, je voudrais goûter la nourriture locale et visiter les temples anciens. Enfin, ce serait un rêve de voir les cerisiers en fleurs au printemps. Voilà.'},
+  {day:54,phase:'DELF专项',grammar:'口语Part3 · 角色扮演 旅馆预订',grammarNote:'Part3 Interaction(3-4min)：考官扮演服务员等。完成指定任务(预订/投诉/询问/购买)',grammarTag:'口语',grammarExercises:[{q:'预订旅馆：想要预订双人房',a:'Je voudrais réserver une chambre double.',tag:'口语'},{q:'询问早餐是否包含',a:'Est-ce que le petit-déjeuner est inclus ?',tag:'口语'},{q:'结束对话',a:'Merci beaucoup pour votre aide. Bonne journée !',tag:'口语'}],listening:'KVDTTbXOs7Q',listeningTitle:'DELF Oral Part 3 - Hotel Booking',listeningQuestion:'Quel type de chambre la cliente réserve-t-elle ?',listeningAnswer:'Une chambre double avec vue sur la mer',speakingScenario:'DELF口语Part3模拟：在旅馆前台预订',speakingPrompt:'Bonjour, je peux vous aider ?',speakingKeywords:['réserver','chambre','nuits','petit-déjeuner','arriver'],speakingModel:'Bonjour, je voudrais réserver une chambre pour deux nuits, du 15 au 17 juin. Est-ce que le petit-déjeuner est inclus ? Nous arriverons vers 14 heures.',writingSujet:'Écrivez un dialogue pour réserver une table au restaurant.',writingKeywords:['réserver','table','personnes','soir','heure'],writingModelEssay:'— Bonsoir, je voudrais réserver une table pour ce soir.\n— Pour combien de personnes ?\n— Pour quatre personnes, à 20 heures.\n— Très bien, à quel nom ?\n— Au nom de Rita. Merci beaucoup !'},
+  {day:55,phase:'DELF专项',grammar:'四项综合模拟 · 计时练习',grammarNote:'今天模拟完整考试：听力(25min)→阅读(45min)→写作(45min)。口语单独录音2分钟',grammarTag:'综合',grammarExercises:[{q:'DELF A2 四个考试项目',a:'听力+阅读+写作+口语',tag:'综合'},{q:'写作考试时间',a:'45分钟，两篇各60+词',tag:'综合'},{q:'口语考试总时长约',a:'约6-8分钟（不含准备时间）',tag:'综合'}],listening:'T2lxaxdW2VE',listeningTitle:'DELF A2 Complete Simulation',listeningQuestion:'Quelle est la durée totale des épreuves collectives ?',listeningAnswer:'Environ 1 heure 55 minutes',speakingScenario:'考试前夜，给自己打气',speakingPrompt:'Comment tu te sens pour l\'examen ?',speakingKeywords:['prête','confiante','travaillé','réussi','préparée'],speakingModel:'Je me sens prête et confiante ! J\'ai travaillé dur pendant deux mois. Je connais bien la structure de l\'examen. Je suis bien préparée et je vais réussir !',writingSujet:'Écrivez un message de motivation pour vous-même avant l\'examen.',writingKeywords:['prête','confiante','travaillé','réussir','fière'],writingModelEssay:'Après 55 jours de préparation, je suis prête pour l\'examen. J\'ai beaucoup travaillé et je suis confiante. Je connais la grammaire, le vocabulaire et la structure de l\'examen. Je vais réussir le DELF A2 ! Je suis fière de mon parcours.'},
+
+  // ══════ 阶段5：模拟冲刺 (D56-60) ══════
+  {day:56,phase:'模拟冲刺',grammar:'全真模拟 · 听力+阅读限时',grammarNote:'模拟考试1：听力25分钟(不暂停)+阅读45分钟。严格计时，模拟真实考场。对答案分析错误类型',grammarTag:'综合',grammarExercises:[{q:'模拟考试策略：先做哪部分',a:'先做有把握的题，难题最后做',tag:'综合'},{q:'听力做完要做什么',a:'对答案，标记错题，分析错误类型',tag:'综合'},{q:'阅读遇到不认识的词',a:'根据上下文猜义，不要卡住',tag:'综合'}],listening:'EkTZo_JoNa4',listeningTitle:'Mock Exam 1 - Listening & Reading',listeningQuestion:'Combien de temps dure l\'épreuve de lecture ?',listeningAnswer:'45 minutes',speakingScenario:'模拟考试后，自我评估口语状态',speakingPrompt:'Après cette simulation, comment évalues-tu ton niveau ?',speakingKeywords:['simulation','niveau','progrès','encore','confiance'],speakingModel:'Après cette simulation, je vois que j\'ai fait des progrès. La compréhension orale est encore difficile mais je comprends mieux qu\'avant. La lecture s\'est bien passée. Je dois travailler sur les questions de détail.',writingSujet:'Analysez vos points forts et points faibles après la simulation.',writingKeywords:['simulation','points','forts','faibles','améliorer'],writingModelEssay:'Après la simulation, mes points forts sont la lecture et la grammaire. Mes points faibles sont la compréhension orale et le vocabulaire. Je dois améliorer ma vitesse de lecture et m\'entraîner à écouter sans pause.'},
+  {day:57,phase:'模拟冲刺',grammar:'全真模拟 · 写作+口语限时',grammarNote:'模拟考试2：写作45分钟(2篇各22分钟)+口语录音。检查：字数/时态/性数配合/连贯性',grammarTag:'综合',grammarExercises:[{q:'写作考试：先草稿还是正稿？',a:'可以先写简短提纲再写正稿',tag:'写作'},{q:'写作检查清单3项必查',a:'字数60+、时态正确、性数配合',tag:'写作'},{q:'口语自我介绍几分钟',a:'约1分30秒',tag:'口语'}],listening:'ED70j_2Ra5s',listeningTitle:'Mock Exam 2 - Writing & Speaking',listeningQuestion:'Combien de textes faut-il écrire ?',listeningAnswer:'Deux textes (une lettre informelle + un récit)',speakingScenario:'做完模拟写作后，口述你的作文内容',speakingPrompt:'Racontez-moi ce que vous avez écrit dans votre deuxième texte.',speakingKeywords:['écrit','lettre','invitation','récit','voyage'],speakingModel:'Pour le premier texte, j\'ai écrit une lettre d\'invitation à un ami. Pour le deuxième, j\'ai raconté un voyage à Beijing. J\'ai utilisé le passé composé et l\'imparfait. J\'ai vérifié les accords et le nombre de mots.',writingSujet:'Écrivez un court récit de 70 mots sur une journée spéciale.',writingKeywords:['spéciale','journée','fêté','famille','souvenir'],writingModelEssay:'C\'était une journée très spéciale. Le matin, je me suis levée tôt parce que c\'était mon anniversaire. Mes amis m\'ont préparé une surprise au bureau. Le soir, j\'ai dîné avec ma famille dans un bon restaurant. J\'ai reçu beaucoup de cadeaux. C\'est un très beau souvenir.'},
+  {day:58,phase:'模拟冲刺',grammar:'错题集中复习 · 薄弱点专攻',grammarNote:'今天只做错题本的题。每道错题再做一遍直到全对。重点：PC助动词/PP配合/否定冠词',grammarTag:'综合',grammarExercises:[{q:'PC vs Imparfait：Hier soir, je ___ (lire) quand elle ___ (appeler).',a:'lisais / a appelé',tag:'PC vs Imparfait'},{q:'代动词PC：Nous ___ ___ (se lever) tôt.',a:'nous sommes levé(e)s',tag:'代动词'},{q:'条件式：Si tu avais faim, tu ___ (manger).',a:'mangerais',tag:'条件式'}],listening:'WhN87vJoPqE',listeningTitle:'Error Review - Focus on Weak Points',listeningQuestion:'Quelle erreur revient le plus souvent ?',listeningAnswer:'Le choix entre PC et imparfait',speakingScenario:'向朋友解释你复习错题的方法',speakingPrompt:'Comment tu révises tes erreurs de grammaire ?',speakingKeywords:['erreurs','révise','reprends','comprendre','corrige'],speakingModel:'Je reprends chaque erreur et j\'essaie de comprendre pourquoi je me suis trompée. Ensuite, je refais l\'exercice jusqu\'à ce que ce soit correct. Je note la règle à côté pour m\'en souvenir.',writingSujet:'Expliquez en français comment vous apprenez de vos erreurs.',writingKeywords:['erreurs','apprendre','comprendre','corriger','progresser'],writingModelEssay:'Quand je fais une erreur, j\'essaie de comprendre la règle derrière. Ensuite, je refais l\'exercice plusieurs fois. Je note l\'erreur dans mon cahier pour ne pas l\'oublier. C\'est comme ça que je progresse le plus.'},
+  {day:59,phase:'模拟冲刺',grammar:'考前词汇+语法速记卡',grammarNote:'今天只做轻量复习：看词汇表、复习连接词表、快速过语法卡片。不做新题，保持大脑清醒',grammarTag:'综合',grammarExercises:[{q:'连接词：D\'abord / ___ / Enfin',a:'Ensuite',tag:'综合'},{q:'礼貌请求套路',a:'Je voudrais... / Pourriez-vous...?',tag:'综合'},{q:'Bon ___ pour demain !（祝好运）',a:'courage / chance',tag:'综合'}],listening:'5si-W8nPoCY',listeningTitle:'Pre-Exam Light Review',listeningQuestion:'Que faut-il faire la veille de l\'examen ?',listeningAnswer:'Réviser légèrement et se reposer',speakingScenario:'考试前一天，和朋友互相鼓励',speakingPrompt:'Demain, c\'est le grand jour ! Comment tu te sens ?',speakingKeywords:['demain','prête','confiante','calme','réussir'],speakingModel:'Demain, c\'est le grand jour ! Je suis un peu stressée mais confiante. J\'ai bien révisé. Je vais me coucher tôt ce soir. Bonne chance à nous deux !',writingSujet:'Écrivez un petit mot d\'encouragement pour vous-même.',writingKeywords:['courage','prête','confiante','réussi','fière'],writingModelEssay:'Tu as travaillé dur pendant 59 jours. Tu es prête. Tu connais la grammaire, le vocabulaire et la structure de l\'examen. Sois confiante et calme. Tu vas réussir !'},
+  {day:60,phase:'模拟冲刺',grammar:'考试当天 · 放松+回顾策略',grammarNote:'考试当天：早起吃好早餐，提前到考场。听力先读题；写作先写提纲；口语深呼吸敢开口',grammarTag:'综合',grammarExercises:[{q:'今天最重要的事',a:'带好证件+考场提前到达+深呼吸放松',tag:'综合'},{q:'口语考试第一句话',a:'Bonjour, je m\'appelle...（微笑，自信开口）',tag:'口语'},{q:'60天努力值得吗？',a:'Oui ! Vous avez fait de grands progrès !',tag:'综合'}],listening:'HKYj6EAzvo8',listeningTitle:'Exam Day - Relax & Review',listeningQuestion:'Quel conseil donne-t-on pour le jour de l\'examen ?',listeningAnswer:'Bien dormir, bien manger, arriver en avance',speakingScenario:'考试结束后，和朋友分享感受',speakingPrompt:'Ça s\'est bien passé ? Raconte-moi !',speakingKeywords:['passé','bien','difficile','réussi','contente'],speakingModel:'Ça s\'est bien passé dans l\'ensemble. La compréhension orale était un peu difficile mais j\'ai réussi à répondre. La production écrite était plus facile que je pensais. Je suis contente de moi !',writingSujet:'Écrivez un bilan de vos 60 jours d\'apprentissage du français.',writingKeywords:['soixante','jours','progrès','grammaire','fière'],writingModelEssay:'Après 60 jours d\'apprentissage, je suis fière de mes progrès. J\'ai appris toute la grammaire A2, du passé composé au conditionnel. Je peux maintenant écrire des lettres et parler de moi en français. Merci à ce programme !'},
 ];
 
 
@@ -2953,7 +2494,6 @@ function getPlanStartDate() {
 }
 function setPlanStartDate() {
   if (!getPlanStartDate()) {
-    // Plan starts 2026-05-01
     localStorage.setItem('planStartDate', '2026-05-01');
   }
 }
@@ -2961,25 +2501,35 @@ function getTodayDayIndex() {
   const start = getPlanStartDate();
   if (!start) return -1;
   const diff = Math.floor((new Date() - new Date(start)) / 86400000);
-  return diff; // 0-based
+  return diff;
 }
 
-function renderPlanNav() {
-  const progress = getPlanProgress();
-  const todayIdx = getTodayDayIndex();
+function renderPlanCalendar() {
   const nav = document.getElementById('planDayNav');
   if (!nav) return;
-  nav.innerHTML = planDays.map((d, i) => {
-    const phase = d.day <= 15 ? 'phase1' : d.day <= 45 ? 'phase2' : 'phase3';
-    let cls = `plan-dot ${phase}`;
-    if (progress.has(d.day)) cls += ' done';
-    if (i === todayIdx) cls += ' today';
-    return `<div class="${cls}" title="D${d.day}: ${d.grammar}" onclick="scrollToPlanDay(${i})">${d.day}</div>`;
-  }).join('');
-}
-
-function scrollToPlanDay(i) {
-  document.getElementById('planDay' + i)?.scrollIntoView({behavior:'smooth', block:'start'});
+  const progress = getPlanProgress();
+  const todayIdx = getTodayDayIndex();
+  const phases = [
+    {label:'📚 A1基础夯实 (D1–15)', start:0, end:15},
+    {label:'🔄 A1-A2过渡 (D16–30)', start:15, end:30},
+    {label:'⭐ A2核心 (D31–45)', start:30, end:45},
+    {label:'🎯 DELF专项 (D46–55)', start:45, end:55},
+    {label:'🚀 模拟冲刺 (D56–60)', start:55, end:60},
+  ];
+  let html = '<div class="plan-calendar">';
+  phases.forEach(ph => {
+    html += `<div class="plan-phase-label">${ph.label}</div><div class="plan-day-grid">`;
+    for (let i = ph.start; i < ph.end; i++) {
+      const d = planDays[i];
+      const cls = ['plan-cal-day'];
+      if (progress.has(d.day)) cls.push('done');
+      if (i === todayIdx) cls.push('today');
+      html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  nav.innerHTML = html;
 }
 
 function togglePlanDone(day, checked) {
@@ -2987,20 +2537,16 @@ function togglePlanDone(day, checked) {
   if (checked) progress.add(day); else progress.delete(day);
   savePlanProgress(progress);
   renderPlanCalendar();
-  // update button appearance
-  const btn = document.querySelector('[data-plan-done="' + day + '"]');
-  if (btn) { btn.textContent = checked ? '✅ 已完成' : '完成打卡'; btn.classList.toggle('done', checked); }
 }
 
 function checkPlanAnswer(btn, dayIdx, exIdx) {
-  const planEx = planDays[dayIdx].exercises[exIdx];
+  const planEx = planDays[dayIdx].grammarExercises[exIdx];
   const input = document.getElementById(`planEx_${dayIdx}_${exIdx}`);
   const feedback = document.getElementById(`planFb_${dayIdx}_${exIdx}`);
   if (!input || !feedback) return;
   const userAnswer = input.value.trim();
   const correctAnswer = planEx.a;
   const tag = planEx.tag;
-
   const stripAccents = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   const norm = s => stripAccents(s.toLowerCase()).replace(/[^a-z0-9\s\/]/g,' ').replace(/\s+/g,' ').trim();
   const exactMatch = norm(userAnswer) === norm(correctAnswer);
@@ -3008,12 +2554,10 @@ function checkPlanAnswer(btn, dayIdx, exIdx) {
   const hasSlash = correctAnswer.includes('/');
   const partialMatch = hasSlash && norm(userAnswer).length > 1 && norm(correctAnswer).includes(norm(userAnswer));
   const isCorrect = exactMatch || rawMatch || partialMatch;
-
   input.classList.remove('correct','wrong');
   input.classList.add(isCorrect ? 'correct' : 'wrong');
   feedback.style.display = 'block';
   feedback.className = 'plan-ex-feedback ' + (isCorrect ? 'correct' : 'wrong');
-
   if (isCorrect) {
     feedback.innerHTML = '✅ 正确！答案：<strong>' + correctAnswer + '</strong>';
     btn.textContent = '✅ 正确';
@@ -3023,7 +2567,6 @@ function checkPlanAnswer(btn, dayIdx, exIdx) {
       (grammarExplains[tag] ? '<div style="margin-top:0.3rem;font-size:0.78rem;color:var(--soft);">💡 ' + grammarExplains[tag] + '</div>' : '');
     btn.textContent = '❌ 查看答案';
     btn.style.background = 'var(--red)';
-    // Save to wrongItems
     saveWrongItem({
       day: planDays[dayIdx].day,
       question: planEx.q,
@@ -3034,11 +2577,9 @@ function checkPlanAnswer(btn, dayIdx, exIdx) {
       addedAt: new Date().toISOString().slice(0,10)
     });
   }
-  // Persist exercise answer & state
   savePlanAnswer(dayIdx, exIdx, userAnswer, isCorrect);
 }
 
-// ════════════════════════ EXERCISE PERSISTENCE ════════════════════════
 function savePlanAnswer(dayIdx, exIdx, value, isCorrect) {
   const key = 'planAnswer_' + dayIdx + '_' + exIdx;
   localStorage.setItem(key, JSON.stringify({value: value || '', isCorrect: isCorrect, timestamp: Date.now()}));
@@ -3048,7 +2589,7 @@ function getPlanAnswer(dayIdx, exIdx) {
 }
 function restorePlanAnswers() {
   planDays.forEach((d, dayIdx) => {
-    d.exercises.forEach((ex, exIdx) => {
+    d.grammarExercises.forEach((ex, exIdx) => {
       const saved = getPlanAnswer(dayIdx, exIdx);
       if (!saved) return;
       const input = document.getElementById('planEx_' + dayIdx + '_' + exIdx);
@@ -3074,7 +2615,6 @@ function restorePlanAnswers() {
 function saveWrongItem(item) {
   let items = [];
   try { items = JSON.parse(localStorage.getItem('wrongItems') || '[]'); } catch(e) {}
-  // Avoid exact duplicates (same day+question)
   const isDup = items.some(x => x.day === item.day && x.question === item.question);
   if (!isDup) {
     items.push(item);
@@ -3082,50 +2622,218 @@ function saveWrongItem(item) {
   }
 }
 
-function checkReview(inputId, answer, ansId) {
-  const val = document.getElementById(inputId)?.value?.trim() || '';
-  const ans = document.getElementById(ansId);
-  if (ans) ans.style.display = 'block';
-}
-
 function renderPlan() {
   setPlanStartDate();
   renderPlanCalendar();
-  // Show today or first incomplete day
   const todayIdx = getTodayDayIndex();
   const startIdx = (todayIdx >= 0 && todayIdx < planDays.length) ? todayIdx : 0;
   showPlanDay(startIdx);
 }
 
-function renderPlanCalendar() {
-  const nav = document.getElementById('planDayNav');
-  if (!nav) return;
-  const progress = getPlanProgress();
-  const todayIdx = getTodayDayIndex();
-  // 5个阶段
-  const phases = [
-    {label:'📚 A1基础天按 (D1–15)', start:0, end:15},
-    {label:'🔄 A1-A2过渡 (D16–30)', start:15, end:30},
-    {label:'⭐ A2核心 (D31–45)', start:30, end:45},
-    {label:'🎯 DELF专项 (D46–55)', start:45, end:55},
-    {label:'🚨 模拟冲刺 (D56–60)', start:55, end:60},
-  ];
-  let html = '<div class="plan-calendar">';
-  phases.forEach(ph => {
-    html += `<div class="plan-phase-label">${ph.label}</div><div class="plan-day-grid">`;
-    for (let i = ph.start; i < ph.end; i++) {
-      const d = planDays[i];
-      const cls = ['plan-cal-day'];
-      if (progress.has(d.day)) cls.push('done');
-      if (i === todayIdx) cls.push('today');
-      html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
-    }
-    html += '</div>';
+// ════════════════════════ SPEAKING MODULE ════════════════════════
+let mediaRecorder = null;
+let audioChunks = [];
+let currentSpeakingIdx = -1;
+
+function startRecording(dayIdx) {
+  if (mediaRecorder && mediaRecorder.state === 'recording') {
+    stopRecording();
+    return;
+  }
+  currentSpeakingIdx = dayIdx;
+  navigator.mediaDevices.getUserMedia({audio: true}).then(stream => {
+    mediaRecorder = new MediaRecorder(stream, {mimeType: 'audio/webm'});
+    audioChunks = [];
+    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(audioChunks, {type: 'audio/webm'});
+      // Use Web Speech API for transcription attempt
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      if (recognition) {
+        recognition.lang = 'fr-FR';
+        recognition.interimResults = false;
+        recognition.onresult = e => {
+          const transcript = e.results[0][0].transcript;
+          document.getElementById('speakTranscript_' + dayIdx).textContent = transcript;
+          checkSpeakingKeywords(dayIdx, transcript);
+          document.getElementById('speakTranscript_' + dayIdx).style.color = 'var(--soft)';
+        };
+        recognition.onerror = () => {
+          document.getElementById('speakTranscript_' + dayIdx).textContent = '（语音识别失败，请用下方文字输入区手动输入你说的内容）';
+          document.getElementById('speakTranscript_' + dayIdx).style.color = 'var(--red)';
+        };
+        recognition.start();
+      } else {
+        document.getElementById('speakTranscript_' + dayIdx).textContent = '（浏览器不支持语音识别，请用下方文字输入区手动输入你说的内容）';
+      }
+      stream.getTracks().forEach(t => t.stop());
+    };
+    mediaRecorder.start();
+    const btn = document.getElementById('btnRecord_' + dayIdx);
+    if (btn) { btn.textContent = '⏹ 停止录音'; btn.classList.add('recording'); btn.classList.remove('start'); }
+  }).catch(() => {
+    document.getElementById('speakTranscript_' + dayIdx).textContent = '（麦克风权限被拒绝，请用下方文字输入区手动输入）';
   });
-  html += '</div>';
-  nav.innerHTML = html;
 }
 
+function stopRecording() {
+  if (mediaRecorder && mediaRecorder.state === 'recording') {
+    mediaRecorder.stop();
+    const btn = document.getElementById('btnRecord_' + currentSpeakingIdx);
+    if (btn) { btn.textContent = '🎤 开始录音'; btn.classList.remove('recording'); btn.classList.add('start'); }
+  }
+}
+
+function checkSpeakingKeywords(dayIdx, transcript) {
+  const d = planDays[dayIdx];
+  if (!d.speakingKeywords) return;
+  const kw = d.speakingKeywords;
+  const lower = transcript.toLowerCase();
+  kw.forEach((k, i) => {
+    const el = document.getElementById('speakKw_' + dayIdx + '_' + i);
+    if (el) {
+      if (lower.includes(k.toLowerCase())) el.classList.add('found');
+      else el.classList.remove('found');
+    }
+  });
+}
+
+function manualCheckSpeaking(dayIdx) {
+  const input = document.getElementById('speakManual_' + dayIdx);
+  if (!input) return;
+  const text = input.value.trim();
+  document.getElementById('speakTranscript_' + dayIdx).textContent = text;
+  checkSpeakingKeywords(dayIdx, text);
+}
+
+function playModelAudio(dayIdx) {
+  const d = planDays[dayIdx];
+  if (!d.speakingModel) return;
+  const btn = document.getElementById('btnPlay_' + dayIdx);
+  // Try ElevenLabs first
+  fetch('https://api.elevenlabs.io/v1/text-to-speech/JBFxbsD3RzzS0RiSDmAN', {
+    method: 'POST',
+    headers: {
+      'xi-api-key': 'sk_50b5174709327ad0a4aebb626de3e283ddf116d4eedac33f',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({text: d.speakingModel, model_id: 'eleven_multilingual_v2'})
+  }).then(res => {
+    if (!res.ok) throw new Error('API error');
+    return res.blob();
+  }).then(blob => {
+    const url = URL.createObjectURL(blob);
+    const audio = new Audio(url);
+    if (btn) btn.classList.add('playing');
+    audio.onended = () => { if (btn) btn.classList.remove('playing'); };
+    audio.play();
+  }).catch(() => {
+    // Fallback to Web Speech API
+    const u = new SpeechSynthesisUtterance(d.speakingModel);
+    u.lang = 'fr-FR'; u.rate = 0.85;
+    const voices = speechSynthesis.getVoices();
+    const fr = voices.find(v => v.lang.startsWith('fr'));
+    if (fr) u.voice = fr;
+    if (btn) btn.classList.add('playing');
+    u.onend = () => { if (btn) btn.classList.remove('playing'); };
+    speechSynthesis.speak(u);
+  });
+}
+
+function assessSpeaking(dayIdx, passed) {
+  const d = planDays[dayIdx];
+  const transcript = document.getElementById('speakTranscript_' + dayIdx).textContent;
+  if (!passed) {
+    saveWrongItem({
+      question: d.speakingPrompt,
+      userAnswer: transcript || '（未录音）',
+      correctAnswer: d.speakingModel,
+      grammarTag: '口语',
+      tag: 'speaking',
+      addedAt: new Date().toISOString().slice(0,10),
+      timestamp: Date.now()
+    });
+    document.getElementById('speakResult_' + dayIdx).innerHTML = '<span style="color:var(--red);">❌ 已记录到错题本，下次再练！</span>';
+  } else {
+    document.getElementById('speakResult_' + dayIdx).innerHTML = '<span style="color:var(--green);">✅ Très bien ! 继续加油！</span>';
+  }
+  const model = document.getElementById('speakModel_' + dayIdx);
+  if (model) model.classList.add('show');
+}
+
+// ════════════════════════ LISTENING MODULE ════════════════════════
+function checkListeningAnswer(dayIdx) {
+  const d = planDays[dayIdx];
+  const input = document.getElementById('listenInput_' + dayIdx);
+  const fb = document.getElementById('listenFb_' + dayIdx);
+  if (!input || !fb) return;
+  const userAnswer = input.value.trim().toLowerCase();
+  const correct = d.listeningAnswer.toLowerCase();
+  const isCorrect = userAnswer === correct || userAnswer.includes(correct) || correct.includes(userAnswer);
+  fb.classList.add('show');
+  fb.classList.remove('correct','wrong');
+  fb.classList.add(isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ 正确答案：<strong>' + d.listeningAnswer + '</strong>';
+  if (!isCorrect) {
+    saveWrongItem({
+      day: d.day,
+      question: '听力理解：' + d.listeningQuestion,
+      userAnswer: userAnswer || '（未作答）',
+      correctAnswer: d.listeningAnswer,
+      grammarTag: '听力',
+      addedAt: new Date().toISOString().slice(0,10),
+      timestamp: Date.now()
+    });
+  }
+}
+
+// ════════════════════════ WRITING MODULE ════════════════════════
+function checkWriting(dayIdx) {
+  const d = planDays[dayIdx];
+  const textarea = document.getElementById('writeText_' + dayIdx);
+  const results = document.getElementById('writeResults_' + dayIdx);
+  if (!textarea || !results) return;
+  const text = textarea.value.trim();
+  const words = text.split(/\s+/).filter(w => w.length > 0);
+  const wordCount = words.length;
+  const lower = text.toLowerCase();
+  let kwFound = 0;
+  let kwTotal = d.writingKeywords ? d.writingKeywords.length : 0;
+  let kwDetails = '';
+  if (d.writingKeywords) {
+    d.writingKeywords.forEach(k => {
+      if (lower.includes(k.toLowerCase())) { kwFound++; kwDetails += '✅ ' + k + ' '; }
+      else kwDetails += '❌ ' + k + ' ';
+    });
+  }
+  const wordOk = wordCount >= 30;
+  const kwOk = kwFound >= Math.ceil(kwTotal / 2);
+  const allOk = wordOk && kwOk;
+  results.classList.add('show');
+  results.classList.remove('pass','fail');
+  results.classList.add(allOk ? 'pass' : 'fail');
+  results.innerHTML = (allOk ? '✅ ' : '⚠️ ') +
+    '字数：' + wordCount + '词' + (wordOk ? ' ✅' : ' ❌（建议30+词）') +
+    ' | 关键词：' + kwFound + '/' + kwTotal + ' ' + kwDetails;
+  if (!allOk) {
+    saveWrongItem({
+      day: d.day,
+      question: '写作练习：' + d.writingSujet,
+      userAnswer: text || '（未作答）',
+      correctAnswer: d.writingModelEssay,
+      grammarTag: '写作',
+      addedAt: new Date().toISOString().slice(0,10),
+      timestamp: Date.now()
+    });
+  }
+}
+
+function revealWritingModel(dayIdx) {
+  const el = document.getElementById('writeModel_' + dayIdx);
+  if (el) el.classList.toggle('show');
+}
+
+// ════════════════════════ SHOW PLAN DAY (4-Module) ════════════════════════
 function showPlanDay(idx) {
   currentPlanDay = idx;
   const d = planDays[idx];
@@ -3133,13 +2841,9 @@ function showPlanDay(idx) {
   const content = document.getElementById('planContent');
   if (!content) return;
   const progress = getPlanProgress();
-  const phase = d.day <= 15 ? 1 : d.day <= 30 ? 2 : d.day <= 45 ? 3 : d.day <= 55 ? 3 : 3;
-  const phaseClass = 'phase' + phase;
   const isDone = progress.has(d.day);
-  const ytIdx = d.listening;
   const total = planDays.length;
 
-  // Update calendar highlighting
   document.querySelectorAll('.plan-cal-day').forEach((el, i) => {
     el.classList.toggle('active', i === idx);
   });
@@ -3151,80 +2855,127 @@ function showPlanDay(idx) {
       <button class="plan-nav-btn" onclick="showPlanDay(${idx + 1})" ${idx === total - 1 ? 'disabled style="opacity:0.4;cursor:default;"' : ''}>后一天 →</button>
     </div>
     <div class="plan-card" id="planDay${idx}">
-      <div class="plan-card-header ${phaseClass}">
+      <div class="plan-card-header phase${d.day <= 15 ? '1' : d.day <= 30 ? '2' : d.day <= 45 ? '3' : d.day <= 55 ? '4' : '5'}">
         <span class="plan-day-badge">第 ${d.day} 天</span>
-        <span class="plan-phase-tag ${phaseClass}">${d.phase}</span>
+        <span class="plan-phase-tag phase${d.day <= 15 ? '1' : d.day <= 30 ? '2' : d.day <= 45 ? '3' : d.day <= 55 ? '4' : '5'}">${d.phase}</span>
         <span style="font-size:0.88rem;color:var(--soft);font-weight:600;flex:1">${d.grammar}</span>
         <button class="plan-done-btn${isDone?' done':''}" data-plan-done="${d.day}" onclick="togglePlanDone(${d.day}, !${isDone})">
           ${isDone ? '✅ 已完成' : '完成打卡'}
         </button>
       </div>
       <div class="plan-card-body">
-        <div class="plan-section">
-          <div class="plan-section-title">📖 今日语法</div>
-          <div style="font-size:0.88rem;font-weight:700;color:var(--ink);">${d.grammar}</div>
-          <div class="plan-grammar-note" id="gnote${idx}" onclick="document.getElementById('gnote${idx}').classList.toggle('open')" style="margin-top:0.5rem;">
-            💡 ${d.grammarNote}
-          </div>
-        </div>
-
-        <div class="plan-section">
-          <div class="plan-section-title">📝 今日词汇（5个）</div>
-          <div class="plan-vocab-grid">
-            ${d.vocab.map(v => {
-              const fr = v.split('（')[0].trim();
-              return '<span class="plan-vocab-pill">' + v + '<span class="speak-btn" onclick="speakFrench(\'' + fr.replace(/'/g,"\\'") + '\',this)">🔊</span></span>';
-            }).join('')}
-          </div>
-        </div>
-
-        <div class="plan-section">
-          <div class="plan-section-title">💬 今日例句</div>
-          <ul class="plan-sentences">
-            ${d.sentences.map(s => '<li><span class="speak-btn" onclick="speakFrench(this.nextElementSibling.textContent,this)">🔊</span><span>' + s + '</span></li>').join('')}
-          </ul>
-        </div>
-
-        <div class="plan-section">
-          <div class="plan-section-title">🎧 今日听力</div>
-          <div class="plan-yt-wrap">
-            <iframe width="100%" height="240"
-              src="https://www.youtube-nocookie.com/embed/${ytIdx}?rel=0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen style="border:none;border-radius:10px;display:block;"></iframe>
-          </div>
-          <div style="margin-top:1rem;">
-            <div style="font-size:0.85em;font-weight:600;color:var(--ink);margin-bottom:0.5rem;">✍️ 听写练习 — 听完后写下你听到的关键句子</div>
-            <textarea id="dictation_${idx}" placeholder="听完后在这里写下你听到的内容，法语或中文都可以..." 
-              style="width:100%;min-height:80px;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.88em;line-height:1.6;resize:vertical;font-family:inherit;outline:none;box-sizing:border-box;"
-              onfocus="this.style.borderColor='var(--blue)'" 
-              onblur="this.style.borderColor='#e0e0e0';saveDictation(${idx},this.value)"
-            ></textarea>
-            <div style="font-size:0.78em;color:var(--grey);margin-top:4px;">自动保存 · 下次打开仍在</div>
-          </div>
-        </div>
-
-        <div class="plan-section">
-          <div class="plan-section-title">✏️ 今日练习（5题，答错自动记入错题本）</div>
-          ${d.exercises.map((ex, ei) => `
-            <div class="plan-exercise">
-              <div class="plan-exercise-q">${ei+1}. ${ex.q}</div>
-              <input type="text" id="planEx_${idx}_${ei}" class="plan-ex-input" placeholder="输入你的答案..."
-                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                onkeydown="if(event.key==='Enter'){document.getElementById('planCk_${idx}_${ei}').click()}">
-              <div style="display:flex;gap:0.5rem;align-items:center;">
-                <button id="planCk_${idx}_${ei}" class="plan-check-btn" onclick="checkPlanAnswer(this,${idx},${ei})">检查</button>
-                <span style="font-size:0.75rem;color:var(--grey);">标签：${ex.tag}</span>
-              </div>
-              <div id="planFb_${idx}_${ei}" class="plan-ex-feedback"></div>
+        <!-- 4-Module Grid -->
+        <div class="module-grid">
+          <!-- Module 1: Grammar -->
+          <div class="module-card module-grammar open" id="modGrammar_${idx}">
+            <div class="module-header" onclick="document.getElementById('modGrammar_${idx}').classList.toggle('open')">
+              <span class="module-icon">📖</span>
+              <span class="module-label">语法 · ${d.grammarTag}</span>
+              <span class="module-arrow">▼</span>
             </div>
-          `).join('')}
-        </div>
+            <div class="module-body">
+              <div style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">${d.grammar}</div>
+              <div class="plan-grammar-note">💡 ${d.grammarNote}</div>
+              ${d.grammarExercises.map((ex, ei) => `
+                <div class="plan-exercise" style="margin-top:0.6rem;">
+                  <div class="plan-exercise-q">${ei+1}. ${ex.q}</div>
+                  <input type="text" id="planEx_${idx}_${ei}" class="plan-ex-input" placeholder="输入你的答案..."
+                    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                    onkeydown="if(event.key==='Enter'){document.getElementById('planCk_${idx}_${ei}').click()}">
+                  <div style="display:flex;gap:0.5rem;align-items:center;">
+                    <button id="planCk_${idx}_${ei}" class="plan-check-btn" onclick="checkPlanAnswer(this,${idx},${ei})">检查</button>
+                    <span style="font-size:0.75rem;color:var(--grey);">标签：${ex.tag}</span>
+                  </div>
+                  <div id="planFb_${idx}_${ei}" class="plan-ex-feedback"></div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
 
+          <!-- Module 2: Listening -->
+          <div class="module-card module-listening" id="modListen_${idx}">
+            <div class="module-header" onclick="document.getElementById('modListen_${idx}').classList.toggle('open')">
+              <span class="module-icon">🎧</span>
+              <span class="module-label">听力 · ${d.listeningTitle || 'FrenchPod101'}</span>
+              <span class="module-arrow">▼</span>
+            </div>
+            <div class="module-body">
+              <div class="plan-yt-wrap">
+                <iframe width="100%" height="220"
+                  src="https://www.youtube-nocookie.com/embed/${d.listening}?rel=0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen style="border:none;border-radius:10px;display:block;"></iframe>
+              </div>
+              <div class="listen-question">❓ ${d.listeningQuestion}</div>
+              <input type="text" id="listenInput_${idx}" class="listen-answer-input" placeholder="输入你的答案...">
+              <button class="plan-check-btn" onclick="checkListeningAnswer(${idx})" style="margin-top:0.3rem;">检查</button>
+              <div id="listenFb_${idx}" class="listen-answer-fb"></div>
+              <div style="margin-top:0.8rem;">
+                <div style="font-size:0.78rem;font-weight:600;color:var(--soft);">✍️ 听写练习</div>
+                <textarea id="dictation_${idx}" placeholder="听完后写下你听到的关键句子..." 
+                  style="width:100%;min-height:60px;padding:8px 10px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.85em;line-height:1.6;resize:vertical;font-family:inherit;outline:none;"
+                  onfocus="this.style.borderColor='var(--green)'" 
+                  onblur="this.style.borderColor='#e0e0e0';saveDictation(${idx},this.value)"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 3: Speaking -->
+          <div class="module-card module-speaking" id="modSpeak_${idx}">
+            <div class="module-header" onclick="document.getElementById('modSpeak_${idx}').classList.toggle('open')">
+              <span class="module-icon">🗣️</span>
+              <span class="module-label">口语 · Coach模式</span>
+              <span class="module-arrow">▼</span>
+            </div>
+            <div class="module-body">
+              <div class="speak-scenario"><strong>🎬 场景：</strong>${d.speakingScenario}</div>
+              <div class="speak-prompt">💬 ${d.speakingPrompt}</div>
+              <div class="speak-keywords">
+                ${d.speakingKeywords.map((k, i) => '<span class="speak-keyword" id="speakKw_' + idx + '_' + i + '">' + k + '</span>').join('')}
+              </div>
+              <div class="speak-actions">
+                <button class="btn-record start" id="btnRecord_${idx}" onclick="startRecording(${idx})">🎤 开始录音</button>
+                <button class="btn-play-model" id="btnPlay_${idx}" onclick="playModelAudio(${idx})">🔊 听标准发音</button>
+              </div>
+              <div class="speak-transcript" id="speakTranscript_${idx}"></div>
+              <div class="speak-manual">
+                <input type="text" id="speakManual_${idx}" placeholder="或手动输入你说的法语..." oninput="manualCheckSpeaking(${idx})">
+              </div>
+              <div class="speak-actions" style="margin-top:0.5rem;">
+                <button class="btn-speak-assess good" onclick="assessSpeaking(${idx},true)">✅ 我说对了</button>
+                <button class="btn-speak-assess bad" onclick="assessSpeaking(${idx},false)">❌ 我需要练</button>
+              </div>
+              <div id="speakResult_${idx}" style="font-size:0.82rem;margin-top:0.4rem;"></div>
+              <div class="speak-model" id="speakModel_${idx}">
+                <strong>📝 范文参考：</strong>${d.speakingModel}
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 4: Writing -->
+          <div class="module-card module-writing" id="modWrite_${idx}">
+            <div class="module-header" onclick="document.getElementById('modWrite_${idx}').classList.toggle('open')">
+              <span class="module-icon">✏️</span>
+              <span class="module-label">写作 · DELF A2</span>
+              <span class="module-arrow">▼</span>
+            </div>
+            <div class="module-body">
+              <div class="write-topic"><strong>📝 写作题目：</strong>${d.writingSujet}</div>
+              <div class="speak-keywords" style="margin-bottom:0.5rem;">
+                ${d.writingKeywords.map(k => '<span class="speak-keyword">' + k + '</span>').join('')}
+              </div>
+              <textarea class="write-textarea" id="writeText_${idx}" placeholder="在这里写下你的作文（建议30词以上）..."></textarea>
+              <button class="btn-write-check" onclick="checkWriting(${idx})">✅ 检查</button>
+              <button class="btn-reveal-model" onclick="revealWritingModel(${idx})">👀 查看范文</button>
+              <div id="writeResults_${idx}" class="write-check-results"></div>
+              <div class="write-model" id="writeModel_${idx}"><strong>📝 范文：</strong>${d.writingModelEssay}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>`;
 
-  // Restore saved answers for this day
   loadDictations();
   restorePlanAnswers();
 
@@ -3250,6 +3001,12 @@ function showPlanDay(idx) {
       content.innerHTML += reviewHtml;
     }
   }
+}
+
+function checkReview(inputId, answer, ansId) {
+  const val = document.getElementById(inputId)?.value?.trim() || '';
+  const ans = document.getElementById(ansId);
+  if (ans) ans.style.display = 'block';
 }
 
 // ════════════════════════ WRONG ITEMS ════════════════════════
@@ -3319,7 +3076,6 @@ function renderWrong() {
     return;
   }
 
-  // Group by grammarTag
   const groups = {};
   items.forEach((item, idx) => {
     const tag = item.grammarTag || '其他';
@@ -3334,9 +3090,10 @@ function renderWrong() {
       const idx = item._idx;
       const dateStr = item.timestamp ? new Date(item.timestamp).toLocaleDateString('zh-CN') : '';
       const explain = grammarExplains[tag] || '';
+      const icon = item.tag === 'speaking' ? '🗣️ ' : '';
       html += `
         <div class="wrong-item" id="wrongItem_${idx}">
-          <div class="wrong-item-q">D${item.day} · ${item.question}</div>
+          <div class="wrong-item-q">${icon}D${item.day || '·'} · ${item.question}</div>
           <div class="wrong-item-row">
             <span class="wrong-your">你的答案：${item.userAnswer || '（未作答）'}</span>
             <span class="wrong-correct">✓ 正确：${item.correctAnswer}</span>
@@ -3354,6 +3111,6 @@ function renderWrong() {
   content.innerHTML = html;
 }
 </script>
-
 </body>
+</html></body>
 </html>
