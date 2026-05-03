@@ -408,8 +408,9 @@
   .plan-dot.phase3 { --phase-color: #c0392b; }
   /* ── Calendar Grid ── */
   .plan-calendar { margin-bottom: 1.5rem; width: 100%; }
-  .plan-phase-label { font-size: 0.82rem; font-weight: 700; color: var(--grey); margin: 1rem 0 0.5rem; padding-left: 2px; }
-  .plan-day-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; margin-bottom: 0.8rem; }
+  .plan-phase-row { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.7rem; }
+  .plan-phase-label { font-size: 0.78rem; font-weight: 700; color: var(--grey); white-space: nowrap; padding-top: 8px; min-width: 130px; flex-shrink: 0; }
+  .plan-day-grid { display: grid; grid-template-columns: repeat(15, 1fr); gap: 5px; flex: 1; }
   .plan-cal-day { aspect-ratio: 1; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font-size: 0.78rem; font-weight: 700; cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: center; transition: all 0.15s; position: relative; }
   .plan-cal-day:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
   .plan-cal-day.active { background: var(--blue); color: white; border-color: var(--blue); box-shadow: 0 3px 12px rgba(44,62,140,0.25); }
@@ -2821,7 +2822,7 @@ function renderPlanCalendar() {
   ];
   let html = '<div class="plan-calendar">';
   phases.forEach(ph => {
-    html += `<div class="plan-phase-label">${ph.label}</div><div class="plan-day-grid">`;
+    html += `<div class="plan-phase-row"><div class="plan-phase-label">${ph.label}</div><div class="plan-day-grid">`;
     for (let i = ph.start; i < ph.end; i++) {
       const d = planDays[i];
       const cls = ['plan-cal-day'];
@@ -2829,7 +2830,7 @@ function renderPlanCalendar() {
       if (i === todayIdx) cls.push('today');
       html += `<div class="${cls.join(' ')}" onclick="showPlanDay(${i})">${d.day}</div>`;
     }
-    html += '</div>';
+    html += '</div></div>'; // close plan-day-grid + plan-phase-row
   });
   html += '</div>';
   nav.innerHTML = html;
