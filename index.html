@@ -2327,15 +2327,7 @@ function renderVerbs() {
   const persons = ['je','tu','il/elle','nous','vous','ils/elles'];
   let html = '';
 
-  // Dictation toolbar
-  html += `<div class="dictation-toolbar">
-    <button class="btn-dictation start" id="btn-start-dictation" onclick="startDictation()">✏️ 开始默写</button>
-    <button class="btn-dictation check" id="btn-check-dictation" onclick="checkDictation()">✅ 检查答案</button>
-    <button class="btn-dictation reset" id="btn-reset-dictation" onclick="resetDictation()">🔄 重置</button>
-    <span class="dictation-hint" id="dictation-hint">填写所有变位格，然后点「✅ 检查答案」</span>
-  </div>`;
-
-  verbs.forEach(v => {
+  verbs.forEach((v, vi) => {
     // Build irregular pp note
     const ppParts = v.pc.split(', ');
     const pp = ppParts[0].replace(/^(ai|as|a|avons|avez|ont|suis|es|est|sommes|êtes|sont)\s+/,'').trim();
@@ -2370,6 +2362,12 @@ function renderVerbs() {
     }
     html += `</tbody></table></div>`;
     html += `<div class="vt-note">📌 Passé composé 过去分词：<strong>${pp}</strong></div>`;
+    html += `<div class="dictation-toolbar" style="margin-top:0.5rem;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+      <button class="btn-dictation start" id="btn-start-dictation-${vi}" onclick="startDictation(${vi})">✏️ 开始默写</button>
+      <button class="btn-dictation check" id="btn-check-dictation-${vi}" onclick="checkDictation(${vi})" style="display:none">✅ 检查答案</button>
+      <button class="btn-dictation reset" id="btn-reset-dictation-${vi}" onclick="resetDictation(${vi})" style="display:none">🔄 重置</button>
+      <span class="dictation-hint" id="dictation-hint-${vi}" style="display:none">填写所有变位格，点「✅ 检查答案」</span>
+    </div>`;
     html += `</div>`;
   });
   document.getElementById('verbTables').innerHTML = html;
@@ -2377,10 +2375,11 @@ function renderVerbs() {
 
 let dictationActive = false;
 
-function startDictation() {
-  dictationActive = true;
+function startDictation(vi) {
+  const wrap = document.querySelectorAll('#verbTables .vt-wrap')[vi];
+  if (!wrap) return;
   // Show all inputs, hide display spans
-  document.querySelectorAll('#verbTables .conj-table td[data-answer]').forEach(td => {
+  wrap.querySelectorAll('.conj-table td[data-answer]').forEach(td => {
     td.querySelector('.conj-display').style.display = 'none';
     const inp = td.querySelector('.dictation-input');
     inp.style.display = 'inline-block';
@@ -2389,12 +2388,12 @@ function startDictation() {
     td.querySelector('.conj-check-mark').style.display = 'none';
     td.querySelector('.conj-check-mark').textContent = '';
   });
-  document.getElementById('btn-start-dictation').style.display = 'none';
-  document.getElementById('btn-check-dictation').style.display = 'inline-block';
-  document.getElementById('btn-reset-dictation').style.display = 'inline-block';
-  document.getElementById('dictation-hint').style.display = 'inline';
+  document.getElementById('btn-start-dictation-' + vi).style.display = 'none';
+  document.getElementById('btn-check-dictation-' + vi).style.display = 'inline-block';
+  document.getElementById('btn-reset-dictation-' + vi).style.display = 'inline-block';
+  document.getElementById('dictation-hint-' + vi).style.display = 'inline';
   // Focus first input
-  const first = document.querySelector('#verbTables .dictation-input');
+  const first = wrap.querySelector('.dictation-input');
   if (first) first.focus();
 }
 
@@ -2402,8 +2401,10 @@ function normConj(s) {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9() ]/g,'').replace(/\s+/g,' ').trim();
 }
 
-function checkDictation() {
-  document.querySelectorAll('#verbTables .conj-table td[data-answer]').forEach(td => {
+function checkDictation(vi) {
+  const wrap = document.querySelectorAll('#verbTables .vt-wrap')[vi];
+  if (!wrap) return;
+  wrap.querySelectorAll('.conj-table td[data-answer]').forEach(td => {
     const answer = td.dataset.answer;
     const inp = td.querySelector('.dictation-input');
     const mark = td.querySelector('.conj-check-mark');
@@ -2423,9 +2424,10 @@ function checkDictation() {
   });
 }
 
-function resetDictation() {
-  dictationActive = false;
-  document.querySelectorAll('#verbTables .conj-table td[data-answer]').forEach(td => {
+function resetDictation(vi) {
+  const wrap = document.querySelectorAll('#verbTables .vt-wrap')[vi];
+  if (!wrap) return;
+  wrap.querySelectorAll('.conj-table td[data-answer]').forEach(td => {
     td.querySelector('.conj-display').style.display = '';
     const inp = td.querySelector('.dictation-input');
     inp.style.display = 'none';
@@ -2435,10 +2437,10 @@ function resetDictation() {
     mark.style.display = 'none';
     mark.textContent = '';
   });
-  document.getElementById('btn-start-dictation').style.display = 'inline-block';
-  document.getElementById('btn-check-dictation').style.display = 'none';
-  document.getElementById('btn-reset-dictation').style.display = 'none';
-  document.getElementById('dictation-hint').style.display = 'none';
+  document.getElementById('btn-start-dictation-' + vi).style.display = 'inline-block';
+  document.getElementById('btn-check-dictation-' + vi).style.display = 'none';
+  document.getElementById('btn-reset-dictation-' + vi).style.display = 'none';
+  document.getElementById('dictation-hint-' + vi).style.display = 'none';
 }
 
 // ════════════════════════ VOCAB ════════════════════════
