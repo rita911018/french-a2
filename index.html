@@ -381,10 +381,7 @@
 
   /* ── Plan tab ── */
   .plan-day-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   #planDayNav { position: sticky; top: 0; z-index: 10; background: var(--bg); padding: 0.5rem 0; }
   .module-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 1.2rem; }
@@ -410,9 +407,9 @@
   .plan-dot.phase2 { --phase-color: #277a4e; }
   .plan-dot.phase3 { --phase-color: #c0392b; }
   /* ── Calendar Grid ── */
-  .plan-calendar { margin-bottom: 2rem; }
+  .plan-calendar { margin-bottom: 1.5rem; width: 100%; }
   .plan-phase-label { font-size: 0.82rem; font-weight: 700; color: var(--grey); margin: 1rem 0 0.5rem; padding-left: 2px; }
-  .plan-day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 0.5rem; }
+  .plan-day-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; margin-bottom: 0.8rem; }
   .plan-cal-day { aspect-ratio: 1; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font-size: 0.78rem; font-weight: 700; cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: center; transition: all 0.15s; position: relative; }
   .plan-cal-day:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
   .plan-cal-day.active { background: var(--blue); color: white; border-color: var(--blue); box-shadow: 0 3px 12px rgba(44,62,140,0.25); }
@@ -2302,7 +2299,7 @@ document.querySelectorAll('.sidebar-tab').forEach(tab => {
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     // Re-render dynamic tabs when switched to
     if (tab.dataset.tab === 'wrong') renderWrong();
-    if (tab.dataset.tab === 'plan') renderPlanCalendar();
+    if (tab.dataset.tab === 'plan') renderPlan();
   });
 });
 
